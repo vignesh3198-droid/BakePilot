@@ -7,8 +7,7 @@
   'use strict';
 
   // 1. Default Production Cloud API URL
-  // Replace with your live Render, Railway, or VPS domain (e.g., https://bakepilot-api.onrender.com)
-  const DEFAULT_CLOUD_API = 'https://bakepilot-cloud.onrender.com';
+  const DEFAULT_CLOUD_API = 'https://bakepilot.onrender.com';
 
   function resolveApiHost() {
     // Priority 1: User or Admin manual override saved in localStorage
