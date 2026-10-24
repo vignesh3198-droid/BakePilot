@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: bakepilot-cloud
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.mjs
+    envVars:
+      - key: NODE_VERSION
+        value: 20.10.0
+      - key: PORT
+        value: 10000

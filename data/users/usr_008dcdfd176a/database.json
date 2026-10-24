@@ -1,0 +1,68 @@
+{
+  "profile": {
+    "name": "Flour Power Studio",
+    "tagline": "Custom Cakes & Bakes",
+    "baker": "",
+    "email": "baker_1792784009904@gmail.com",
+    "phone": "",
+    "whatsappNumber": "",
+    "address": "",
+    "currency": "₹",
+    "currencySymbol": "₹",
+    "defaultDeliveryCharge": 50,
+    "fssaiOrLicense": "",
+    "invoiceNotes": "Baked fresh with pure butter and premium chocolate. Please refrigerate upon arrival.",
+    "instagram": "",
+    "logo": "assets/bakepilot-logo.png",
+    "brandColor": "#3E3239",
+    "secondaryColor": "#E8D2C4",
+    "paymentUpi": "",
+    "cloudSyncUrl": "/api/sync"
+  },
+  "utilities": {
+    "gasCylinderRate": 1850,
+    "gasCylinderLifeDays": 20,
+    "electricityRatePerUnit": 8.5,
+    "monthlyEstimatedPower": 3200,
+    "waterAndMaintenance": 650,
+    "notes": "Commercial 19kg cylinder costs ₹1,850 and lasts ~20 baking days. Power calculated on commercial unit rates."
+  },
+  "eodReport": {
+    "frequency": "daily",
+    "scheduledTime": "23:50",
+    "email": "baker_1792784009904@gmail.com",
+    "lastSentAt": null,
+    "includeJsonBackup": true
+  },
+  "workspace": {
+    "name": "Flour Power Studio Studio",
+    "coverPhoto": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop&q=80",
+    "address": "",
+    "isHomeKitchenPrivate": false,
+    "pickupLocationInstructions": "",
+    "workingDays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "workingHours": "09:00 AM - 08:00 PM",
+    "orderAcceptanceHours": "09:00 AM - 07:00 PM",
+    "minAdvanceNoticeHours": 24,
+    "defaultPrepTimeHours": 4,
+    "notes": ""
+  },
+  "inventory": [],
+  "products": [],
+  "recipes": [],
+  "orders": [],
+  "expenses": [],
+  "customers": [],
+  "suppliers": [],
+  "cashbook": {
+    "openingBalance": 0,
+    "records": []
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "BakePilot — Smart Home Bakery Studio",
+  "short_name": "BakePilot",
+  "version": "1.1.43",
+  "description": "Mobile-First Smart Bakery Studio Suite for Home Bakers — WhatsApp Bills, Pipeline, Inventory & Cloud Backup",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#1C171A",
+  "theme_color": "#1C171A",
+  "lang": "en-IN",
+  "categories": ["business", "productivity", "food"],
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/bakepilot-logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Create Order / Bill",
+      "short_name": "Quick Bill",
+      "description": "Create instant WhatsApp order bill",
+      "url": "/#billing",
+      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Kitchen Pipeline",
+      "short_name": "Orders",
+      "description": "View active cake and bake orders",
+      "url": "/#orders",
+      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Pantry & Stock",
+      "short_name": "Pantry",
+      "description": "Check inventory and ingredient levels",
+      "url": "/#inventory",
+      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false
+}

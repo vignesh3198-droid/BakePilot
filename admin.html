@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>BakePilot — Super Admin Master Command Center</title>
+  <link rel="icon" type="image/png" href="assets/bakepilot-logo.png" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg-admin: #080D0B;
+      --bg-surface: #0E1A16;
+      --bg-surface-elevated: #142620;
+      --bg-input: #091310;
+      --border-subtle: rgba(142, 186, 168, 0.18);
+      --border-active: #D4AF37;
+      --text-main: #FFFFFF;
+      --text-secondary: #FAF1E4;
+      --text-muted: #8EBAA8;
+      --text-faint: #5C7A6E;
+      --accent-mint: #5CE09E;
+      --accent-gold: #D4AF37;
+      --accent-cream: #FAF1E4;
+      --accent-warn: #F5A623;
+      --accent-danger: #FF6B7A;
+      --font-heading: 'Manrope', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: var(--bg-admin);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .tabular-nums { font-variant-numeric: tabular-nums; }
+
+    /* Admin Container */
+    .admin-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 18px 16px 80px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 9px 16px;
+      border-radius: 9999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.18s ease;
+      text-decoration: none;
+      white-space: nowrap;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-cream {
+      background: #FAF1E4;
+      color: #0F382C;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #D4AF37 0%, #B37D22 100%);
+      color: #0E0B05;
+      font-weight: 800;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.25);
+    }
+    .btn-mint {
+      background: #5CE09E;
+      color: #061A13;
+      font-weight: 800;
+    }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent-gold);
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .btn-danger {
+      background: rgba(255, 107, 122, 0.14);
+      color: #FF6B7A;
+      border: 1px solid rgba(255, 107, 122, 0.3);
+    }
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 11.5px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      position: relative;
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      background: var(--bg-surface);
+      padding: 5px;
+      border-radius: 9999px;
+      border: 1px solid var(--border-subtle);
+      margin: 18px 0 22px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .nav-tabs::-webkit-scrollbar { display: none; }
+
+    .nav-tab-btn {
+      flex-shrink: 0;
+      padding: 8px 15px;
+      border-radius: 9999px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-tab-btn.active {
+      background: #FAF1E4;
+      color: #0F382C;
+      font-weight: 800;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive Grids */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .responsive-grid-2 {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+    }
+
+    /* Inputs */
+    .input-field {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 10px 13px;
+      color: #FFFFFF;
+      font-size: 13px;
+      outline: none;
+      font-family: inherit;
+      transition: border-color 0.2s ease;
+    }
+    .input-field:focus {
+      border-color: var(--accent-gold);
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      font-size: 10.5px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .badge-active { background: rgba(92, 224, 158, 0.15); color: #5CE09E; border: 1px solid rgba(92, 224, 158, 0.3); }
+    .badge-suspended { background: rgba(255, 107, 122, 0.15); color: #FF6B7A; border: 1px solid rgba(255, 107, 122, 0.3); }
+    .badge-tag { background: rgba(212, 175, 55, 0.15); color: #D4AF37; border: 1px solid rgba(212, 175, 55, 0.3); }
+    .badge-mint { background: rgba(92, 224, 158, 0.12); color: #5CE09E; }
+
+    /* Tables (Desktop) */
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .admin-table th {
+      padding: 12px 14px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(0, 0, 0, 0.15);
+    }
+    .admin-table td {
+      padding: 14px;
+      font-size: 12.5px;
+      border-bottom: 1px solid rgba(142, 186, 168, 0.08);
+      vertical-align: middle;
+    }
+    .admin-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Mobile Baker Cards */
+    .bakers-mobile-cards {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .baker-mobile-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Modals */
+    .admin-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 9999;
+    }
+    .admin-modal-dialog {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 22px;
+      width: 100%;
+      max-width: 580px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 22px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    /* Toast */
+    #admin-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #FAF1E4;
+      color: #0F382C;
+      font-weight: 800;
+      padding: 10px 22px;
+      border-radius: 9999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      display: none;
+      z-index: 10000;
+      font-size: 12.5px;
+      white-space: nowrap;
+    }
+
+    /* Activity Stream Item */
+    .activity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+    }
+
+    /* RESPONSIVE MEDIA QUERIES FOR PHONES */
+    @media (max-width: 768px) {
+      .admin-container { padding: 12px 10px 80px; }
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px;
+      }
+      .responsive-grid-2 {
+        grid-template-columns: 1fr !important;
+        gap: 14px;
+      }
+      .table-desktop-view { display: none !important; }
+      .bakers-mobile-cards { display: flex !important; }
+      
+      .top-header-wrap {
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 12px;
+      }
+      .top-actions-row {
+        justify-content: space-between;
+        width: 100%;
+      }
+      .top-actions-row .btn {
+        flex: 1;
+        padding: 8px 6px;
+        font-size: 11px;
+      }
+      .admin-modal-dialog {
+        padding: 18px 14px;
+        max-height: 94vh;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .metrics-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toast Notification -->
+  <div id="admin-toast"></div>
+
+  <!-- 1. LOGIN GATE (Shown when not authenticated as Super Admin) -->
+  <div id="admin-login-screen" style="display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 16px;">
+    <div class="card" style="width: 100%; max-width: 390px; text-align: center; padding: 32px 20px; border-radius: 24px; border-color: rgba(212, 175, 55, 0.3);">
+      
+      <div style="width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #FAF1E4 0%, #D4AF37 100%); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
+        <i data-lucide="shield-check" style="width: 36px; height: 36px; color: #0F382C;"></i>
+      </div>
+      
+      <h1 style="font-size: 20px; font-family: var(--font-heading); margin-bottom: 3px; color: #FAF1E4;">Super Admin Portal</h1>
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 20px;">BakePilot Master Control • Multi-Baker Suite</p>
+
+      <form onsubmit="AdminApp.handleLogin(event)" style="display: flex; flex-direction: column; gap: 13px; text-align: left;">
+        <div>
+          <label style="display: block; font-size: 11.5px; font-weight: 700; color: var(--text-secondary); margin-bottom: 5px;">Master Admin Email</label>
+          <input type="email" id="admin-email-input" class="input-field" value="admin@bakepilot.in" required />
+        </div>
+        <div>
+          <label style="display: block; font-size: 11.5px; font-weight: 700; color: var(--text-secondary); margin-bottom: 5px;">Master Passkey</label>
+          <input type="password" id="admin-password-input" class="input-field" placeholder="••••••••" required />
+          <span style="font-size: 10.5px; color: var(--accent-gold); display: block; margin-top: 3px;">Default: <code>bakepilot@admin2026</code></span>
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="margin-top: 6px; width: 100%; padding: 12px; font-size: 13px;">
+          <i data-lucide="key" style="width: 15px; height: 15px;"></i>
+          <span>Access Command Center</span>
+        </button>
+      </form>
+
+      <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border-subtle); font-size: 11px; color: var(--text-muted);">
+        🔒 100% Isolated from individual baker databases. Secure multi-tenant cloud telemetry.
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. SUPER ADMIN MAIN DASHBOARD (Shown when authenticated) -->
+  <div id="admin-main-screen" style="display: none;">
+    <div class="admin-container">
+
+      <!-- Top Header -->
+      <header class="top-header-wrap" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle);">
+        <div style="display: flex; align-items: center; gap: 12px; min-width: 0;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #FAF1E4 0%, #D4AF37 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+            <i data-lucide="shield-check" style="width: 22px; height: 22px; color: #0F382C;"></i>
+          </div>
+          <div style="min-width: 0;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <h1 style="font-size: 18px; font-weight: 800; font-family: var(--font-heading); color: #FAF1E4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                BakePilot Super Admin
+              </h1>
+              <span class="badge badge-tag" style="padding: 2px 6px; font-size: 9.5px;">v1.1.43</span>
+              <span class="badge badge-active" style="padding: 2px 6px; font-size: 9.5px;">● Live</span>
+            </div>
+            <p style="font-size: 11px; color: var(--text-muted); margin-top: 1px;">Home Baker Network Operations & Growth Command</p>
+          </div>
+        </div>
+
+        <!-- Utility Pills -->
+        <div class="top-actions-row" style="display: flex; align-items: center; gap: 8px;">
+          <a href="/download/bakepilot.apk" class="btn btn-gold btn-sm" title="Download BakePilot v1.1.43 Android App Package">
+            <i data-lucide="smartphone" style="width: 13px; height: 13px;"></i>
+            <span>Get APK (v1.1.43)</span>
+          </a>
+
+          <a id="admin-wifi-pill" href="#" target="_blank" class="btn btn-outline btn-sm" title="Local Wi-Fi Network Address">
+            <i data-lucide="wifi" style="width: 13px; height: 13px; color: var(--accent-mint);"></i>
+            <span id="admin-wifi-text">192.168.0.104</span>
+          </a>
+
+          <a href="/" target="_blank" class="btn btn-outline btn-sm" title="Open Baker Client View">
+            <i data-lucide="external-link" style="width: 13px; height: 13px;"></i>
+            <span>Baker App</span>
+          </a>
+
+          <button onclick="AdminApp.logout()" class="btn btn-danger btn-sm" title="Log Out of Admin">
+            <i data-lucide="log-out" style="width: 13px; height: 13px;"></i>
+            <span>Exit</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Executive Overview Bento Grid -->
+      <section style="margin-top: 16px;">
+        <div class="metrics-grid">
+          
+          <div class="card" style="background: linear-gradient(135deg, #142821 0%, #0E1A16 100%); padding: 14px 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); font-size: 11px; font-weight: 700;">
+              <span>Total Bakers</span>
+              <i data-lucide="users" style="width: 15px; height: 15px; color: var(--accent-mint);"></i>
+            </div>
+            <div id="stat-bakers-count" class="tabular-nums" style="font-size: clamp(22px, 5vw, 28px); font-weight: 800; color: #FAF1E4; margin-top: 6px;">0</div>
+            <span style="font-size: 10.5px; color: var(--accent-mint);">Active Sandboxes</span>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, #142821 0%, #0E1A16 100%); padding: 14px 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); font-size: 11px; font-weight: 700;">
+              <span>Platform GMV</span>
+              <i data-lucide="indian-rupee" style="width: 15px; height: 15px; color: var(--accent-gold);"></i>
+            </div>
+            <div id="stat-revenue" class="tabular-nums" style="font-size: clamp(20px, 4.5vw, 26px); font-weight: 800; color: var(--accent-gold); margin-top: 6px; word-break: break-all;">₹0.00</div>
+            <span style="font-size: 10.5px; color: var(--text-muted);">Billed across all studios</span>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, #142821 0%, #0E1A16 100%); padding: 14px 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); font-size: 11px; font-weight: 700;">
+              <span>Total Orders</span>
+              <i data-lucide="shopping-bag" style="width: 15px; height: 15px; color: var(--accent-cream);"></i>
+            </div>
+            <div id="stat-orders" class="tabular-nums" style="font-size: clamp(22px, 5vw, 28px); font-weight: 800; color: #FAF1E4; margin-top: 6px;">0</div>
+            <span style="font-size: 10.5px; color: var(--accent-mint);">Processed via BakePilot</span>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, #142821 0%, #0E1A16 100%); padding: 14px 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); font-size: 11px; font-weight: 700;">
+              <span>Cloud Backups</span>
+              <i data-lucide="database" style="width: 15px; height: 15px; color: #5CE09E;"></i>
+            </div>
+            <div id="stat-backups" class="tabular-nums" style="font-size: clamp(22px, 5vw, 28px); font-weight: 800; color: #FAF1E4; margin-top: 6px;">0</div>
+            <span style="font-size: 10.5px; color: var(--text-muted);">Nightly 11:50 PM EOD</span>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, #142821 0%, #0E1A16 100%); padding: 14px 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); font-size: 11px; font-weight: 700;">
+              <span>Feature Wishlist</span>
+              <i data-lucide="sparkles" style="width: 15px; height: 15px; color: var(--accent-warn);"></i>
+            </div>
+            <div id="stat-feedback" class="tabular-nums" style="font-size: clamp(22px, 5vw, 28px); font-weight: 800; color: var(--accent-warn); margin-top: 6px;">0</div>
+            <span style="font-size: 10.5px; color: var(--text-muted);">Baker update requests</span>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, #142821 0%, #0E1A16 100%); padding: 14px 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); font-size: 11px; font-weight: 700;">
+              <span>System Health</span>
+              <i data-lucide="activity" style="width: 15px; height: 15px; color: #5CE09E;"></i>
+            </div>
+            <div id="stat-health-status" style="font-size: clamp(20px, 4.5vw, 26px); font-weight: 800; color: #5CE09E; margin-top: 6px;">100% OK</div>
+            <span id="stat-uptime-text" style="font-size: 10.5px; color: var(--text-muted);">Sub-10ms response</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Navigation Tabs (Smooth Horizontal Scroll on Phones) -->
+      <nav class="nav-tabs">
+        <button class="nav-tab-btn active" onclick="AdminApp.switchTab('bakers', event)">
+          <i data-lucide="users" style="width: 14px; height: 14px;"></i>
+          <span>Bakers Directory (<span id="tab-bakers-badge">0</span>)</span>
+        </button>
+        <button class="nav-tab-btn" onclick="AdminApp.switchTab('activity', event)">
+          <i data-lucide="activity" style="width: 14px; height: 14px;"></i>
+          <span>Activity Stream</span>
+        </button>
+        <button class="nav-tab-btn" onclick="AdminApp.switchTab('broadcast', event)">
+          <i data-lucide="megaphone" style="width: 14px; height: 14px;"></i>
+          <span>Broadcast Updates</span>
+        </button>
+        <button class="nav-tab-btn" onclick="AdminApp.switchTab('feedback', event)">
+          <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i>
+          <span>Feature Wishlist (<span id="tab-feedback-badge">0</span>)</span>
+        </button>
+        <button class="nav-tab-btn" onclick="AdminApp.switchTab('security', event)">
+          <i data-lucide="shield" style="width: 14px; height: 14px;"></i>
+          <span>Data Isolation</span>
+        </button>
+        <button class="nav-tab-btn" onclick="AdminApp.switchTab('system', event)">
+          <i data-lucide="cpu" style="width: 14px; height: 14px;"></i>
+          <span>Server Telemetry</span>
+        </button>
+      </nav>
+
+      <!-- ================================================================= -->
+      <!-- TAB 1: BAKERS DIRECTORY (DESKTOP TABLE + MOBILE CARDS) -->
+      <!-- ================================================================= -->
+      <section id="tab-content-bakers">
+        <div class="card">
+          
+          <!-- Filter & Search Toolbar -->
+          <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <h2 style="font-size: 16px; font-family: var(--font-heading); color: #FAF1E4;">Home Bakers Roster</h2>
+                <p style="font-size: 11.5px; color: var(--text-muted);">Real-time monitoring of all active bakery databases, revenue, and health</p>
+              </div>
+              <button onclick="AdminApp.loadBakers()" class="btn btn-outline btn-sm">
+                <i data-lucide="refresh-cw" style="width: 13px; height: 13px;"></i>
+                <span>Refresh Roster</span>
+              </button>
+            </div>
+
+            <!-- Search, Status Filter & Sorter Row -->
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+              <div style="flex: 1; min-width: 200px;">
+                <input 
+                  type="text" 
+                  id="baker-search-input" 
+                  oninput="AdminApp.filterBakers()" 
+                  class="input-field" 
+                  placeholder="🔍 Search bakery name, owner, or email..." 
+                />
+              </div>
+
+              <select id="baker-status-filter" onchange="AdminApp.filterBakers()" class="input-field" style="width: auto; min-width: 140px;">
+                <option value="all">All Statuses</option>
+                <option value="active">🟢 Active (Paid Access)</option>
+                <option value="expiring">⏰ Expiring Soon (≤3 Days)</option>
+                <option value="unpaid">💳 Disabled (Payment Due)</option>
+                <option value="revenue">💰 High Revenue (>₹5,000)</option>
+                <option value="orders">🛍️ Has Orders</option>
+              </select>
+
+              <select id="baker-sort-filter" onchange="AdminApp.filterBakers()" class="input-field" style="width: auto; min-width: 130px;">
+                <option value="newest">Newest Registered</option>
+                <option value="expiring">Expiring Soonest</option>
+                <option value="revenue">Highest Revenue</option>
+                <option value="orders">Most Orders</option>
+                <option value="name">Alphabetical</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- DESKTOP TABLE VIEW (>768px) -->
+          <div class="table-desktop-view" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Bakery / Owner</th>
+                  <th>Contact Details</th>
+                  <th>Orders</th>
+                  <th>Revenue (₹)</th>
+                  <th>Pantry / Items</th>
+                  <th>Cloud Sync & Backups</th>
+                  <th>Status</th>
+                  <th>Manage & Actions</th>
+                </tr>
+              </thead>
+              <tbody id="bakers-table-body">
+                <tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 30px;">Loading bakers roster...</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- MOBILE CARDS VIEW (<=768px) -->
+          <div id="bakers-mobile-cards-container" class="bakers-mobile-cards">
+            <p style="text-align: center; color: var(--text-muted); padding: 30px;">Loading mobile cards...</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- TAB 2: ACTIVITY STREAM (NEW REAL-TIME EVENT LOG) -->
+      <!-- ================================================================= -->
+      <section id="tab-content-activity" style="display: none;">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <div>
+              <h2 style="font-size: 16px; font-family: var(--font-heading); color: #FAF1E4;">Real-Time Platform Activity Stream</h2>
+              <p style="font-size: 11.5px; color: var(--text-muted);">Live audit trail of baker sign-ups, orders, backups, and broadcasts</p>
+            </div>
+            <button onclick="AdminApp.loadActivity()" class="btn btn-outline btn-sm">
+              <i data-lucide="refresh-cw" style="width: 13px; height: 13px;"></i>
+              <span>Refresh Log</span>
+            </button>
+          </div>
+
+          <div id="activity-stream-container" style="display: flex; flex-direction: column; gap: 10px;">
+            <p style="color: var(--text-muted); text-align: center; padding: 24px;">Loading activity history...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- TAB 3: BROADCAST UPDATES (NOTIFY EVERYONE) -->
+      <!-- ================================================================= -->
+      <section id="tab-content-broadcast" style="display: none;">
+        <div class="responsive-grid-2">
+          
+          <!-- Compose Form -->
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+              <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(92, 224, 158, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i data-lucide="megaphone" style="width: 18px; height: 18px; color: var(--accent-mint);"></i>
+              </div>
+              <div>
+                <h2 style="font-size: 16px; font-family: var(--font-heading); color: #FAF1E4;">Publish Update to All Bakers</h2>
+                <p style="font-size: 11.5px; color: var(--text-muted);">Displays an announcement banner on every baker's dashboard</p>
+              </div>
+            </div>
+
+            <form onsubmit="AdminApp.handlePublishBroadcast(event)" style="display: flex; flex-direction: column; gap: 12px;">
+              <div>
+                <label style="display: block; font-size: 11.5px; font-weight: 700; margin-bottom: 4px;">Announcement Title *</label>
+                <input type="text" id="broadcast-title-input" class="input-field" placeholder="e.g. 🎉 Version 2.4 Released: Automatic WhatsApp Image Bills" required />
+              </div>
+
+              <div>
+                <label style="display: block; font-size: 11.5px; font-weight: 700; margin-bottom: 4px;">Message Body / Release Notes *</label>
+                <textarea id="broadcast-message-input" class="input-field" rows="4" placeholder="Explain the new feature or important notice to your bakers..." required></textarea>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div>
+                  <label style="display: block; font-size: 11.5px; font-weight: 700; margin-bottom: 4px;">Category Tag</label>
+                  <select id="broadcast-tag-input" class="input-field">
+                    <option value="Release">🚀 New Feature Release</option>
+                    <option value="Update">⚡ Feature Improvement</option>
+                    <option value="Notice">📢 Important Announcement</option>
+                    <option value="Maintenance">⚠️ Cloud Maintenance</option>
+                    <option value="Pro Tip">💡 Baker Pro Tip</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="display: block; font-size: 11.5px; font-weight: 700; margin-bottom: 4px;">Visibility Status</label>
+                  <select id="broadcast-active-input" class="input-field">
+                    <option value="true">🟢 Active (Shown to All)</option>
+                    <option value="false">⚪ Inactive / Hidden</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-gold" style="margin-top: 6px; padding: 12px;">
+                <i data-lucide="send" style="width: 15px; height: 15px;"></i>
+                <span>Publish Update to All Bakers Now</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Live Preview -->
+          <div class="card">
+            <h3 style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.04em;">Baker Dashboard Banner Preview</h3>
+            
+            <div style="background: #081B14; border: 1.5px solid var(--border-active); border-radius: 16px; padding: 16px; box-shadow: 0 10px 24px rgba(0,0,0,0.3);">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+                <div style="display: flex; gap: 10px; align-items: flex-start;">
+                  <span style="font-size: 22px;">📢</span>
+                  <div>
+                    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px; flex-wrap: wrap;">
+                      <span id="preview-tag" class="badge badge-tag" style="font-size: 10px;">RELEASE</span>
+                      <strong id="preview-title" style="font-size: 14px; color: #FAF1E4;">✨ Welcome to BakePilot 2.0 Studio Suite</strong>
+                    </div>
+                    <p id="preview-message" style="font-size: 12px; color: #8EBAA8; line-height: 1.45;">Zero-GST WhatsApp image billing, EOD cloud backups, and Recipe Cost Estimator are active! Need any custom tool? Click "Request Feature" below.</p>
+                  </div>
+                </div>
+                <button type="button" style="background: none; border: none; color: #8EBAA8; font-size: 14px; cursor: pointer;">✕</button>
+              </div>
+            </div>
+
+            <div style="margin-top: 20px; padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,0.03); font-size: 11.5px; color: var(--text-muted); line-height: 1.45;">
+              ✨ When you publish, every home baker will immediately see this card pinned to the top of their home dashboard.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- TAB 4: FEATURE WISHLIST & FEEDBACK -->
+      <!-- ================================================================= -->
+      <section id="tab-content-feedback" style="display: none;">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
+            <div>
+              <h2 style="font-size: 16px; font-family: var(--font-heading); color: #FAF1E4;">Bakers Feature Requests & Wishlist Inbox</h2>
+              <p style="font-size: 11.5px; color: var(--text-muted);">Direct suggestions and custom tool requests submitted by home bakers</p>
+            </div>
+            <button onclick="AdminApp.loadFeedback()" class="btn btn-outline btn-sm">
+              <i data-lucide="refresh-cw" style="width: 13px; height: 13px;"></i>
+              <span>Refresh Inbox</span>
+            </button>
+          </div>
+
+          <div id="feedback-list-container" style="display: flex; flex-direction: column; gap: 12px;">
+            <p style="color: var(--text-muted); font-size: 12.5px; text-align: center; padding: 24px;">Loading wishlist items...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- TAB 5: DATA CONFIDENTIALITY & AUDIT -->
+      <!-- ================================================================= -->
+      <section id="tab-content-security" style="display: none;">
+        <div class="responsive-grid-2">
+          
+          <div class="card">
+            <h2 style="font-size: 16px; font-family: var(--font-heading); margin-bottom: 12px; color: #FAF1E4;">🔒 Multi-Tenant Data Quarantine Architecture</h2>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+              <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border-subtle);">
+                <strong style="color: #5CE09E;">✓ Isolated Sandbox:</strong> Each baker's data is quarantined into <code>/data/users/&lt;userId&gt;/database.json</code>. No baker can ever view another baker's records.
+              </div>
+              <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border-subtle);">
+                <strong style="color: #5CE09E;">✓ SHA-256 Hashing:</strong> Passwords use one-way cryptographic SHA-256 with rotating user tokens. Plaintext passwords are never stored.
+              </div>
+              <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border-subtle);">
+                <strong style="color: #5CE09E;">✓ 100% Recipe Ownership:</strong> Proprietary formulas, client lists, and pricing margins are exclusively owned by each home baker.
+              </div>
+              <div style="background: rgba(255,255,255,0.02); padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border-subtle);">
+                <strong style="color: #5CE09E;">✓ EOD 11:50 PM Backup Vaults:</strong> Independent automated snapshots archived nightly in user backup folders.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2 style="font-size: 16px; font-family: var(--font-heading); margin-bottom: 12px; color: #FAF1E4;">⚡ Scaling & Capacity Benchmarks</h2>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+              <div style="padding: 12px 14px; border-radius: 12px; background: rgba(92, 224, 158, 0.08); border: 1px solid rgba(92, 224, 158, 0.2);">
+                <div style="font-size: 13.5px; font-weight: 800; color: #FAF1E4; margin-bottom: 3px;">Current Capacity: 1,000+ Bakers</div>
+                <p>Because each database is an isolated JSON file (~80KB - 200KB), this server effortlessly handles concurrent home baker operations with sub-10ms response times.</p>
+              </div>
+
+              <div style="padding: 12px 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle);">
+                <div style="font-size: 13.5px; font-weight: 800; color: #FAF1E4; margin-bottom: 3px;">Production Cloud Deployment</div>
+                <p>Ready to deploy on AWS, DigitalOcean, or Railway for ₹450/month with zero code changes.</p>
+              </div>
+
+              <button onclick="AdminApp.triggerTestEod()" class="btn btn-outline" style="width: 100%; margin-top: 4px;">
+                <i data-lucide="play" style="width: 14px; height: 14px;"></i>
+                <span>Test Run 11:50 PM EOD Backup Engine Now</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- TAB 6: SERVER TELEMETRY & HEALTH (NEW) -->
+      <!-- ================================================================= -->
+      <section id="tab-content-system" style="display: none;">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <div>
+              <h2 style="font-size: 16px; font-family: var(--font-heading); color: #FAF1E4;">Node.js Runtime & Server Telemetry</h2>
+              <p style="font-size: 11.5px; color: var(--text-muted);">Real-time memory, process uptime, and storage diagnostics</p>
+            </div>
+            <button onclick="AdminApp.loadHealth()" class="btn btn-outline btn-sm">
+              <i data-lucide="refresh-cw" style="width: 13px; height: 13px;"></i>
+              <span>Refresh Telemetry</span>
+            </button>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px;">
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 700;">Node.js Engine</div>
+              <div id="sys-node-version" class="tabular-nums" style="font-size: 18px; font-weight: 800; color: #5CE09E; margin-top: 4px;">-</div>
+              <div id="sys-platform" style="font-size: 10.5px; color: var(--text-muted); margin-top: 2px;">-</div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px;">
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 700;">Server Uptime</div>
+              <div id="sys-uptime" class="tabular-nums" style="font-size: 18px; font-weight: 800; color: #FAF1E4; margin-top: 4px;">-</div>
+              <div style="font-size: 10.5px; color: var(--accent-mint); margin-top: 2px;">Continuous live daemon</div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px;">
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 700;">Memory Heap (Used / Total)</div>
+              <div id="sys-memory" class="tabular-nums" style="font-size: 18px; font-weight: 800; color: var(--accent-gold); margin-top: 4px;">- MB</div>
+              <div id="sys-rss" style="font-size: 10.5px; color: var(--text-muted); margin-top: 2px;">-</div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 14px;">
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 700;">Invoices Image Cache</div>
+              <div id="sys-invoices" class="tabular-nums" style="font-size: 18px; font-weight: 800; color: #FAF1E4; margin-top: 4px;">-</div>
+              <div id="sys-invoices-size" style="font-size: 10.5px; color: var(--text-muted); margin-top: 2px;">- MB used</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL: BAKER STUDIO INSPECTOR (DEEP MONITORING DRAWER) -->
+  <!-- ===================================================================== -->
+  <div id="baker-inspector-modal" class="admin-modal-overlay" style="display: none;">
+    <div class="admin-modal-dialog">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 42px; height: 42px; border-radius: 12px; background: rgba(212, 175, 55, 0.15); border: 1.5px solid rgba(212, 175, 55, 0.3); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); flex-shrink: 0;">
+            <i data-lucide="store" style="width: 22px; height: 22px;"></i>
+          </div>
+          <div>
+            <h3 id="inspect-business-name" style="font-size: 16px; font-weight: 800; color: #FAF1E4; margin: 0;">-</h3>
+            <p id="inspect-tagline" style="font-size: 11.5px; color: var(--text-muted); margin-top: 1px;">-</p>
+          </div>
+        </div>
+        <button onclick="AdminApp.closeInspectModal()" style="background: none; border: none; color: var(--text-muted); font-size: 18px; cursor: pointer; padding: 4px 8px;">✕</button>
+      </div>
+
+      <div id="inspect-modal-body" style="display: flex; flex-direction: column; gap: 14px;">
+        <p style="text-align: center; color: var(--text-muted); padding: 20px;">Loading baker studio metrics...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL: RESET BAKER PASSWORD -->
+  <!-- ===================================================================== -->
+  <div id="reset-password-modal" class="admin-modal-overlay" style="display: none;">
+    <div class="admin-modal-dialog" style="max-width: 420px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+        <h3 style="font-size: 15px; font-weight: 800; color: #FAF1E4;">Reset Baker Passkey</h3>
+        <button onclick="AdminApp.closeResetPassModal()" style="background: none; border: none; color: var(--text-muted); font-size: 16px; cursor: pointer;">✕</button>
+      </div>
+
+      <form onsubmit="AdminApp.handleResetPasswordSubmit(event)" style="display: flex; flex-direction: column; gap: 12px;">
+        <p style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">
+          Set a new access password for <strong id="reset-modal-baker-email" style="color: #FAF1E4;">baker</strong>.
+        </p>
+
+        <input type="hidden" id="reset-modal-user-id" />
+
+        <div>
+          <label style="display: block; font-size: 11.5px; font-weight: 700; margin-bottom: 4px;">New Passkey *</label>
+          <input type="text" id="reset-modal-new-pass" required minlength="4" class="input-field" placeholder="e.g. baker123" />
+        </div>
+
+        <div style="display: flex; gap: 8px; margin-top: 6px;">
+          <button type="button" onclick="AdminApp.closeResetPassModal()" class="btn btn-outline" style="flex: 1;">Cancel</button>
+          <button type="submit" class="btn btn-gold" style="flex: 1.4;">Update Passkey</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT: APPLICATION LOGIC & REAL-TIME EVENT STREAM -->
+  <!-- ===================================================================== -->
+  <script>
+    const AdminApp = {
+      token: localStorage.getItem('bakepilot_admin_token') || '',
+      allBakers: [],
+      activeTab: 'bakers',
+
+      init() {
+        if (this.token) {
+          this.verifyAuth();
+        } else {
+          this.showLogin();
+        }
+      },
+
+      showToast(msg) {
+        const toast = document.getElementById('admin-toast');
+        toast.textContent = msg;
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 3200);
+      },
+
+      showLogin() {
+        document.getElementById('admin-login-screen').style.display = 'flex';
+        document.getElementById('admin-main-screen').style.display = 'none';
+        lucide.createIcons();
+      },
+
+      showDashboard() {
+        document.getElementById('admin-login-screen').style.display = 'none';
+        document.getElementById('admin-main-screen').style.display = 'block';
+        this.loadStats();
+        this.loadBakers();
+        this.loadBroadcast();
+        this.loadFeedback();
+        this.loadActivity();
+        this.loadHealth();
+        lucide.createIcons();
+      },
+
+      async handleLogin(e) {
+        e.preventDefault();
+        const email = document.getElementById('admin-email-input').value.trim();
+        const password = document.getElementById('admin-password-input').value;
+
+        try {
+          const res = await fetch('/api/admin/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+          });
+          const data = await res.json();
+          if (res.ok && data.token) {
+            this.token = data.token;
+            localStorage.setItem('bakepilot_admin_token', data.token);
+            this.showToast('✓ Welcome Super Admin!');
+            this.showDashboard();
+          } else {
+            alert(data.error || 'Invalid credentials');
+          }
+        } catch (err) {
+          alert('Login failed: ' + err.message);
+        }
+      },
+
+      logout() {
+        this.token = '';
+        localStorage.removeItem('bakepilot_admin_token');
+        this.showLogin();
+      },
+
+      async verifyAuth() {
+        try {
+          const res = await fetch('/api/admin/me', {
+            headers: { 'Authorization': `Bearer ${this.token}` }
+          });
+          const data = await res.json();
+          if (data.authenticated) {
+            this.showDashboard();
+          } else {
+            this.logout();
+          }
+        } catch {
+          this.logout();
+        }
+      },
+
+      switchTab(tab, evt) {
+        this.activeTab = tab;
+        document.querySelectorAll('.nav-tab-btn').forEach(b => b.classList.remove('active'));
+        if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+
+        ['bakers', 'activity', 'broadcast', 'feedback', 'security', 'system'].forEach(t => {
+          const el = document.getElementById(`tab-content-${t}`);
+          if (el) el.style.display = t === tab ? 'block' : 'none';
+        });
+
+        if (tab === 'activity') this.loadActivity();
+        if (tab === 'system') this.loadHealth();
+        lucide.createIcons();
+      },
+
+      async loadStats() {
+        try {
+          const res = await fetch('/api/admin/stats', {
+            headers: { 'Authorization': `Bearer ${this.token}` }
+          });
+          const data = await res.json();
+          if (res.ok) {
+            document.getElementById('stat-bakers-count').textContent = data.totalBakers || 0;
+            document.getElementById('stat-revenue').textContent = `₹${(data.totalPlatformRevenue || 0).toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
+            document.getElementById('stat-orders').textContent = data.totalPlatformOrders || 0;
+            document.getElementById('stat-backups').textContent = data.totalBackupsCount || 0;
+            document.getElementById('stat-feedback').textContent = data.pendingFeedback || 0;
+            document.getElementById('tab-bakers-badge').textContent = data.totalBakers || 0;
+            document.getElementById('tab-feedback-badge').textContent = data.pendingFeedback || 0;
+
+            if (data.wifiUrl) {
+              const pill = document.getElementById('admin-wifi-pill');
+              pill.href = data.wifiUrl;
+              document.getElementById('admin-wifi-text').textContent = data.wifiUrl.replace('http://', '').replace('/admin.html', '');
+            }
+          }
+        } catch (e) {
+          console.error('Stats error:', e);
+        }
+      },
+
+      async loadBakers() {
+        try {
+          const res = await fetch('/api/admin/bakers', {
+            headers: { 'Authorization': `Bearer ${this.token}` }
+          });
+          const data = await res.json();
+          if (res.ok && data.bakers) {
+            this.allBakers = data.bakers;
+            this.filterBakers();
+          }
+        } catch (e) {
+          console.error('Bakers error:', e);
+        }
+      },
+
+      filterBakers() {
+        const query = (document.getElementById('baker-search-input')?.value || '').toLowerCase().trim();
+        const statusFilter = document.getElementById('baker-status-filter')?.value || 'all';
+        const sortFilter = document.getElementById('baker-sort-filter')?.value || 'newest';
+
+        let list = [...this.allBakers];
+
+        // Search text
+        if (query) {
+          list = list.filter(b => 
+            (b.businessName || '').toLowerCase().includes(query) ||
+            (b.email || '').toLowerCase().includes(query) ||
+            (b.bakerName || '').toLowerCase().includes(query) ||
+            (b.phone || '').includes(query)
+          );
+        }
+
+        // Status Filter
+        if (statusFilter === 'active') {
+          list = list.filter(b => b.status === 'active' || (!b.status));
+        } else if (statusFilter === 'expiring') {
+          list = list.filter(b => b.status === 'active' && b.daysRemaining !== null && b.daysRemaining <= 3);
+        } else if (statusFilter === 'unpaid') {
+          list = list.filter(b => b.status === 'payment_pending' || b.status === 'disabled');
+        } else if (statusFilter === 'suspended') {
+          list = list.filter(b => b.status === 'suspended');
+        } else if (statusFilter === 'revenue') {
+          list = list.filter(b => Number(b.revenue || 0) >= 5000);
+        } else if (statusFilter === 'orders') {
+          list = list.filter(b => Number(b.ordersCount || 0) > 0);
+        }
+
+        // Sorter
+        if (sortFilter === 'newest') {
+          list.sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
+        } else if (sortFilter === 'expiring') {
+          list.sort((a, b) => {
+            const timeA = b.subscriptionExpiresAt ? new Date(b.subscriptionExpiresAt).getTime() : Infinity;
+            const timeB = b.subscriptionExpiresAt ? new Date(b.subscriptionExpiresAt).getTime() : Infinity;
+            return timeA - timeB;
+          });
+        } else if (sortFilter === 'revenue') {
+          list.sort((a, b) => Number(b.revenue || 0) - Number(a.revenue || 0));
+        } else if (sortFilter === 'orders') {
+          list.sort((a, b) => Number(b.ordersCount || 0) - Number(a.ordersCount || 0));
+        } else if (sortFilter === 'name') {
+          list.sort((a, b) => (a.businessName || '').localeCompare(b.businessName || ''));
+        }
+
+        this.renderBakersDesktop(list);
+        this.renderBakersMobile(list);
+        lucide.createIcons();
+      },
+
+      renderBakersDesktop(list) {
+        const tbody = document.getElementById('bakers-table-body');
+        if (!tbody) return;
+
+        if (list.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 30px;">No bakers found matching filter criteria</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = list.map(b => {
+          const isUnpaid = b.status === 'payment_pending' || b.status === 'disabled';
+          const isSuspended = b.status === 'suspended';
+          const isBlocked = isUnpaid || isSuspended;
+
+          let statusBadge = `<span class="badge badge-active">🟢 Active</span>`;
+          let expirySubtext = '';
+          if (isUnpaid) {
+            statusBadge = `<span class="badge" style="background: rgba(245, 166, 35, 0.16); color: #F5A623; border: 1px solid rgba(245, 166, 35, 0.35);">💳 Disabled (Unpaid)</span>`;
+            expirySubtext = `<div style="font-size: 10px; color: #F5A623; margin-top: 3px; font-weight: 600;">Payment Pending</div>`;
+          } else if (isSuspended) {
+            statusBadge = `<span class="badge badge-suspended">🔴 Suspended</span>`;
+            expirySubtext = `<div style="font-size: 10px; color: #FF6B7A; margin-top: 3px;">Access Revoked</div>`;
+          } else if (b.subscriptionExpiresAt) {
+            const expDate = new Date(b.subscriptionExpiresAt);
+            const expFormatted = expDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+            if (b.daysRemaining <= 1) {
+              statusBadge = `<span class="badge" style="background: rgba(255, 107, 122, 0.18); color: #FF6B7A; border: 1px solid rgba(255, 107, 122, 0.4);">⏰ Expires Tonight</span>`;
+              expirySubtext = `<div style="font-size: 10px; color: #FF6B7A; font-weight: 700; margin-top: 3px;">Cutoff 11:59 PM</div>`;
+            } else if (b.daysRemaining <= 3) {
+              statusBadge = `<span class="badge" style="background: rgba(245, 166, 35, 0.18); color: #F5A623; border: 1px solid rgba(245, 166, 35, 0.4);">🟡 ${b.daysRemaining}d Left</span>`;
+              expirySubtext = `<div style="font-size: 10px; color: var(--text-muted); margin-top: 3px;">Expires ${expFormatted} 11:59 PM</div>`;
+            } else {
+              statusBadge = `<span class="badge badge-active">🟢 ${b.daysRemaining}d Left</span>`;
+              expirySubtext = `<div style="font-size: 10px; color: #5CE09E; margin-top: 3px;">Expires ${expFormatted} 11:59 PM</div>`;
+            }
+          } else {
+            statusBadge = `<span class="badge badge-active">🟢 Lifetime Active</span>`;
+            expirySubtext = `<div style="font-size: 10px; color: var(--text-muted); margin-top: 3px;">No Expiry</div>`;
+          }
+
+          const sizeKb = (b.dbSizeBytes / 1024).toFixed(1);
+          const syncFormatted = b.lastSync ? new Date(b.lastSync).toLocaleString('en-IN', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : 'Never';
+
+          return `
+            <tr>
+              <td>
+                <div style="font-weight: 800; color: #FAF1E4; font-size: 13.5px;">${b.businessName}</div>
+                <div style="font-size: 11px; color: var(--text-muted);">${b.tagline || 'Artisan Home Studio'}</div>
+                <div style="font-size: 10.5px; color: #5CE09E; margin-top: 1px;">Baker: ${b.bakerName || 'Owner'}</div>
+              </td>
+              <td>
+                <div style="font-size: 12px; color: var(--text-secondary);">${b.email}</div>
+                <div style="font-size: 11px; color: var(--text-muted);">${b.phone || 'No phone set'}</div>
+              </td>
+              <td>
+                <strong class="tabular-nums" style="font-size: 13.5px; color: #FAF1E4;">${b.ordersCount}</strong>
+              </td>
+              <td>
+                <strong class="tabular-nums" style="font-size: 13.5px; color: var(--accent-gold);">₹${Number(b.revenue || 0).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</strong>
+              </td>
+              <td>
+                <div style="font-size: 11.5px; color: var(--text-secondary);">${b.inventoryCount} pantry items</div>
+                <div style="font-size: 10.5px; color: var(--text-muted);">${b.productsCount} catalogue variants</div>
+              </td>
+              <td>
+                <div style="font-size: 11px; color: var(--text-secondary);">Sync: ${syncFormatted}</div>
+                <div style="font-size: 10px; color: var(--text-muted);">${sizeKb} KB • ${b.backupFilesCount} snapshots</div>
+              </td>
+              <td>
+                ${statusBadge}
+                ${expirySubtext}
+              </td>
+              <td>
+                <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+                  <button onclick="AdminApp.inspectBaker('${b.id}')" class="btn btn-outline" style="padding: 5px 9px; font-size: 11px;" title="Deep Baker Inspector">
+                    <i data-lucide="eye" style="width: 12px; height: 12px;"></i>
+                    <span>Inspect</span>
+                  </button>
+                  <button onclick="AdminApp.renewBaker30Days('${b.id}', '${b.email}')" class="btn btn-gold btn-sm" style="padding: 5px 9px; font-size: 11px;" title="Enable/Renew 30 Days (Expires 11:59 PM)">
+                    <i data-lucide="plus-circle" style="width: 12px; height: 12px;"></i>
+                    <span>+30 Days</span>
+                  </button>
+                  <button onclick="AdminApp.toggleBakerStatus('${b.id}')" class="btn ${isBlocked ? 'btn-mint' : 'btn-outline'}" style="padding: 5px 9px; font-size: 11px; ${!isBlocked ? 'color: #F5A623; border-color: rgba(245, 166, 35, 0.4);' : ''}" title="${isBlocked ? 'Enable Baker Studio' : 'Disable Baker (Monthly Payment Pending)'}">
+                    <i data-lucide="${isBlocked ? 'check-circle' : 'ban'}" style="width: 12px; height: 12px;"></i>
+                    <span>${isBlocked ? 'Enable (Paid)' : 'Disable (Hold)'}</span>
+                  </button>
+                  <button onclick="AdminApp.triggerBackupForBaker('${b.id}')" class="btn btn-outline" style="padding: 5px 9px; font-size: 11px;" title="Archive Instant Snapshot">
+                    <i data-lucide="archive" style="width: 12px; height: 12px;"></i>
+                  </button>
+                  <button onclick="AdminApp.openResetPasswordModal('${b.id}', '${b.email}')" class="btn btn-outline" style="padding: 5px 9px; font-size: 11px;" title="Reset Passkey">
+                    <i data-lucide="key" style="width: 12px; height: 12px;"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      },
+
+      renderBakersMobile(list) {
+        const container = document.getElementById('bakers-mobile-cards-container');
+        if (!container) return;
+
+        if (list.length === 0) {
+          container.innerHTML = `<p style="text-align: center; color: var(--text-muted); padding: 30px;">No bakers found</p>`;
+          return;
+        }
+
+        container.innerHTML = list.map(b => {
+          const isUnpaid = b.status === 'payment_pending' || b.status === 'disabled';
+          const isSuspended = b.status === 'suspended';
+          const isBlocked = isUnpaid || isSuspended;
+
+          let statusBadge = `<span class="badge badge-active">🟢 Active</span>`;
+          let expirySubtext = '';
+          if (isUnpaid) {
+            statusBadge = `<span class="badge" style="background: rgba(245, 166, 35, 0.16); color: #F5A623; border: 1px solid rgba(245, 166, 35, 0.35);">💳 Disabled (Unpaid)</span>`;
+            expirySubtext = `<span style="color: #F5A623; font-weight: 600;">Monthly payment pending</span>`;
+          } else if (isSuspended) {
+            statusBadge = `<span class="badge badge-suspended">🔴 Suspended</span>`;
+            expirySubtext = `<span style="color: #FF6B7A;">Access revoked</span>`;
+          } else if (b.subscriptionExpiresAt) {
+            const expDate = new Date(b.subscriptionExpiresAt);
+            const expFormatted = expDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+            if (b.daysRemaining <= 1) {
+              statusBadge = `<span class="badge" style="background: rgba(255, 107, 122, 0.18); color: #FF6B7A; border: 1px solid rgba(255, 107, 122, 0.4);">⏰ Expires Tonight</span>`;
+              expirySubtext = `<span style="color: #FF6B7A; font-weight: 700;">Cutoff tonight at 11:59 PM</span>`;
+            } else if (b.daysRemaining <= 3) {
+              statusBadge = `<span class="badge" style="background: rgba(245, 166, 35, 0.18); color: #F5A623; border: 1px solid rgba(245, 166, 35, 0.4);">🟡 ${b.daysRemaining}d Left</span>`;
+              expirySubtext = `<span style="color: var(--text-muted);">Cutoff ${expFormatted} 11:59 PM</span>`;
+            } else {
+              statusBadge = `<span class="badge badge-active">🟢 ${b.daysRemaining}d Left</span>`;
+              expirySubtext = `<span style="color: #5CE09E;">Expires ${expFormatted} at 11:59 PM</span>`;
+            }
+          } else {
+            statusBadge = `<span class="badge badge-active">🟢 Lifetime</span>`;
+            expirySubtext = `<span style="color: var(--text-muted);">Unlimited Access</span>`;
+          }
+
+          const sizeKb = (b.dbSizeBytes / 1024).toFixed(1);
+          const cleanPhone = (b.phone || '').replace(/[^0-9]/g, '');
+          const waPhone = cleanPhone.length === 10 ? `91${cleanPhone}` : cleanPhone;
+
+          return `
+            <div class="baker-mobile-card" style="${isBlocked ? 'border-color: rgba(245, 166, 35, 0.4);' : ''}">
+              <!-- Top Row: Bakery Identity + Status Badge -->
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+                <div style="min-width: 0;">
+                  <h3 style="font-size: 14.5px; font-weight: 800; color: #FAF1E4; margin: 0; word-break: break-word;">${b.businessName}</h3>
+                  <div style="font-size: 11px; color: var(--text-muted); margin-top: 1px;">${b.tagline || 'Artisan Patisserie'}</div>
+                  <div style="font-size: 11px; color: #5CE09E; margin-top: 2px;">Owner: ${b.bakerName || 'Baker'}</div>
+                </div>
+                <div style="text-align: right;">
+                  ${statusBadge}
+                  <div style="font-size: 10px; margin-top: 3px;">${expirySubtext}</div>
+                </div>
+              </div>
+
+              <!-- 4-Pill Mini Stats Grid -->
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; background: rgba(0, 0, 0, 0.25); padding: 8px; border-radius: 10px; border: 1px solid var(--border-subtle); text-align: center;">
+                <div>
+                  <div style="font-size: 9.5px; color: var(--text-muted); font-weight: 700;">ORDERS</div>
+                  <div class="tabular-nums" style="font-size: 13px; font-weight: 800; color: #FAF1E4; margin-top: 2px;">${b.ordersCount}</div>
+                </div>
+                <div>
+                  <div style="font-size: 9.5px; color: var(--text-muted); font-weight: 700;">REVENUE</div>
+                  <div class="tabular-nums" style="font-size: 13px; font-weight: 800; color: var(--accent-gold); margin-top: 2px;">₹${Number(b.revenue || 0).toLocaleString('en-IN', { maximumFractionDigits: 0 })}</div>
+                </div>
+                <div>
+                  <div style="font-size: 9.5px; color: var(--text-muted); font-weight: 700;">PANTRY</div>
+                  <div class="tabular-nums" style="font-size: 13px; font-weight: 800; color: #FAF1E4; margin-top: 2px;">${b.inventoryCount}</div>
+                </div>
+                <div>
+                  <div style="font-size: 9.5px; color: var(--text-muted); font-weight: 700;">STORAGE</div>
+                  <div class="tabular-nums" style="font-size: 13px; font-weight: 800; color: #5CE09E; margin-top: 2px;">${sizeKb}K</div>
+                </div>
+              </div>
+
+              <!-- Contact Row with 1-Tap WhatsApp & Call -->
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; color: var(--text-muted); border-top: 1px dashed rgba(142, 186, 168, 0.15); padding-top: 8px;">
+                <span style="word-break: break-all; max-width: 65%; color: var(--text-secondary);">${b.email}</span>
+                <div style="display: flex; gap: 6px;">
+                  ${cleanPhone ? `
+                    <a href="https://wa.me/${waPhone}" target="_blank" class="btn btn-outline" style="padding: 4px 8px; font-size: 10.5px; color: #25D366;" title="WhatsApp Baker">
+                      <i data-lucide="message-circle" style="width: 12px; height: 12px;"></i>
+                    </a>
+                    <a href="tel:${cleanPhone}" class="btn btn-outline" style="padding: 4px 8px; font-size: 10.5px;" title="Call Baker">
+                      <i data-lucide="phone" style="width: 12px; height: 12px;"></i>
+                    </a>
+                  ` : ''}
+                </div>
+              </div>
+
+              <!-- Mobile Actions Row (Inspect, 30-Day Renew, Toggle Block/Paid, Backup) -->
+              <div style="display: grid; grid-template-columns: 1fr 1.1fr 1.1fr 0.8fr; gap: 6px; margin-top: 2px;">
+                <button onclick="AdminApp.inspectBaker('${b.id}')" class="btn btn-outline btn-sm" style="padding: 7px 4px; font-size: 11px;">
+                  <i data-lucide="eye" style="width: 12px; height: 12px;"></i>
+                  <span>Inspect</span>
+                </button>
+                <button onclick="AdminApp.renewBaker30Days('${b.id}', '${b.email}')" class="btn btn-gold btn-sm" style="padding: 7px 4px; font-size: 10.5px; font-weight: 800;">
+                  <i data-lucide="plus-circle" style="width: 12px; height: 12px;"></i>
+                  <span>+30 Days</span>
+                </button>
+                <button onclick="AdminApp.toggleBakerStatus('${b.id}')" class="btn ${isBlocked ? 'btn-mint' : 'btn-outline'} btn-sm" style="padding: 7px 4px; font-size: 10.5px; ${!isBlocked ? 'color: #F5A623; border-color: rgba(245, 166, 35, 0.4);' : ''}">
+                  <span>${isBlocked ? 'Enable' : 'Hold'}</span>
+                </button>
+                <button onclick="AdminApp.triggerBackupForBaker('${b.id}')" class="btn btn-outline btn-sm" style="padding: 7px 4px; font-size: 11px;">
+                  <i data-lucide="archive" style="width: 12px; height: 12px;"></i>
+                  <span>Backup</span>
+                </button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      },
+
+      async inspectBaker(userId) {
+        const modal = document.getElementById('baker-inspector-modal');
+        const body = document.getElementById('inspect-modal-body');
+        modal.style.display = 'flex';
+        body.innerHTML = `<p style="text-align: center; color: var(--text-muted); padding: 30px;">Loading baker studio metrics...</p>`;
+
+        try {
+          const res = await fetch(`/api/admin/bakers/details?userId=${userId}`, {
+            headers: { 'Authorization': `Bearer ${this.token}` }
+          });
+          const data = await res.json();
+          if (!res.ok || !data.baker) throw new Error(data.error || 'Failed to fetch details');
+
+          const b = data.baker;
+          const isUnpaid = b.status === 'payment_pending' || b.status === 'disabled';
+          const isSuspended = b.status === 'suspended';
+          const isBlocked = isUnpaid || isSuspended;
+
+          document.getElementById('inspect-business-name').textContent = b.businessName;
+          document.getElementById('inspect-tagline').textContent = b.tagline || b.email;
+
+          let statusBadge = `<span class="badge badge-active">🟢 Active</span>`;
+          if (isUnpaid) {
+            statusBadge = `<span class="badge" style="background: rgba(245, 166, 35, 0.18); color: #F5A623; border: 1px solid rgba(245, 166, 35, 0.35);">💳 Disabled (Payment Pending)</span>`;
+          } else if (isSuspended) {
+            statusBadge = `<span class="badge badge-suspended">🔴 Suspended</span>`;
+          } else if (b.subscriptionExpiresAt) {
+            if (b.daysRemaining <= 1) {
+              statusBadge = `<span class="badge" style="background: rgba(255, 107, 122, 0.18); color: #FF6B7A; border: 1px solid rgba(255, 107, 122, 0.4);">⏰ Expires Tonight 11:59 PM</span>`;
+            } else {
+              statusBadge = `<span class="badge badge-active">🟢 ${b.daysRemaining} Days Left (11:59 PM)</span>`;
+            }
+          } else {
+            statusBadge = `<span class="badge badge-active">🟢 Lifetime Active</span>`;
+          }
+
+          body.innerHTML = `
+            <!-- 30-Day Monthly Subscription & 11:59 PM Auto-Cutoff Gate Pod -->
+            <div style="background: rgba(0, 0, 0, 0.45); border: 1.5px solid ${isBlocked ? 'rgba(245, 166, 35, 0.45)' : 'rgba(92, 224, 158, 0.35)'}; border-radius: 14px; padding: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.25);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
+                  <i data-lucide="clock" style="width: 14px; height: 14px; color: ${isBlocked ? '#F5A623' : '#5CE09E'};"></i>
+                  <span>30-Day Subscription & Access Gate</span>
+                </div>
+                ${statusBadge}
+              </div>
+
+              <!-- Expiry Details Card -->
+              <div style="background: rgba(255, 255, 255, 0.04); border-radius: 10px; padding: 10px 12px; margin-bottom: 12px; font-size: 12px; line-height: 1.5;">
+                ${b.subscriptionExpiresAt ? `
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="color: var(--text-muted);">Cutoff Date & Time:</span>
+                    <strong style="color: #FAF1E4;">${new Date(b.subscriptionExpiresAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })} at 11:59 PM</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
+                    <span style="color: var(--text-muted);">Time Remaining:</span>
+                    <strong style="color: ${b.daysRemaining <= 3 ? '#F5A623' : '#5CE09E'}; font-size: 13px;">${b.daysRemaining} Days (${b.hoursRemaining || 0} Hours)</strong>
+                  </div>
+                  <div style="font-size: 11px; color: var(--text-muted); margin-top: 6px; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 6px;">
+                    ⏰ <em>System automatically disables access and shows payment reminder screen at 11:59:59 PM on the 30th day.</em>
+                  </div>
+                ` : `
+                  <div style="color: ${isBlocked ? '#F5A623' : '#5CE09E'}; font-weight: 700;">
+                    ${isBlocked ? '⚠️ Baker is currently held for monthly subscription payment. Login shows payment gate.' : '♾️ Baker has lifetime active access without recurring cutoff.'}
+                  </div>
+                `}
+              </div>
+
+              <!-- Quick Subscription Actions -->
+              <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 8px; margin-bottom: 8px;">
+                <button onclick="AdminApp.setSubscriptionDuration('${b.id}', 30)" class="btn btn-gold btn-sm" style="padding: 9px; font-weight: 800;">
+                  <i data-lucide="plus-circle" style="width: 13px; height: 13px;"></i>
+                  <span>Enable 30 Days (11:59 PM)</span>
+                </button>
+                <button onclick="AdminApp.setSubscriptionDuration('${b.id}', 60)" class="btn btn-outline btn-sm" style="padding: 9px;">
+                  <i data-lucide="calendar" style="width: 13px; height: 13px;"></i>
+                  <span>+60 Days</span>
+                </button>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
+                <button onclick="AdminApp.setSubscriptionDuration('${b.id}', 365)" class="btn btn-outline btn-sm" style="padding: 7px; font-size: 11px;">
+                  <span>+1 Year</span>
+                </button>
+                <button onclick="AdminApp.setSubscriptionDuration('${b.id}', 'lifetime')" class="btn btn-outline btn-sm" style="padding: 7px; font-size: 11px;">
+                  <span>Lifetime</span>
+                </button>
+                <button onclick="AdminApp.setBakerStatusFromModal('${b.id}', 'payment_pending')" class="btn btn-danger btn-sm" style="padding: 7px; font-size: 11px;">
+                  <span>Disable Now</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Performance Banner -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; background: rgba(0, 0, 0, 0.35); padding: 12px; border-radius: 14px; border: 1px solid var(--border-subtle); text-align: center;">
+              <div>
+                <div style="font-size: 10px; color: var(--text-muted); font-weight: 700;">TOTAL REVENUE</div>
+                <div class="tabular-nums" style="font-size: 16px; font-weight: 800; color: var(--accent-gold); margin-top: 2px;">₹${Number(b.totalRevenue || 0).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</div>
+              </div>
+              <div>
+                <div style="font-size: 10px; color: var(--text-muted); font-weight: 700;">ORDERS</div>
+                <div class="tabular-nums" style="font-size: 16px; font-weight: 800; color: #FAF1E4; margin-top: 2px;">${b.ordersCount}</div>
+              </div>
+              <div>
+                <div style="font-size: 10px; color: var(--text-muted); font-weight: 700;">AVG TICKET</div>
+                <div class="tabular-nums" style="font-size: 16px; font-weight: 800; color: #5CE09E; margin-top: 2px;">₹${Number(b.avgOrderValue || 0).toLocaleString('en-IN', { maximumFractionDigits: 0 })}</div>
+              </div>
+            </div>
+
+            <!-- Profile & Licensing Info -->
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 12px; font-size: 12px; line-height: 1.5;">
+              <div><strong>Owner Name:</strong> <span style="color: #FAF1E4;">${b.bakerName || 'Not configured'}</span></div>
+              <div><strong>Email:</strong> <span style="color: #FAF1E4;">${b.email}</span></div>
+              <div><strong>Phone:</strong> <span style="color: #FAF1E4;">${b.phone || 'No phone set'}</span></div>
+              <div><strong>Kitchen Address:</strong> <span style="color: var(--text-muted);">${b.address || 'Pickup from home kitchen'}</span></div>
+              <div><strong>FSSAI License:</strong> <span style="color: var(--accent-mint);">${b.fssai || 'Not registered'}</span></div>
+              <div><strong>UPI ID:</strong> <span style="color: var(--accent-gold);">${b.paymentUpi || 'Not set'}</span></div>
+              <div><strong>Registered:</strong> <span style="color: var(--text-muted);">${b.createdAt ? new Date(b.createdAt).toLocaleDateString('en-IN') : 'N/A'}</span></div>
+            </div>
+
+            <!-- Recent Orders Snippet -->
+            <div>
+              <div style="font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">Recent Orders</div>
+              <div style="display: flex; flex-direction: column; gap: 6px; max-height: 140px; overflow-y: auto;">
+                ${(b.recentOrders && b.recentOrders.length > 0) ? b.recentOrders.map(o => `
+                  <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); padding: 8px 10px; border-radius: 8px; font-size: 11.5px; border: 1px solid rgba(142, 186, 168, 0.1);">
+                    <div>
+                      <strong style="color: #FAF1E4;">${o.id}</strong> • ${o.customerName || 'Walk-in'}
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                      <span class="badge ${o.status === 'delivered' ? 'badge-active' : 'badge-tag'}">${o.status}</span>
+                      <strong style="color: var(--accent-gold);">₹${o.total}</strong>
+                    </div>
+                  </div>
+                `).join('') : '<div style="font-size: 11.5px; color: var(--text-muted); text-align: center; padding: 10px;">No orders logged yet</div>'}
+              </div>
+            </div>
+
+            <!-- Action Buttons for Baker -->
+            <div style="display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap;">
+              <a href="/api/admin/bakers/download-db?userId=${b.id}&admin_token=${AdminApp.token}" target="_blank" class="btn btn-outline" style="flex: 1; padding: 9px; font-size: 11.5px;">
+                <i data-lucide="download" style="width: 13px; height: 13px;"></i>
+                <span>Download DB (.json)</span>
+              </a>
+              <button onclick="AdminApp.openResetPasswordModal('${b.id}', '${b.email}')" class="btn btn-outline" style="flex: 1; padding: 9px; font-size: 11.5px;">
+                <i data-lucide="key" style="width: 13px; height: 13px;"></i>
+                <span>Reset Password</span>
+              </button>
+              <button onclick="AdminApp.deleteBaker('${b.id}', '${b.email}')" class="btn btn-danger" style="padding: 9px 12px; font-size: 11.5px;">
+                <i data-lucide="trash-2" style="width: 13px; height: 13px;"></i>
+                <span>Delete</span>
+              </button>
+            </div>
+          `;
+          lucide.createIcons();
+        } catch (e) {
+          body.innerHTML = `<p style="color: var(--accent-danger); text-align: center; padding: 20px;">Error: ${e.message}</p>`;
+        }
+      },
+
+      closeInspectModal() {
+        document.getElementById('baker-inspector-modal').style.display = 'none';
+      },
+
+      openResetPasswordModal(userId, email) {
+        document.getElementById('reset-modal-user-id').value = userId;
+        document.getElementById('reset-modal-baker-email').textContent = email;
+        document.getElementById('reset-modal-new-pass').value = '';
+        document.getElementById('reset-password-modal').style.display = 'flex';
+      },
+
+      closeResetPassModal() {
+        document.getElementById('reset-password-modal').style.display = 'none';
+      },
+
+      async handleResetPasswordSubmit(e) {
+        e.preventDefault();
+        const userId = document.getElementById('reset-modal-user-id').value;
+        const newPassword = document.getElementById('reset-modal-new-pass').value.trim();
+
+        try {
+          const res = await fetch('/api/admin/bakers/reset-password', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${this.token}`
+            },
+            body: JSON.stringify({ userId, newPassword })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            this.showToast('✓ ' + data.message);
+            this.closeResetPassModal();
+            this.loadActivity();
+          } else {
+            alert(data.error || 'Password reset failed');
+          }
+        } catch (err) {
+          alert('Error: ' + err.message);
+        }
+      },
+
+      async deleteBaker(userId, email) {
+        if (!confirm(`CAUTION: Are you sure you want to delete and purge baker "${email}"? A safety backup will be archived.`)) return;
+
+        try {
+          const res = await fetch('/api/admin/bakers/delete', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${this.token}`
+            },
+            body: JSON.stringify({ userId })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            this.showToast('✓ ' + data.message);
+            this.closeInspectModal();
+            this.loadBakers();
+            this.loadStats();
+            this.loadActivity();
+          } else {
+            alert(data.error || 'Delete failed');
+          }
+        } catch (e) {
+          alert('Error: ' + e.message);
+        }
+      },
+
+      async triggerBackupForBaker(userId) {
+        try {
+          const res = await fetch('/api/admin/bakers/trigger-backup', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${this.token}`
+            },
+            body: JSON.stringify({ userId })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            this.showToast('✓ Cloud snapshot archived: ' + data.backup);
+            this.loadBakers();
+            this.loadStats();
+            this.loadActivity();
+          } else {
+            alert(data.error || 'Backup failed');
+          }
+        } catch (e) {
+          alert('Error: ' + e.message);
+        }
+      },
+
+      async renewBaker30Days(userId, email) {
+        try {
+          const res = await fetch('/api/admin/bakers/toggle-status', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${this.token}`
+            },
+            body: JSON.stringify({ userId, days: 30 })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            this.showToast('✓ ' + data.message);
+            this.loadBakers();
+            this.loadStats();
+            this.loadActivity();
+          } else {
+            alert(data.error || 'Failed to renew subscription');
+          }
+        } catch (e) {
+          alert('Error: ' + e.message);
+        }
+      },
+
+      async setSubscriptionDuration(userId, days) {
+        try {
+          const res = await fetch('/api/admin/bakers/toggle-status', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${this.token}`
+            },
+            body: JSON.stringify({ userId, days })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            this.showToast('✓ ' + data.message);
+            this.inspectBaker(userId);
+            this.loadBakers();
+            this.loadStats();
+            this.loadActivity();
+          } else {
+            alert(data.error || 'Failed to update subscription');
+          }
+        } catch (e) {
+          alert('Error: ' + e.message);
+        }
+      },
+
+      async toggleBakerStatus(userId, explicitStatus) {
+        try {
+          const res = await fetch('/api/admin/bakers/toggle-status', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${this.token}`
+            },
+            body: JSON.stringify({ userId, status: explicitStatus })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            this.showToast('✓ ' + data.message);
+            this.loadBakers();
+            this.loadStats();
+            this.loadActivity();
+          }
+        } catch (e) {
+          alert('Error: ' + e.message);
+        }
+      },
+
+      async setBakerStatusFromModal(userId, status) {
+        await this.toggleBakerStatus(userId, status);
+        this.inspectBaker(userId);
+      },
+
+      async loadActivity() {
+        try {
+          const res = await fetch('/api/admin/activity-log', {
+            headers: { 'Authorization': `Bearer ${this.token}` }
+          });
+          const data = await res.json();
+          const list = data.activities || [];
+          const container = document.getElementById('activity-stream-container');
+
+          if (list.length === 0) {
+            container.innerHTML = `<p style="color: var(--text-muted); text-align: center; padding: 24px;">No recent events logged yet</p>`;
+            return;
+          }
+
+          container.innerHTML = list.map(item => {
+            const timeStr = new Date(item.timestamp).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' • ' + new Date(item.timestamp).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+            let icon = 'activity';
+            let color = 'var(--accent-mint)';
+            if (item.type === 'baker_registered') { icon = 'user-plus'; color = 'var(--accent-mint)'; }
+            else if (item.type === 'baker_login') { icon = 'log-in'; color = 'var(--accent-gold)'; }
+            else if (item.type === 'broadcast_published') { icon = 'megaphone'; color = '#FAF1E4'; }
+            else if (item.type === 'feedback_submitted') { icon = 'sparkles'; color = 'var(--accent-warn)'; }
+            else if (item.type === 'admin_action') { icon = 'shield-alert'; color = 'var(--accent-danger)'; }
+
+            return `
+              <div class="activity-item">
+                <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.04); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: ${color};">
+                  <i data-lucide="${icon}" style="width: 16px; height: 16px;"></i>
+                </div>
+                <div style="flex: 1; min-width: 0;">
+                  <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap;">
+                    <strong style="font-size: 13px; color: #FAF1E4;">${item.title}</strong>
+                    <span style="font-size: 10.5px; color: var(--text-faint);">${timeStr}</span>
+                  </div>
+                  <p style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px;">${item.desc}</p>
+                </div>
+              </div>
+            `;
+          }).join('');
+
+          lucide.createIcons();
+        } catch (e) {
+          console.error('Activity error:', e);
+        }
+      },
+
+      async loadHealth() {
+        try {
+          const res = await fetch('/api/admin/health', {
+            headers: { 'Authorization': `Bearer ${this.token}` }
+          });
+          const d = await res.json();
+          if (res.ok) {
+            document.getElementById('sys-node-version').textContent = d.nodeVersion;
+            document.getElementById('sys-platform').textContent = `${d.platform} (${d.arch})`;
+            
+            const hours = Math.floor(d.uptimeSeconds / 3600);
+            const mins = Math.floor((d.uptimeSeconds % 3600) / 60);
+            document.getElementById('sys-uptime').textContent = `${hours}h ${mins}m`;
+            document.getElementById('stat-uptime-text').textContent = `Uptime: ${hours}h ${mins}m`;
+
+            document.getElementById('sys-memory').textContent = `${d.heapUsedMb} / ${d.heapTotalMb} MB`;
+            document.getElementById('sys-rss').textContent = `RSS: ${d.rssMb} MB`;
+
+            document.getElementById('sys-invoices').textContent = `${d.invoicesCount} PNG Bills`;
+            document.getElementById('sys-invoices-size').textContent = `${d.invoicesSizeMb} MB total`;
+          }
+        } catch (e) {
+          console.error('Health error:', e);
+        }
+      },
+
+      async loadBroadcast() {
+        try {
+          const res = await fetch('/api/broadcast');
+          const data = await res.json();
+          if (data.broadcast) {
+            const b = data.broadcast;
+            document.getElementById('broadcast-title-input').value = b.title || '';
+            document.getElementById('broadcast-message-input').value = b.message || '';
+            document.getElementById('broadcast-tag-input').value = b.tag || 'Release';
+            document.getElementById('broadcast-active-input').value = String(b.active !== false);
+
+            document.getElementById('preview-title').textContent = b.title || 'Broadcast Title';
+            document.getElementById('preview-message').textContent = b.message || 'Message details...';
+            document.getElementById('preview-tag').textContent = (b.tag || 'Release').toUpperCase();
+          }
+        } catch (e) {
+          console.error('Broadcast load error:', e);
+        }
+      },
+
+      async handlePublishBroadcast(e) {
+        e.preventDefault();
+        const title = document.getElementById('broadcast-title-input').value.trim();
+        const message = document.getElementById('broadcast-message-input').value.trim();
+        const tag = document.getElementById('broadcast-tag-input').value;
+        const active = document.getElementById('broadcast-active-input').value === 'true';
+
+        try {
+          const res = await fetch('/api/admin/broadcast', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${this.token}`
+            },
+            body: JSON.stringify({ title, message, tag, active })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            this.showToast('✓ Broadcast published to all bakers!');
+            this.loadBroadcast();
+            this.loadActivity();
+          } else {
+            alert(data.error || 'Broadcast failed');
+          }
+        } catch (e) {
+          alert('Error: ' + e.message);
+        }
+      },
+
+      async loadFeedback() {
+        try {
+          const res = await fetch('/api/admin/feedback', {
+            headers: { 'Authorization': `Bearer ${this.token}` }
+          });
+          const data = await res.json();
+          const list = data.feedback || [];
+          const container = document.getElementById('feedback-list-container');
+
+          if (list.length === 0) {
+            container.innerHTML = `
+              <div style="text-align: center; padding: 36px 20px; color: var(--text-muted);">
+                <i data-lucide="sparkles" style="width: 32px; height: 32px; opacity: 0.5; margin-bottom: 8px;"></i>
+                <p>No feature requests submitted yet. Bakers can submit ideas from their app!</p>
+              </div>
+            `;
+            lucide.createIcons();
+            return;
+          }
+
+          container.innerHTML = list.map(item => {
+            const timeAgo = new Date(item.submittedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+            return `
+              <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 14px 16px;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px; flex-wrap: wrap;">
+                  <div>
+                    <span class="badge badge-tag" style="font-size: 10px; margin-bottom: 4px;">${item.category || 'General'}</span>
+                    <h3 style="font-size: 14.5px; font-weight: 800; color: #FAF1E4;">${item.featureTitle}</h3>
+                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">From: <strong>${item.businessName || 'Baker'}</strong> (${item.email}) • ${timeAgo}</p>
+                  </div>
+                  <div>
+                    <select onchange="AdminApp.updateFeedbackStatus('${item.id}', this.value)" class="input-field" style="padding: 6px 10px; font-size: 11.5px; width: auto;">
+                      <option value="new" ${item.status === 'new' ? 'selected' : ''}>📥 New</option>
+                      <option value="planned" ${item.status === 'planned' ? 'selected' : ''}>🛠️ Planned</option>
+                      <option value="in-progress" ${item.status === 'in-progress' ? 'selected' : ''}>⚡ In Progress</option>
+                      <option value="completed" ${item.status === 'completed' ? 'selected' : ''}>✅ Completed</option>
+                    </select>
+                  </div>
+                </div>
+                <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.45; background: #071C15; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border-subtle);">
+                  ${item.description}
+                </p>
+              </div>
+            `;
+          }).join('');
+
+          lucide.createIcons();
+        } catch (e) {
+          console.error('Feedback error:', e);
+        }
+      },
+
+      async updateFeedbackStatus(id, status) {
+        try {
+          const res = await fetch('/api/admin/feedback/update-status', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${this.token}`
+            },
+            body: JSON.stringify({ id, status })
+          });
+          if (res.ok) {
+            this.showToast('✓ Wishlist status updated');
+            this.loadStats();
+          }
+        } catch (e) {
+          alert('Update failed: ' + e.message);
+        }
+      },
+
+      async triggerTestEod() {
+        try {
+          const res = await fetch('/api/reports/test-send', { method: 'POST' });
+          const data = await res.json();
+          if (res.ok) {
+            this.showToast('✓ ' + data.message);
+            this.loadStats();
+            this.loadActivity();
+          } else {
+            alert(data.error || 'Test failed');
+          }
+        } catch (e) {
+          alert('Error: ' + e.message);
+        }
+      }
+    };
+
+    // Live update preview listeners
+    document.getElementById('broadcast-title-input').addEventListener('input', (e) => {
+      document.getElementById('preview-title').textContent = e.target.value || 'Broadcast Title';
+    });
+    document.getElementById('broadcast-message-input').addEventListener('input', (e) => {
+      document.getElementById('preview-message').textContent = e.target.value || 'Message details...';
+    });
+    document.getElementById('broadcast-tag-input').addEventListener('change', (e) => {
+      document.getElementById('preview-tag').textContent = e.target.value.toUpperCase();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      AdminApp.init();
+    });
+  </script>
+</body>
+</html>

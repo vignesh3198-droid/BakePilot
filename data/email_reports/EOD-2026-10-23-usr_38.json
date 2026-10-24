@@ -1,0 +1,60 @@
+{
+  "reportId": "EOD-2026-10-23-usr_38",
+  "date": "2026-10-23",
+  "generatedAt": "2026-10-23T18:20:10.722Z",
+  "recipientEmail": "baker_1792779291163@crustandcrumb.in",
+  "businessName": "Blossom Bakes Studio",
+  "summary": {
+    "grossRevenue": 7720,
+    "expenses": 3570,
+    "netMargin": 4150,
+    "ordersCompleted": 6,
+    "pendingOrdersRemaining": 3,
+    "currency": "₹"
+  },
+  "ordersList": [
+    {
+      "id": "ORD-2413",
+      "customer": "Walk-in Counter Guest",
+      "total": 950,
+      "deliveryType": "Delivery (+₹100)",
+      "status": "delivered"
+    },
+    {
+      "id": "ORD-2998",
+      "customer": "Walk-in Counter Guest",
+      "total": 1100,
+      "deliveryType": "Self Pickup",
+      "status": "delivered"
+    },
+    {
+      "id": "ORD-2137",
+      "customer": "vikey",
+      "total": 2150,
+      "deliveryType": "Own Delivery",
+      "status": "pending"
+    },
+    {
+      "id": "ORD-2101",
+      "customer": "Pooja Sundaram",
+      "total": 1270,
+      "deliveryType": "Store Pickup",
+      "status": "ready"
+    },
+    {
+      "id": "ORD-2102",
+      "customer": "Rohan Mehra",
+      "total": 860,
+      "deliveryType": "Dunzo Delivery",
+      "status": "in-oven"
+    },
+    {
+      "id": "ORD-2103",
+      "customer": "Kavitha Sridhar",
+      "total": 1390,
+      "deliveryType": "Porter Express",
+      "status": "pending"
+    }
+  ],
+  "databaseBackupIncluded": true
+}

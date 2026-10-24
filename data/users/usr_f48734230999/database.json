@@ -1,0 +1,81 @@
+{
+  "profile": {
+    "name": "Royal Pastry Lab",
+    "tagline": "Custom Cakes & Bakes",
+    "baker": "",
+    "email": "test_expiry_1792792636476@bake.in",
+    "phone": "",
+    "whatsappNumber": "",
+    "address": "",
+    "currency": "₹",
+    "currencySymbol": "₹",
+    "defaultDeliveryCharge": 50,
+    "fssaiOrLicense": "",
+    "invoiceNotes": "Baked fresh with pure butter and premium chocolate. Please refrigerate upon arrival.",
+    "instagram": "",
+    "logo": "assets/bakepilot-logo.png",
+    "brandColor": "#3E3239",
+    "secondaryColor": "#E8D2C4",
+    "paymentUpi": "",
+    "cloudSyncUrl": "/api/sync"
+  },
+  "utilities": {
+    "gasCylinderRate": 1850,
+    "gasCylinderLifeDays": 20,
+    "electricityRatePerUnit": 8.5,
+    "monthlyEstimatedPower": 3200,
+    "waterAndMaintenance": 650,
+    "notes": "Commercial 19kg cylinder costs ₹1,850 and lasts ~20 baking days. Power calculated on commercial unit rates."
+  },
+  "eodReport": {
+    "frequency": "daily",
+    "scheduledTime": "23:50",
+    "email": "test_expiry_1792792636476@bake.in",
+    "lastSentAt": null,
+    "includeJsonBackup": true
+  },
+  "invoiceSettings": {
+    "showBakeryAddress": true,
+    "showBakeryPhone": true,
+    "showFssai": true,
+    "showPaymentUpi": true,
+    "showDeliveryAddress": true,
+    "showCustomerPhone": true,
+    "showCakeMessage": true,
+    "showFooterNotes": true,
+    "showInstagram": true,
+    "invoiceHeaderTitle": "Official Bill",
+    "invoiceNotes": "Baked fresh with pure butter and premium chocolate. Please refrigerate cream items immediately upon arrival."
+  },
+  "workspace": {
+    "name": "Royal Pastry Lab Studio",
+    "coverPhoto": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop&q=80",
+    "address": "",
+    "isHomeKitchenPrivate": false,
+    "pickupLocationInstructions": "",
+    "workingDays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "workingHours": "09:00 AM - 08:00 PM",
+    "orderAcceptanceHours": "09:00 AM - 07:00 PM",
+    "minAdvanceNoticeHours": 24,
+    "defaultPrepTimeHours": 4,
+    "notes": ""
+  },
+  "inventory": [],
+  "products": [],
+  "recipes": [],
+  "orders": [],
+  "expenses": [],
+  "customers": [],
+  "suppliers": [],
+  "cashbook": {
+    "openingBalance": 0,
+    "records": []
+  }
+}

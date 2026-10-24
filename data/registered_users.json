@@ -1,0 +1,35 @@
+[
+  {
+    "id": "usr_388467243db5",
+    "email": "baker_1792779291163@crustandcrumb.in",
+    "passwordHash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+    "businessName": "Blossom Bakes Studio",
+    "tagline": "Artisan Fudgy Brownies",
+    "createdAt": "2026-10-23T18:14:51.186Z",
+    "status": "active",
+    "updatedAt": "2026-10-23T21:53:07.619Z",
+    "subscriptionExpiresAt": "2026-11-23T18:29:59.999Z"
+  },
+  {
+    "id": "usr_e7454671485c",
+    "email": "viki.3nity@gmail.com",
+    "passwordHash": "772cd18ecb11719ff6fdb8295368769753679f70dbfdf10db54211dddac0719f",
+    "businessName": "Letz Bake Bro",
+    "tagline": "Artisans custom cakes and brownies",
+    "createdAt": "2026-10-23T18:19:45.577Z",
+    "status": "active",
+    "updatedAt": "2026-10-23T21:57:40.741Z",
+    "subscriptionExpiresAt": "2026-11-23T18:29:59.999Z"
+  },
+  {
+    "id": "usr_008dcdfd176a",
+    "email": "baker_1792784009904@gmail.com",
+    "passwordHash": "c822a0abf4ef0a5fc2a4c2010ed111e16af3ae95cee462a55e7877b8623ade36",
+    "businessName": "Flour Power Studio",
+    "tagline": "Custom Cakes & Bakes",
+    "createdAt": "2026-10-23T19:33:30.111Z",
+    "status": "active",
+    "subscriptionExpiresAt": "2026-11-23T18:29:59.999Z",
+    "updatedAt": "2026-10-23T21:57:33.744Z"
+  }
+]

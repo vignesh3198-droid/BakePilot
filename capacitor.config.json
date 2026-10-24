@@ -1,0 +1,15 @@
+{
+  "appId": "in.moovarkreativ.bakepilot",
+  "appName": "BakePilot",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "server": {
+    "cleartext": true,
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true
+  }
+}

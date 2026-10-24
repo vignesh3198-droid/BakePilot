@@ -1,0 +1,986 @@
+{
+  "profile": {
+    "name": "Blossom Bakes Studio",
+    "tagline": "Artisan Fudgy Brownies",
+    "baker": "Viki",
+    "email": "baker_1792779291163@crustandcrumb.in",
+    "phone": "+91 98401 55230",
+    "address": "31, Velan Nagar , Kottai pirivu, Coimbatore-641019",
+    "currency": "₹",
+    "currencySymbol": "₹",
+    "defaultDeliveryCharge": 60,
+    "fssaiOrLicense": "FSSAI: 22424001000842",
+    "invoiceNotes": "Baked fresh with pure butter and premium chocolate. Please refrigerate cream items immediately.",
+    "instagram": "@Letz Bake Bro",
+    "activeBusiness": "The Crust & Crumb (Main Kitchen)",
+    "businesses": [
+      "The Crust & Crumb (Main Kitchen)",
+      "Crust & Crumb Express (Kiosk)"
+    ],
+    "cloudSyncUrl": "/api/sync",
+    "logo": "data:image/jpeg;base64,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",
+    "paymentUpi": "viki555@okicici"
+  },
+  "inventory": [
+    {
+      "id": "ing-1",
+      "name": "Dark compound",
+      "category": "Compounds & Chocolates",
+      "currentStock": 12,
+      "minThreshold": 3,
+      "unit": "kg",
+      "unitCost": 195,
+      "supplier": "BakePro Supplies"
+    },
+    {
+      "id": "ing-2",
+      "name": "White compound",
+      "category": "Compounds & Chocolates",
+      "currentStock": 8.5,
+      "minThreshold": 2,
+      "unit": "kg",
+      "unitCost": 220,
+      "supplier": "BakePro Supplies"
+    },
+    {
+      "id": "ing-3",
+      "name": "Milk compound",
+      "category": "Compounds & Chocolates",
+      "currentStock": 6,
+      "minThreshold": 2,
+      "unit": "kg",
+      "unitCost": 210,
+      "supplier": "BakePro Supplies"
+    },
+    {
+      "id": "ing-4",
+      "name": "Butter (Pasteurized)",
+      "category": "Dairy & Fats",
+      "currentStock": 4.5,
+      "minThreshold": 5,
+      "unit": "kg",
+      "unitCost": 540,
+      "supplier": "Amul Dairy Distributor"
+    },
+    {
+      "id": "ing-5",
+      "name": "Whipping cream",
+      "category": "Dairy & Fats",
+      "currentStock": 5,
+      "minThreshold": 4,
+      "unit": "kg",
+      "unitCost": 195,
+      "supplier": "Richs / Tropolite Depot"
+    },
+    {
+      "id": "ing-6",
+      "name": "Egg",
+      "category": "Dairy & Fats",
+      "currentStock": 48,
+      "minThreshold": 30,
+      "unit": "pcs",
+      "unitCost": 7,
+      "supplier": "Local Poultry Wholesale"
+    },
+    {
+      "id": "ing-7",
+      "name": "Maida",
+      "category": "Flours & Sugars",
+      "currentStock": 25,
+      "minThreshold": 8,
+      "unit": "kg",
+      "unitCost": 42,
+      "supplier": "Sri Murugan Wholesale Mart"
+    },
+    {
+      "id": "ing-8",
+      "name": "Sugar",
+      "category": "Flours & Sugars",
+      "currentStock": 20,
+      "minThreshold": 6,
+      "unit": "kg",
+      "unitCost": 46,
+      "supplier": "Sri Murugan Wholesale Mart"
+    },
+    {
+      "id": "ing-9",
+      "name": "Brown sugar",
+      "category": "Flours & Sugars",
+      "currentStock": 4,
+      "minThreshold": 2,
+      "unit": "kg",
+      "unitCost": 110,
+      "supplier": "BakeMart Wholesale"
+    },
+    {
+      "id": "ing-10",
+      "name": "Cocoa powder",
+      "category": "Compounds & Chocolates",
+      "currentStock": 3.5,
+      "minThreshold": 1.5,
+      "unit": "kg",
+      "unitCost": 480,
+      "supplier": "BakePro Supplies"
+    },
+    {
+      "id": "ing-11",
+      "name": "Baking powder",
+      "category": "Leavening & Essentials",
+      "currentStock": 1.2,
+      "minThreshold": 0.5,
+      "unit": "kg",
+      "unitCost": 380,
+      "supplier": "BakeMart Wholesale"
+    },
+    {
+      "id": "ing-12",
+      "name": "Baking soda",
+      "category": "Leavening & Essentials",
+      "currentStock": 0.8,
+      "minThreshold": 0.4,
+      "unit": "kg",
+      "unitCost": 240,
+      "supplier": "BakeMart Wholesale"
+    },
+    {
+      "id": "ing-13",
+      "name": "Nuts (Almonds, Cashews, Walnuts)",
+      "category": "Nuts & Inclusions",
+      "currentStock": 2.8,
+      "minThreshold": 1,
+      "unit": "kg",
+      "unitCost": 850,
+      "supplier": "Royal Dry Fruits"
+    },
+    {
+      "id": "ing-14",
+      "name": "Vanilla essence",
+      "category": "Essences & Flavours",
+      "currentStock": 400,
+      "minThreshold": 150,
+      "unit": "ml",
+      "unitCost": 0.65,
+      "supplier": "Ossoro Flavour House"
+    },
+    {
+      "id": "ing-15",
+      "name": "Rosemilk essence",
+      "category": "Essences & Flavours",
+      "currentStock": 350,
+      "minThreshold": 150,
+      "unit": "ml",
+      "unitCost": 0.75,
+      "supplier": "Flying Man / Ossoro"
+    },
+    {
+      "id": "ing-16",
+      "name": "Pista essence",
+      "category": "Essences & Flavours",
+      "currentStock": 250,
+      "minThreshold": 100,
+      "unit": "ml",
+      "unitCost": 0.75,
+      "supplier": "Ossoro Flavour House"
+    },
+    {
+      "id": "ing-17",
+      "name": "Blackcurrant essence",
+      "category": "Essences & Flavours",
+      "currentStock": 200,
+      "minThreshold": 100,
+      "unit": "ml",
+      "unitCost": 0.8,
+      "supplier": "Ossoro Flavour House"
+    },
+    {
+      "id": "ing-18",
+      "name": "Mango essence",
+      "category": "Essences & Flavours",
+      "currentStock": 200,
+      "minThreshold": 100,
+      "unit": "ml",
+      "unitCost": 0.75,
+      "supplier": "Ossoro Flavour House"
+    },
+    {
+      "id": "ing-19",
+      "name": "Butterscotch essence",
+      "category": "Essences & Flavours",
+      "currentStock": 250,
+      "minThreshold": 100,
+      "unit": "ml",
+      "unitCost": 0.8,
+      "supplier": "Ossoro Flavour House"
+    },
+    {
+      "id": "ing-20",
+      "name": "Bread",
+      "category": "Cafe & Savoury",
+      "currentStock": 6,
+      "minThreshold": 4,
+      "unit": "loaf",
+      "unitCost": 45,
+      "supplier": "Modern / Britannia Depot"
+    },
+    {
+      "id": "ing-21",
+      "name": "Mayonise",
+      "category": "Cafe & Savoury",
+      "currentStock": 3.2,
+      "minThreshold": 1.5,
+      "unit": "kg",
+      "unitCost": 180,
+      "supplier": "Veeba Wholesale"
+    },
+    {
+      "id": "ing-22",
+      "name": "Sauce tomato",
+      "category": "Cafe & Savoury",
+      "currentStock": 4,
+      "minThreshold": 2,
+      "unit": "kg",
+      "unitCost": 140,
+      "supplier": "Kissan Wholesale"
+    },
+    {
+      "id": "ing-23",
+      "name": "Sauce sachet",
+      "category": "Cafe & Savoury",
+      "currentStock": 120,
+      "minThreshold": 50,
+      "unit": "pcs",
+      "unitCost": 1.5,
+      "supplier": "Kissan Wholesale"
+    },
+    {
+      "id": "ing-24",
+      "name": "Brownie Packing box (8 inch)",
+      "category": "Boxes & Packaging",
+      "currentStock": 18,
+      "minThreshold": 25,
+      "unit": "pcs",
+      "unitCost": 18,
+      "supplier": "PackPrint Corrugators"
+    },
+    {
+      "id": "ing-25",
+      "name": "Brownie Packing box (10 inch)",
+      "category": "Boxes & Packaging",
+      "currentStock": 22,
+      "minThreshold": 20,
+      "unit": "pcs",
+      "unitCost": 25,
+      "supplier": "PackPrint Corrugators"
+    },
+    {
+      "id": "ing-26",
+      "name": "Cake Packing box (8 inch)",
+      "category": "Boxes & Packaging",
+      "currentStock": 14,
+      "minThreshold": 20,
+      "unit": "pcs",
+      "unitCost": 24,
+      "supplier": "PackPrint Corrugators"
+    },
+    {
+      "id": "ing-27",
+      "name": "Cake Packing box (10 inch)",
+      "category": "Boxes & Packaging",
+      "currentStock": 16,
+      "minThreshold": 15,
+      "unit": "pcs",
+      "unitCost": 32,
+      "supplier": "PackPrint Corrugators"
+    },
+    {
+      "id": "ing-28",
+      "name": "10Inch Packing cover",
+      "category": "Boxes & Packaging",
+      "currentStock": 45,
+      "minThreshold": 30,
+      "unit": "pcs",
+      "unitCost": 6,
+      "supplier": "EcoCarry Bags"
+    },
+    {
+      "id": "ing-29",
+      "name": "Sandwich Box",
+      "category": "Boxes & Packaging",
+      "currentStock": 35,
+      "minThreshold": 25,
+      "unit": "pcs",
+      "unitCost": 8,
+      "supplier": "EcoCarry Bags"
+    },
+    {
+      "id": "ing-30",
+      "name": "Brownie PVC 3*3 Box",
+      "category": "Boxes & Packaging",
+      "currentStock": 28,
+      "minThreshold": 20,
+      "unit": "pcs",
+      "unitCost": 12,
+      "supplier": "ClearView Plastics"
+    },
+    {
+      "id": "ing-31",
+      "name": "Cake birthday toppers",
+      "category": "Party & Decor",
+      "currentStock": 24,
+      "minThreshold": 15,
+      "unit": "pcs",
+      "unitCost": 35,
+      "supplier": "PartyWorld Wholesale"
+    },
+    {
+      "id": "ing-32",
+      "name": "Birthday candles",
+      "category": "Party & Decor",
+      "currentStock": 30,
+      "minThreshold": 20,
+      "unit": "pkt",
+      "unitCost": 20,
+      "supplier": "PartyWorld Wholesale"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "Classic Fudgy Dark Chocolate Brownie (8\" Box)",
+      "category": "Brownies",
+      "price": 550,
+      "costPrice": 215,
+      "unit": "box",
+      "description": "Loaded with Morde dark compound, butter, rich cocoa and crackly crust. Cut into 6 or 8 fudgy slices.",
+      "allergens": [
+        "Dairy",
+        "Eggs",
+        "Gluten"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "prod-2",
+      "name": "Signature 10\" Walnut Brownie Celebration Slab",
+      "category": "Brownies",
+      "price": 950,
+      "costPrice": 380,
+      "unit": "box",
+      "description": "Extra-large 10-inch fudgy brownie slab topped with toasted Kashmiri walnuts in 10\" presentation box.",
+      "allergens": [
+        "Dairy",
+        "Eggs",
+        "Gluten",
+        "Tree Nuts"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "prod-3",
+      "name": "Rosemilk Tres Leches Celebration Cake (8\" 1kg)",
+      "category": "Cakes",
+      "price": 850,
+      "costPrice": 310,
+      "unit": "cake",
+      "description": "Soft sponge soaked in cardamom rosemilk, whipped cream frosting, dried rose petals and pista.",
+      "allergens": [
+        "Dairy",
+        "Gluten",
+        "Tree Nuts"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "prod-4",
+      "name": "Blackcurrant Dream Whipped Cake (8\" 1kg)",
+      "category": "Cakes",
+      "price": 780,
+      "costPrice": 280,
+      "unit": "cake",
+      "description": "Airy vanilla sponge layered with rich blackcurrant compote, whipped cream and dark compound drip.",
+      "allergens": [
+        "Dairy",
+        "Gluten"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "prod-5",
+      "name": "Pista Butterscotch Crunch Pastry Box (4 Pack)",
+      "category": "Pastries",
+      "price": 360,
+      "costPrice": 120,
+      "unit": "pack",
+      "description": "Rich layers of butterscotch crunch and natural pistachio cream pastry slices.",
+      "allergens": [
+        "Dairy",
+        "Gluten",
+        "Tree Nuts"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "prod-6",
+      "name": "Cafe Grilled Cheese Mayo Sandwich (Pack of 2)",
+      "category": "Savouries",
+      "price": 180,
+      "costPrice": 58,
+      "unit": "pack",
+      "description": "Toasted bakery bread packed with creamy mayo, herbs, tomato sauce and butter in sandwich box.",
+      "allergens": [
+        "Dairy",
+        "Gluten"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "prod-7",
+      "name": "Single Serve Brownie Cube (PVC 3*3 Box)",
+      "category": "Brownies",
+      "price": 85,
+      "costPrice": 32,
+      "unit": "piece",
+      "description": "Individual fudgy dark compound brownie square packed in crystal-clear 3x3 PVC box.",
+      "allergens": [
+        "Dairy",
+        "Eggs",
+        "Gluten"
+      ],
+      "inStock": true
+    }
+  ],
+  "recipes": [
+    {
+      "id": "rec-1",
+      "name": "Classic Fudgy Brownie (8-inch Box)",
+      "yieldCount": 1,
+      "yieldUnit": "8\" Box (6-8 Slices)",
+      "prepTimeMinutes": 20,
+      "bakeTimeMinutes": 30,
+      "ovenTemp": "175°C / 350°F",
+      "laborMinutes": 30,
+      "hourlyLaborRate": 150,
+      "overheadPercent": 12,
+      "items": [
+        {
+          "ingredientId": "ing-1",
+          "name": "Dark compound",
+          "qty": 0.22,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-4",
+          "name": "Butter (Pasteurized)",
+          "qty": 0.12,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-8",
+          "name": "Sugar",
+          "qty": 0.15,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-6",
+          "name": "Egg",
+          "qty": 3,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-7",
+          "name": "Maida",
+          "qty": 0.065,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-10",
+          "name": "Cocoa powder",
+          "qty": 0.025,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-14",
+          "name": "Vanilla essence",
+          "qty": 5,
+          "unit": "ml"
+        },
+        {
+          "ingredientId": "ing-24",
+          "name": "Brownie Packing box (8 inch)",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-28",
+          "name": "10Inch Packing cover",
+          "qty": 1,
+          "unit": "pcs"
+        }
+      ],
+      "notes": "Melt dark compound and butter over low heat. Whisk eggs and sugar until pale ribbon stage."
+    },
+    {
+      "id": "rec-2",
+      "name": "Rosemilk Tres Leches Cake (8-inch 1kg)",
+      "yieldCount": 1,
+      "yieldUnit": "8\" Cake (1kg)",
+      "prepTimeMinutes": 45,
+      "bakeTimeMinutes": 35,
+      "ovenTemp": "165°C / 330°F",
+      "laborMinutes": 45,
+      "hourlyLaborRate": 150,
+      "overheadPercent": 15,
+      "items": [
+        {
+          "ingredientId": "ing-7",
+          "name": "Maida",
+          "qty": 0.16,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-8",
+          "name": "Sugar",
+          "qty": 0.12,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-6",
+          "name": "Egg",
+          "qty": 3,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-11",
+          "name": "Baking powder",
+          "qty": 0.005,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-5",
+          "name": "Whipping cream",
+          "qty": 0.28,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-15",
+          "name": "Rosemilk essence",
+          "qty": 8,
+          "unit": "ml"
+        },
+        {
+          "ingredientId": "ing-13",
+          "name": "Nuts (Almonds, Cashews, Walnuts)",
+          "qty": 0.03,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-26",
+          "name": "Cake Packing box (8 inch)",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-31",
+          "name": "Cake birthday toppers",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-32",
+          "name": "Birthday candles",
+          "qty": 1,
+          "unit": "pkt"
+        }
+      ],
+      "notes": "Poke cooled sponge thoroughly before pouring rosemilk soak."
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-2413",
+      "date": "2026-10-23",
+      "status": "delivered",
+      "paymentStatus": "paid",
+      "paymentMethod": "UPI / GPay",
+      "fulfilmentMethod": "own_delivery",
+      "deliveryType": "Delivery (+₹100)",
+      "deliverySlot": "Home Delivery",
+      "deliveryAddress": "",
+      "deliveryInstructions": "",
+      "recipientContact": "",
+      "externalReference": "",
+      "cakeMessage": "",
+      "referenceImage": "",
+      "items": [
+        {
+          "productId": "prod-3",
+          "name": "Rosemilk Tres Leches Celebration Cake (8\" 1kg)",
+          "price": 850,
+          "qty": 1
+        }
+      ],
+      "createdAt": "2026-10-23T17:28:49.586Z",
+      "customerName": "Walk-in Counter Guest",
+      "customerPhone": "",
+      "subtotal": 850,
+      "discount": 0,
+      "deliveryCharge": 100,
+      "total": 950,
+      "advancePaid": 950,
+      "balanceDue": 0,
+      "notes": "Counter POS sale"
+    },
+    {
+      "id": "ORD-2998",
+      "date": "2026-10-23",
+      "status": "delivered",
+      "paymentStatus": "paid",
+      "paymentMethod": "UPI / GPay",
+      "fulfilmentMethod": "self_pickup",
+      "deliveryType": "Self Pickup",
+      "deliverySlot": "Counter Takeaway",
+      "deliveryAddress": "",
+      "deliveryInstructions": "",
+      "recipientContact": "",
+      "externalReference": "",
+      "cakeMessage": "",
+      "referenceImage": "",
+      "items": [
+        {
+          "productId": "prod-1",
+          "name": "Classic Fudgy Dark Chocolate Brownie (8\" Box)",
+          "price": 550,
+          "qty": 2
+        }
+      ],
+      "createdAt": "2026-10-23T17:28:21.387Z",
+      "customerName": "Walk-in Counter Guest",
+      "customerPhone": "",
+      "subtotal": 1100,
+      "discount": 0,
+      "deliveryCharge": 0,
+      "total": 1100,
+      "advancePaid": 1100,
+      "balanceDue": 0,
+      "notes": "Counter POS sale"
+    },
+    {
+      "id": "ORD-2137",
+      "date": "2026-10-23",
+      "status": "pending",
+      "paymentStatus": "partially-paid",
+      "paymentMethod": "UPI / GPay",
+      "fulfilmentMethod": "own_delivery",
+      "deliveryType": "Own Delivery",
+      "deliverySlot": "11:00 AM - 01:00 PM",
+      "deliveryAddress": "site 31 velan nagar , mathampalayam",
+      "deliveryInstructions": "",
+      "recipientContact": "vikey (+91 7708409541)",
+      "externalReference": "",
+      "cakeMessage": "",
+      "referenceImage": "",
+      "items": [
+        {
+          "productId": "prod-1",
+          "name": "Classic Fudgy Dark Chocolate Brownie (8\" Box)",
+          "qty": 1,
+          "price": 550,
+          "cakeMessage": ""
+        },
+        {
+          "productId": "prod-2",
+          "name": "Signature 10\" Walnut Brownie Celebration Slab",
+          "qty": 1,
+          "price": 950,
+          "cakeMessage": ""
+        },
+        {
+          "productId": "prod-1",
+          "name": "Classic Fudgy Dark Chocolate Brownie (8\" Box)",
+          "qty": 1,
+          "price": 550,
+          "cakeMessage": ""
+        }
+      ],
+      "createdAt": "2026-10-23T17:25:36.822Z",
+      "customerName": "vikey",
+      "customerPhone": "+91 7708409541",
+      "customerWhatsapp": "+91 7708409541",
+      "subtotal": 2050,
+      "discount": 0,
+      "deliveryCharge": 100,
+      "total": 2150,
+      "advancePaid": 350,
+      "balanceDue": 1800,
+      "notes": "add Choco chips"
+    },
+    {
+      "id": "ORD-2101",
+      "customerName": "Pooja Sundaram",
+      "customerPhone": "+91 98401 22910",
+      "date": "2026-10-23",
+      "deliverySlot": "11:30 AM",
+      "deliveryType": "Store Pickup",
+      "status": "ready",
+      "paymentStatus": "paid",
+      "paymentMethod": "UPI / GPay",
+      "items": [
+        {
+          "productId": "prod-1",
+          "name": "Classic Fudgy Dark Chocolate Brownie (8\" Box)",
+          "qty": 2,
+          "price": 550
+        },
+        {
+          "productId": "prod-7",
+          "name": "Single Serve Brownie Cube (PVC 3*3 Box)",
+          "qty": 2,
+          "price": 85
+        }
+      ],
+      "subtotal": 1270,
+      "discount": 0,
+      "deliveryCharge": 0,
+      "total": 1270,
+      "notes": "Write \"Happy Anniversary Karthik & Pooja\" with gold ribbon on both boxes."
+    },
+    {
+      "id": "ORD-2102",
+      "customerName": "Rohan Mehra",
+      "customerPhone": "+91 99620 44812",
+      "date": "2026-10-23",
+      "deliverySlot": "3:00 PM",
+      "deliveryType": "Dunzo Delivery",
+      "status": "in-oven",
+      "paymentStatus": "paid",
+      "paymentMethod": "UPI / PhonePe",
+      "items": [
+        {
+          "productId": "prod-3",
+          "name": "Rosemilk Tres Leches Celebration Cake (8\" 1kg)",
+          "qty": 1,
+          "price": 850
+        }
+      ],
+      "subtotal": 850,
+      "discount": 50,
+      "deliveryCharge": 60,
+      "total": 860,
+      "notes": "Add Cake Birthday Topper & candles inside bag."
+    },
+    {
+      "id": "ORD-2103",
+      "customerName": "Kavitha Sridhar",
+      "customerPhone": "+91 94440 88123",
+      "date": "2026-10-23",
+      "deliverySlot": "5:30 PM",
+      "deliveryType": "Porter Express",
+      "status": "pending",
+      "paymentStatus": "unpaid",
+      "paymentMethod": "Cash on Delivery",
+      "items": [
+        {
+          "productId": "prod-2",
+          "name": "Signature 10\" Walnut Brownie Celebration Slab",
+          "qty": 1,
+          "price": 950
+        },
+        {
+          "productId": "prod-6",
+          "name": "Cafe Grilled Cheese Mayo Sandwich (Pack of 2)",
+          "qty": 2,
+          "price": 180
+        }
+      ],
+      "subtotal": 1310,
+      "discount": 0,
+      "deliveryCharge": 80,
+      "total": 1390,
+      "notes": "Cut 10\" brownie slab into 16 clean squares."
+    }
+  ],
+  "expenses": [
+    {
+      "id": "exp-101",
+      "date": "2026-10-23",
+      "category": "Ingredients",
+      "vendor": "BakePro Supplies",
+      "amount": 2450,
+      "paymentMethod": "UPI / GPay",
+      "notes": "10kg Dark compound and 2kg White compound restock"
+    },
+    {
+      "id": "exp-102",
+      "date": "2026-10-23",
+      "category": "Packaging",
+      "vendor": "PackPrint Corrugators",
+      "amount": 1120,
+      "paymentMethod": "Cash",
+      "notes": "50pcs 8-inch Brownie boxes and 30pcs Cake boxes"
+    }
+  ],
+  "production": [
+    {
+      "id": "plan-1",
+      "date": "2026-10-23",
+      "product": "Classic Fudgy Brownie (8\" Box)",
+      "batchQty": 4,
+      "stage": "Baking",
+      "targetTime": "11:00 AM",
+      "completed": false,
+      "assignedBaker": "Ananya",
+      "notes": "2 for ORD-2101, 2 for counter display"
+    },
+    {
+      "id": "plan-2",
+      "date": "2026-10-23",
+      "product": "Rosemilk Tres Leches (8\" 1kg)",
+      "batchQty": 1,
+      "stage": "Cooling",
+      "targetTime": "1:30 PM",
+      "completed": false,
+      "assignedBaker": "Ananya",
+      "notes": "ORD-2102 birthday order"
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "sup-1",
+      "name": "BakePro Supplies",
+      "contact": "Venkatesh",
+      "phone": "+91 98840 11920",
+      "email": "orders@bakepro.in",
+      "category": "Compounds, Cocoa & Essences",
+      "leadDays": 1,
+      "minOrder": "�,�1,000"
+    },
+    {
+      "id": "sup-2",
+      "name": "Amul Dairy Distributor",
+      "contact": "Suresh Babu",
+      "phone": "+91 94441 55021",
+      "email": "suresh.amul@gmail.com",
+      "category": "Butter, Cheese & Cream",
+      "leadDays": 1,
+      "minOrder": "�,�1,500"
+    },
+    {
+      "id": "sup-3",
+      "name": "PackPrint Corrugators",
+      "contact": "Kailash",
+      "phone": "+91 98410 77300",
+      "email": "packprint.sales@gmail.com",
+      "category": "8\" & 10\" Boxes & Bags",
+      "leadDays": 2,
+      "minOrder": "�,�2,000"
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust-1",
+      "name": "Pooja Sundaram",
+      "phone": "+91 98401 22910",
+      "totalOrders": 7,
+      "totalSpend": 5420,
+      "tier": "VIP Baker Club",
+      "notes": "Loves extra dark chocolate"
+    },
+    {
+      "id": "cust-2",
+      "name": "Rohan Mehra",
+      "phone": "+91 99620 44812",
+      "totalOrders": 4,
+      "totalSpend": 3100,
+      "tier": "Regular",
+      "notes": "Corporate Dunzo orders"
+    },
+    {
+      "id": "cust-3",
+      "name": "Kavitha Sridhar",
+      "phone": "+91 94440 88123",
+      "totalOrders": 5,
+      "totalSpend": 4680,
+      "tier": "VIP Baker Club",
+      "notes": "Prefers eggless options"
+    },
+    {
+      "id": "cust-6822",
+      "name": "vikey",
+      "phone": "+91 7708409541",
+      "whatsapp": "+91 7708409541",
+      "address": "site 31 velan nagar , mathampalayam",
+      "totalOrders": 1,
+      "totalSpend": 2150,
+      "tier": "Regular",
+      "notes": ""
+    },
+    {
+      "id": "cust-1387",
+      "name": "Walk-in Counter Guest",
+      "phone": "",
+      "whatsapp": "",
+      "address": "",
+      "totalOrders": 2,
+      "totalSpend": 2050,
+      "tier": "Regular",
+      "notes": ""
+    }
+  ],
+  "cashbook": {
+    "openingBalance": 3000,
+    "records": [
+      {
+        "id": "cb-1",
+        "time": "09:30 AM",
+        "description": "Opening Cash Register Float",
+        "type": "in",
+        "amount": 3000,
+        "category": "Float"
+      },
+      {
+        "id": "cb-2",
+        "time": "11:15 AM",
+        "description": "Counter POS sale: 2 Brownie Cubes",
+        "type": "in",
+        "amount": 170,
+        "category": "Sales"
+      },
+      {
+        "id": "cb-3",
+        "time": "01:00 PM",
+        "description": "Paid packing box delivery auto fare",
+        "type": "out",
+        "amount": 150,
+        "category": "Expense"
+      }
+    ]
+  },
+  "workspace": {
+    "name": "Letz Bake Bro",
+    "coverPhoto": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAMgAyADASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAgFBgcJAgMEAf/EAFoQAAEDAwEEBQYJCAYGCAQHAAABAgMEBREGBwgSIRMxQVFhFCJxgZGhFTJScpKiscHRFiMzQmKCssIkVJOzw+E3Q0Rjc3UYJTZTVYOj8DVFZdIXNEZkpNPj/8QAHAEBAAIDAQEBAAAAAAAAAAAAAAEGAgQFAwcI/8QARBEBAAIBAwAFCQUECAUFAQAAAAECAwQFEQYSITFRE0FhcYGRobHBBzJCUtEUFSLwJDM0YpKisuEWI0RTciVUgsLS8f/aAAwDAQACEQMRAD8AmWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/2Q==",
+    "address": "site 31, Velan Nagar,Kottai pirivu,Coimbatore-641019",
+    "isHomeKitchenPrivate": true,
+    "pickupLocationInstructions": "site 31,Velan Nagar ,Kottai pirivu,Coimbatore-641019",
+    "workingDays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "workingHours": "08:30 AM - 08:30 PM",
+    "orderAcceptanceHours": "09:00 AM - 07:00 PM",
+    "minAdvanceNoticeHours": 24,
+    "defaultPrepTimeHours": 4,
+    "holidayDates": [],
+    "equipment": [
+      "Double Deck Convection Oven (60L)",
+      "Stand Mixer (7L)",
+      "Blast Chiller",
+      "Commercial Microwave"
+    ],
+    "notes": "Brownies must be completely cooled for 45 minutes before slicing and packing in 8\" or 10\" presentation boxes."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "bakepilot",
+  "version": "1.1.43",
+  "description": "BakePilot v1.1.43 — Smart Mobile-First Home Bakery Studio & Cloud Kitchen Manager with WhatsApp Image Billing, 11:50 PM Daily Backups & Recipe Margins",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "keywords": [
+    "bakery",
+    "bakepilot",
+    "mobile-app",
+    "pwa",
+    "cake-billing",
+    "kitchen-manager"
+  ],
+  "author": "MOOVAR Kreativ",
+  "license": "Proprietary",
+  "devDependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/cli": "^8.5.3",
+    "@capacitor/core": "^8.5.3"
+  },
+  "dependencies": {
+    "@capacitor/filesystem": "^8.1.5",
+    "@capacitor/share": "^8.0.3"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "profile": {
+    "currencySymbol": "?",
+    "name": "The Crust & Crumb",
+    "defaultDeliveryCharge": 50,
+    "baker": "Chef Ananya"
+  },
+  "inventory": [
+    {
+      "currentStock": 8,
+      "name": "Dark compound (55% Morde / Van Houten)",
+      "id": "ing-1",
+      "unit": "kg",
+      "unitCost": 380
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-2101",
+      "subtotal": 1270,
+      "total": 1270,
+      "deliveryCharge": 0,
+      "paymentStatus": "paid",
+      "customerName": "Pooja Sundaram",
+      "status": "ready"
+    }
+  ]
+}

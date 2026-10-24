@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>BakePilot — Smart Home Bakery & Cloud Kitchen Manager</title>
+  
+  <!-- PWA & Mobile App Settings for BakePilot v1.1.43 -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1C171A" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="BakePilot" />
+  <meta name="application-name" content="BakePilot" />
+
+  <link rel="icon" type="image/png" href="assets/bakepilot-logo.png" />
+  <link rel="apple-touch-icon" href="assets/bakepilot-logo.png" />
+  
+  <!-- Refined Typography: Manrope (Headings & Numbers) & Inter (Body & UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Clean Editorial Luxury Design System CSS -->
+  <link rel="stylesheet" href="css/design-system.css" />
+
+  <style>
+    @keyframes pwaBounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -5px); }
+    }
+
+    /* Top utility bar for desktop developers / testers */
+    .top-utility-bar {
+      position: fixed;
+      top: 14px;
+      right: 18px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    @media (max-width: 640px) {
+      .top-utility-bar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="mode-fluid">
+  <script>
+    // If on a desktop wide screen, user can default to phone frame if preferred, but on phones ALWAYS fluid full-screen
+    if (window.innerWidth > 768 && !/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      document.body.classList.add('mode-phone-frame');
+      document.body.classList.remove('mode-fluid');
+    }
+  </script>
+
+  <!-- Desktop Utility Bar (Viewport Mode Switcher & Wi-Fi Phone Testing Link) -->
+  <div class="top-utility-bar no-print">
+    <a 
+      id="phone-wifi-link"
+      href="http://192.168.0.104:3000" 
+      target="_blank"
+      class="btn-3d btn-3d-secondary" 
+      style="padding: 6px 12px; font-size: 11.5px; text-decoration: none; display: flex; align-items: center; gap: 6px;"
+      title="Open this URL on your phone connected to the same Wi-Fi"
+    >
+      <i data-lucide="smartphone" style="width: 14px; height: 14px; color: var(--c-primary);"></i>
+      <span>Phone Wi-Fi: <strong id="phone-wifi-text">192.168.0.104:3000</strong></span>
+    </a>
+
+    <button 
+      onclick="BakeryUI.toggleDarkMode()" 
+      class="btn-3d btn-3d-secondary" 
+      style="padding: 6px 12px; font-size: 11.5px; display: flex; align-items: center; gap: 6px;"
+      title="Toggle Dark / Light Theme"
+    >
+      <i data-lucide="moon" style="width: 14px; height: 14px;"></i>
+      <span>Theme</span>
+    </button>
+
+    <button 
+      id="viewport-mode-toggle-btn"
+      onclick="window.bakeryApp.toggleViewportMode()" 
+      class="btn-3d btn-3d-secondary" 
+      style="padding: 6px 12px; font-size: 11.5px;"
+    >
+      <i data-lucide="maximize-2" style="width: 14px; height: 14px;"></i>
+      <span>Expand View</span>
+    </button>
+  </div>
+
+  <!-- Toast Notification Center -->
+  <div id="toast-container"></div>
+
+  <!-- Main Viewport Application Wrapper -->
+  <div id="app-viewport-wrapper">
+    
+    <!-- Phone Top Notch (Phone-frame preview mode) -->
+    <div class="phone-notch"></div>
+
+    <!-- Scrollable Kitchen App Container -->
+    <main id="app-scroll-container">
+      <div id="view-content-mount" style="padding: 10px 16px 28px; min-height: 100%;">
+        <!-- Dynamic screen views mount here -->
+      </div>
+    </main>
+
+    <!-- Contextual Floating Action Button (FAB) -->
+    <button id="global-fab" class="floating-fab no-print" onclick="OrdersView.openNewOrderModal()" title="Add New Order" aria-label="Add New Order">
+      <i data-lucide="plus" style="width: 22px; height: 22px; stroke-width: 2.2;"></i>
+    </button>
+
+    <!-- Fixed Thumb-Friendly Bottom Glass Navigation Bar -->
+    <nav class="bottom-nav-container no-print" aria-label="Bottom Navigation">
+      <div class="bottom-nav-bar">
+        
+        <button class="bottom-nav-item active" data-route="dashboard" onclick="window.bakeryApp.navigate('dashboard')" aria-label="Home Dashboard">
+          <i data-lucide="home"></i>
+          <span>Home</span>
+        </button>
+
+        <button class="bottom-nav-item" data-route="orders" onclick="window.bakeryApp.navigate('orders')" aria-label="Orders Pipeline">
+          <i data-lucide="shopping-bag"></i>
+          <span>Orders</span>
+          <span class="nav-badge" title="Active orders"></span>
+        </button>
+
+        <button class="bottom-nav-item" data-route="billing" onclick="window.bakeryApp.navigate('billing')" aria-label="Counter Billing POS">
+          <i data-lucide="receipt"></i>
+          <span>Billing</span>
+        </button>
+
+        <button class="bottom-nav-item" data-route="inventory" onclick="window.bakeryApp.navigate('inventory')" aria-label="Pantry Stock & Pricing">
+          <i data-lucide="package"></i>
+          <span>Pantry</span>
+        </button>
+
+        <button class="bottom-nav-item" data-route="more" onclick="window.bakeryApp.navigate('more')" aria-label="Operations Hub">
+          <i data-lucide="grid"></i>
+          <span>More</span>
+        </button>
+
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- Global Modal & Bottom-Sheet Container -->
+  <div id="global-modal-backdrop" class="modal-backdrop no-print" onclick="if(event.target === this) BakeryUI.closeSheet();">
+    <div class="bottom-sheet" role="dialog" aria-modal="true">
+      <div class="sheet-handle" onclick="BakeryUI.closeSheet()"></div>
+      <div class="sheet-header">
+        <h3 id="sheet-title-text" style="font-size: 15px; font-weight: 800; color: var(--text-main);">Details</h3>
+        <button onclick="BakeryUI.closeSheet()" style="background: none; border: none; font-size: 16px; color: var(--text-muted); cursor: pointer; padding: 4px;" aria-label="Close">✕</button>
+      </div>
+      <div id="sheet-content-container" class="sheet-body">
+        <!-- Content injects here dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/html2canvas.min.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/views/order-wizard.js"></script>
+  <script src="js/views/dashboard.js"></script>
+  <script src="js/views/orders.js"></script>
+  <script src="js/views/billing.js"></script>
+  <script src="js/views/invoice.js"></script>
+  <script src="js/views/inventory.js"></script>
+  <script src="js/views/recipes.js"></script>
+  <script src="js/views/production.js"></script>
+  <script src="js/views/expenses.js"></script>
+  <script src="js/views/cashbook.js"></script>
+  <script src="js/views/reports.js"></script>
+  <script src="js/views/catalogue.js"></script>
+  <script src="js/views/customers.js"></script>
+  <script src="js/views/suppliers.js"></script>
+  <script src="js/views/branding.js"></script>
+  <script src="js/views/workspace.js"></script>
+  <script src="js/views/settings.js"></script>
+  <script src="js/views/auth.js"></script>
+  <script src="js/views/login.js"></script>
+  <script src="js/views/more.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Progressive Web App (PWA) Mobile Service Worker & Install Handler -->
+  <script>
+    // Register Service Worker for BakePilot v1.1.43
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(reg => {
+          console.log('✓ BakePilot v1.1.43 Service Worker registered, scope:', reg.scope);
+        }).catch(err => {
+          console.warn('Service worker registration note:', err.message);
+        });
+      });
+    }
+
+    // Standalone & Native App Detection for BakePilot v1.1.43
+    window.isAppInstalled = function() {
+      try {
+        const isStandalone = 
+          (window.matchMedia && (
+            window.matchMedia('(display-mode: standalone)').matches ||
+            window.matchMedia('(display-mode: fullscreen)').matches ||
+            window.matchMedia('(display-mode: minimal-ui)').matches
+          )) ||
+          window.navigator.standalone === true ||
+          (window.location.search && (window.location.search.includes('source=pwa') || window.location.search.includes('mode=standalone'))) ||
+          (window.Capacitor && typeof window.Capacitor.isNativePlatform === 'function' && window.Capacitor.isNativePlatform()) ||
+          (window.Capacitor && window.Capacitor.getPlatform && window.Capacitor.getPlatform() !== 'web') ||
+          window.location.protocol === 'capacitor:' ||
+          window.location.protocol === 'ionic:' ||
+          (window.navigator.userAgent && /Capacitor|wv/i.test(window.navigator.userAgent)) ||
+          (document.referrer && document.referrer.includes('android-app://')) ||
+          (function(){ try { return localStorage.getItem('bakepilot_installed_mode') === 'true'; } catch(e){ return false; } })();
+        return !!isStandalone;
+      } catch (e) {
+        return false;
+      }
+    };
+
+    // PWA In-App Install Prompt Banner logic
+    let deferredInstallPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredInstallPrompt = e;
+      if (!window.isAppInstalled()) {
+        showPwaInstallBanner();
+      }
+    });
+
+    window.addEventListener('appinstalled', () => {
+      try { localStorage.setItem('bakepilot_installed_mode', 'true'); } catch(e){}
+      if (window.dismissPwaBanner) window.dismissPwaBanner();
+      if (window.bakeryApp && window.bakeryApp.currentRoute === 'more') {
+        window.bakeryApp.renderCurrentView();
+      }
+    });
+
+    function showPwaInstallBanner() {
+      if (document.getElementById('pwa-install-pill')) return;
+      if (window.isAppInstalled()) return;
+
+      const pill = document.createElement('div');
+      pill.id = 'pwa-install-pill';
+      pill.style.cssText = `
+        position: fixed;
+        bottom: 74px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        background: linear-gradient(135deg, #1C171A 0%, #2A2126 100%);
+        border: 1.5px solid #D4AF37;
+        color: #FAF1E4;
+        border-radius: 9999px;
+        padding: 8px 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        animation: pwaBounce 2.4s infinite ease-in-out;
+        max-width: 92vw;
+      `;
+      pill.innerHTML = `
+        <img src="assets/bakepilot-logo.png" style="width: 24px; height: 24px; border-radius: 50%;" />
+        <div style="font-size: 12px; font-weight: 800;">
+          <span style="color: #D4AF37;">Install BakePilot App</span>
+          <span style="font-size: 10px; opacity: 0.8; font-weight: 600; margin-left: 4px;">v1.1.43</span>
+        </div>
+        <button onclick="triggerPwaInstall(event)" style="background: #D4AF37; color: #1C171A; font-weight: 800; border: none; border-radius: 9999px; padding: 4px 10px; font-size: 11px; cursor: pointer; margin-left: 4px;">
+          Install
+        </button>
+        <span onclick="dismissPwaBanner(event)" style="font-size: 14px; opacity: 0.6; padding: 2px 4px; cursor: pointer;">✕</span>
+      `;
+      document.body.appendChild(pill);
+    }
+
+    window.triggerPwaInstall = async function(e) {
+      if (e) e.stopPropagation();
+      if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        const choice = await deferredInstallPrompt.userChoice;
+        if (choice.outcome === 'accepted') {
+          try { localStorage.setItem('bakepilot_installed_mode', 'true'); } catch(e){}
+          dismissPwaBanner();
+          if (window.bakeryApp && window.bakeryApp.currentRoute === 'more') {
+            window.bakeryApp.renderCurrentView();
+          }
+        }
+        deferredInstallPrompt = null;
+      } else {
+        // iOS Safari / non-prompt browsers guide
+        alert("📲 To install BakePilot App v1.1.43 on your Phone:\n\n• On iPhone (Safari): Tap the Share button at bottom -> 'Add to Home Screen'\n• On Android (Chrome): Tap top right (⋮) -> 'Install app' or 'Add to Home screen'\n\nOr download the Android APK directly at /download/bakepilot.apk");
+      }
+    };
+
+    window.dismissPwaBanner = function(e) {
+      if (e) e.stopPropagation();
+      const el = document.getElementById('pwa-install-pill');
+      if (el) el.remove();
+    };
+  </script>
+
+</body>
+</html>

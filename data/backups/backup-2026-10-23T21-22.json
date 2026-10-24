@@ -1,0 +1,1096 @@
+{
+  "profile": {
+    "name": "The Crust & Crumb Patisserie",
+    "tagline": "Artisan Custom Cakes, Fudgy Brownies & Cloud Kitchen",
+    "baker": "Ananya Sharma",
+    "email": "hello@crustandcrumb.in",
+    "phone": "+91 98401 55230",
+    "whatsappNumber": "+91 98401 55230",
+    "address": "14, Greenways Road, R.A. Puram, Chennai, TN",
+    "currency": "₹",
+    "currencySymbol": "₹",
+    "defaultDeliveryCharge": 60,
+    "fssaiOrLicense": "FSSAI: 22424001000842",
+    "invoiceNotes": "Baked fresh with pure butter and premium chocolate. Please refrigerate cream items immediately upon arrival.",
+    "instagram": "@crustandcrumb.india",
+    "activeBusiness": "The Crust & Crumb (Main Kitchen)",
+    "businesses": [
+      "The Crust & Crumb (Main Kitchen)",
+      "Crust & Crumb Express (Kiosk)"
+    ],
+    "logo": "assets/bakepilot-logo.png",
+    "brandColor": "#F6C9D0",
+    "secondaryColor": "#DCD6F7",
+    "paymentUpi": "crustandcrumb@okhdfcbank",
+    "cloudSyncUrl": "/api/sync"
+  },
+  "utilities": {
+    "gasCylinderRate": 1850,
+    "gasCylinderLifeDays": 20,
+    "electricityRatePerUnit": 8.5,
+    "monthlyEstimatedPower": 3200,
+    "waterAndMaintenance": 650,
+    "notes": "Commercial 19kg cylinder costs ₹1,850 and lasts ~20 baking days. Power calculated on commercial unit rates."
+  },
+  "eodReport": {
+    "frequency": "daily",
+    "scheduledTime": "23:50",
+    "email": "hello@crustandcrumb.in",
+    "lastSentAt": null,
+    "includeJsonBackup": true
+  },
+  "invoiceSettings": {
+    "showBakeryAddress": true,
+    "showBakeryPhone": true,
+    "showFssai": true,
+    "showPaymentUpi": true,
+    "showDeliveryAddress": true,
+    "showCustomerPhone": true,
+    "showCakeMessage": true,
+    "showFooterNotes": true,
+    "showInstagram": true,
+    "invoiceHeaderTitle": "Official Bill",
+    "invoiceNotes": "Baked fresh with pure butter and premium chocolate. Please refrigerate cream items immediately upon arrival."
+  },
+  "workspace": {
+    "name": "The Crust & Crumb — Main Patisserie Studio",
+    "coverPhoto": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop&q=80",
+    "address": "14, Greenways Road, R.A. Puram, Chennai, TN",
+    "isHomeKitchenPrivate": false,
+    "pickupLocationInstructions": "Gate 2, Ring the bakery buzzer on ground floor. Parking available in driveway.",
+    "workingDays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "workingHours": "08:30 AM - 08:30 PM",
+    "orderAcceptanceHours": "09:00 AM - 07:00 PM",
+    "minAdvanceNoticeHours": 24,
+    "defaultPrepTimeHours": 4,
+    "holidayDates": [],
+    "equipment": [
+      "Double Deck Convection Oven (60L)",
+      "Stand Mixer (7L)",
+      "Blast Chiller",
+      "Commercial Microwave"
+    ],
+    "notes": "Brownies must be completely cooled for 45 minutes before slicing and packing in 8\" or 10\" presentation boxes."
+  },
+  "inventory": [
+    {
+      "id": "ing-1",
+      "name": "Dark compound",
+      "category": "Compounds & Chocolates",
+      "currentStock": 12,
+      "minThreshold": 3,
+      "unit": "kg",
+      "unitCost": 195,
+      "supplier": "BakePro Supplies",
+      "image": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=300&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "ing-2",
+      "name": "White compound",
+      "category": "Compounds & Chocolates",
+      "currentStock": 8.5,
+      "minThreshold": 2,
+      "unit": "kg",
+      "unitCost": 220,
+      "supplier": "BakePro Supplies",
+      "image": "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=300&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "ing-3",
+      "name": "Milk compound",
+      "category": "Compounds & Chocolates",
+      "currentStock": 6,
+      "minThreshold": 2,
+      "unit": "kg",
+      "unitCost": 210,
+      "supplier": "BakePro Supplies",
+      "image": ""
+    },
+    {
+      "id": "ing-4",
+      "name": "Butter (Pasteurized)",
+      "category": "Dairy & Fats",
+      "currentStock": 5.5,
+      "minThreshold": 5,
+      "unit": "kg",
+      "unitCost": 540,
+      "supplier": "Amul Dairy Distributor",
+      "image": "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=300&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "ing-5",
+      "name": "Whipping cream",
+      "category": "Dairy & Fats",
+      "currentStock": 5,
+      "minThreshold": 4,
+      "unit": "kg",
+      "unitCost": 195,
+      "supplier": "Richs / Tropolite Depot",
+      "image": ""
+    },
+    {
+      "id": "ing-6",
+      "name": "Egg",
+      "category": "Dairy & Fats",
+      "currentStock": 48,
+      "minThreshold": 30,
+      "unit": "pcs",
+      "unitCost": 7,
+      "supplier": "Local Poultry Wholesale",
+      "image": ""
+    },
+    {
+      "id": "ing-7",
+      "name": "Maida",
+      "category": "Flours & Sugars",
+      "currentStock": 25,
+      "minThreshold": 8,
+      "unit": "kg",
+      "unitCost": 42,
+      "supplier": "Sri Murugan Wholesale Mart",
+      "image": ""
+    },
+    {
+      "id": "ing-8",
+      "name": "Sugar",
+      "category": "Flours & Sugars",
+      "currentStock": 20,
+      "minThreshold": 6,
+      "unit": "kg",
+      "unitCost": 46,
+      "supplier": "Sri Murugan Wholesale Mart",
+      "image": ""
+    },
+    {
+      "id": "ing-9",
+      "name": "Brown sugar",
+      "category": "Flours & Sugars",
+      "currentStock": 4,
+      "minThreshold": 2,
+      "unit": "kg",
+      "unitCost": 110,
+      "supplier": "BakeMart Wholesale",
+      "image": ""
+    },
+    {
+      "id": "ing-10",
+      "name": "Cocoa powder",
+      "category": "Compounds & Chocolates",
+      "currentStock": 3.5,
+      "minThreshold": 1.5,
+      "unit": "kg",
+      "unitCost": 480,
+      "supplier": "BakePro Supplies",
+      "image": ""
+    },
+    {
+      "id": "ing-11",
+      "name": "Baking powder",
+      "category": "Leavening & Essentials",
+      "currentStock": 1.2,
+      "minThreshold": 0.5,
+      "unit": "kg",
+      "unitCost": 380,
+      "supplier": "BakeMart Wholesale",
+      "image": ""
+    },
+    {
+      "id": "ing-12",
+      "name": "Baking soda",
+      "category": "Leavening & Essentials",
+      "currentStock": 0.8,
+      "minThreshold": 0.4,
+      "unit": "kg",
+      "unitCost": 240,
+      "supplier": "BakeMart Wholesale",
+      "image": ""
+    },
+    {
+      "id": "ing-13",
+      "name": "Nuts (Almonds, Cashews, Walnuts)",
+      "category": "Nuts & Inclusions",
+      "currentStock": 2.8,
+      "minThreshold": 1,
+      "unit": "kg",
+      "unitCost": 850,
+      "supplier": "Royal Dry Fruits",
+      "image": "https://images.unsplash.com/photo-1536591375315-1b836835a2b7?w=300&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "ing-14",
+      "name": "Vanilla essence",
+      "category": "Essences & Flavours",
+      "currentStock": 400,
+      "minThreshold": 150,
+      "unit": "ml",
+      "unitCost": 0.65,
+      "supplier": "Ossoro Flavour House",
+      "image": ""
+    },
+    {
+      "id": "ing-15",
+      "name": "Rosemilk essence",
+      "category": "Essences & Flavours",
+      "currentStock": 350,
+      "minThreshold": 150,
+      "unit": "ml",
+      "unitCost": 0.75,
+      "supplier": "Flying Man / Ossoro",
+      "image": ""
+    },
+    {
+      "id": "ing-16",
+      "name": "Pista essence",
+      "category": "Essences & Flavours",
+      "currentStock": 250,
+      "minThreshold": 100,
+      "unit": "ml",
+      "unitCost": 0.75,
+      "supplier": "Ossoro Flavour House",
+      "image": ""
+    },
+    {
+      "id": "ing-17",
+      "name": "Blackcurrant essence",
+      "category": "Essences & Flavours",
+      "currentStock": 200,
+      "minThreshold": 100,
+      "unit": "ml",
+      "unitCost": 0.8,
+      "supplier": "Ossoro Flavour House",
+      "image": ""
+    },
+    {
+      "id": "ing-18",
+      "name": "Mango essence",
+      "category": "Essences & Flavours",
+      "currentStock": 200,
+      "minThreshold": 100,
+      "unit": "ml",
+      "unitCost": 0.75,
+      "supplier": "Ossoro Flavour House",
+      "image": ""
+    },
+    {
+      "id": "ing-19",
+      "name": "Butterscotch essence",
+      "category": "Essences & Flavours",
+      "currentStock": 250,
+      "minThreshold": 100,
+      "unit": "ml",
+      "unitCost": 0.8,
+      "supplier": "Ossoro Flavour House",
+      "image": "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=300&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "ing-20",
+      "name": "Bread",
+      "category": "Cafe & Savoury",
+      "currentStock": 6,
+      "minThreshold": 4,
+      "unit": "loaf",
+      "unitCost": 45,
+      "supplier": "Modern / Britannia Depot",
+      "image": ""
+    },
+    {
+      "id": "ing-21",
+      "name": "Mayonise",
+      "category": "Cafe & Savoury",
+      "currentStock": 3.2,
+      "minThreshold": 1.5,
+      "unit": "kg",
+      "unitCost": 180,
+      "supplier": "Veeba Wholesale",
+      "image": ""
+    },
+    {
+      "id": "ing-22",
+      "name": "Sauce tomato",
+      "category": "Cafe & Savoury",
+      "currentStock": 4,
+      "minThreshold": 2,
+      "unit": "kg",
+      "unitCost": 140,
+      "supplier": "Kissan Wholesale",
+      "image": ""
+    },
+    {
+      "id": "ing-23",
+      "name": "Sauce sachet",
+      "category": "Cafe & Savoury",
+      "currentStock": 120,
+      "minThreshold": 50,
+      "unit": "pcs",
+      "unitCost": 1.5,
+      "supplier": "Kissan Wholesale",
+      "image": ""
+    },
+    {
+      "id": "ing-24",
+      "name": "Brownie Packing box (8 inch)",
+      "category": "Boxes & Packaging",
+      "currentStock": 18,
+      "minThreshold": 25,
+      "unit": "pcs",
+      "unitCost": 18,
+      "supplier": "PackPrint Corrugators",
+      "image": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "ing-25",
+      "name": "Brownie Packing box (10 inch)",
+      "category": "Boxes & Packaging",
+      "currentStock": 22,
+      "minThreshold": 20,
+      "unit": "pcs",
+      "unitCost": 25,
+      "supplier": "PackPrint Corrugators",
+      "image": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "ing-26",
+      "name": "Cake Packing box (8 inch)",
+      "category": "Boxes & Packaging",
+      "currentStock": 14,
+      "minThreshold": 20,
+      "unit": "pcs",
+      "unitCost": 24,
+      "supplier": "PackPrint Corrugators",
+      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=300&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "ing-27",
+      "name": "Cake Packing box (10 inch)",
+      "category": "Boxes & Packaging",
+      "currentStock": 16,
+      "minThreshold": 15,
+      "unit": "pcs",
+      "unitCost": 32,
+      "supplier": "PackPrint Corrugators",
+      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=300&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "ing-28",
+      "name": "10Inch Packing cover",
+      "category": "Boxes & Packaging",
+      "currentStock": 45,
+      "minThreshold": 30,
+      "unit": "pcs",
+      "unitCost": 6,
+      "supplier": "EcoCarry Bags",
+      "image": ""
+    },
+    {
+      "id": "ing-29",
+      "name": "Sandwich Box",
+      "category": "Boxes & Packaging",
+      "currentStock": 35,
+      "minThreshold": 25,
+      "unit": "pcs",
+      "unitCost": 8,
+      "supplier": "EcoCarry Bags",
+      "image": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "ing-30",
+      "name": "Brownie PVC 3*3 Box",
+      "category": "Boxes & Packaging",
+      "currentStock": 28,
+      "minThreshold": 20,
+      "unit": "pcs",
+      "unitCost": 12,
+      "supplier": "ClearView Plastics",
+      "image": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "ing-31",
+      "name": "Cake birthday toppers",
+      "category": "Party & Decor",
+      "currentStock": 24,
+      "minThreshold": 15,
+      "unit": "pcs",
+      "unitCost": 35,
+      "supplier": "PartyWorld Wholesale",
+      "image": ""
+    },
+    {
+      "id": "ing-32",
+      "name": "Birthday candles",
+      "category": "Party & Decor",
+      "currentStock": 30,
+      "minThreshold": 20,
+      "unit": "pkt",
+      "unitCost": 20,
+      "supplier": "PartyWorld Wholesale",
+      "image": ""
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "Classic Fudgy Dark Chocolate Brownie",
+      "category": "Brownies",
+      "price": 550,
+      "costPrice": 215,
+      "unit": "box",
+      "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&auto=format&fit=crop&q=80",
+      "description": "Loaded with Morde 55% dark compound, Amul butter, rich cocoa and crackly crust.",
+      "allergens": [
+        "Dairy",
+        "Eggs",
+        "Gluten"
+      ],
+      "inStock": true,
+      "variants": [
+        {
+          "id": "v1",
+          "name": "8\" Box (6-8 slices)",
+          "price": 550,
+          "costPrice": 215
+        },
+        {
+          "id": "v2",
+          "name": "10\" Box (12-16 slices)",
+          "price": 950,
+          "costPrice": 380
+        },
+        {
+          "id": "v3",
+          "name": "Single Serve (PVC Box)",
+          "price": 85,
+          "costPrice": 32
+        }
+      ],
+      "customizationOptions": {
+        "allowCakeMessage": true,
+        "messagePrompt": "Custom gold ribbon message"
+      }
+    },
+    {
+      "id": "prod-2",
+      "name": "Signature 10\" Walnut Brownie Celebration Slab",
+      "category": "Brownies",
+      "price": 950,
+      "costPrice": 380,
+      "unit": "box",
+      "image": "https://images.unsplash.com/photo-1515037893149-de7f840978e2?w=500&auto=format&fit=crop&q=80",
+      "description": "Extra-large 10-inch fudgy brownie slab topped with toasted Kashmiri walnuts.",
+      "allergens": [
+        "Dairy",
+        "Eggs",
+        "Gluten",
+        "Tree Nuts"
+      ],
+      "inStock": true,
+      "variants": [
+        {
+          "id": "v1",
+          "name": "10\" Slab (Full)",
+          "price": 950,
+          "costPrice": 380
+        },
+        {
+          "id": "v2",
+          "name": "10\" Slab with Extra Nuts",
+          "price": 1050,
+          "costPrice": 420
+        }
+      ],
+      "customizationOptions": {
+        "allowCakeMessage": true,
+        "messagePrompt": "Custom tag on box"
+      }
+    },
+    {
+      "id": "prod-3",
+      "name": "Rosemilk Tres Leches Celebration Cake",
+      "category": "Cakes",
+      "price": 850,
+      "costPrice": 310,
+      "unit": "cake",
+      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop&q=80",
+      "description": "Soft sponge soaked in cardamom rosemilk, whipped cream frosting, dried rose petals and pista.",
+      "allergens": [
+        "Dairy",
+        "Gluten",
+        "Tree Nuts"
+      ],
+      "inStock": true,
+      "variants": [
+        {
+          "id": "v1",
+          "name": "500g Bento Cake",
+          "price": 480,
+          "costPrice": 175
+        },
+        {
+          "id": "v2",
+          "name": "1 kg Box (8\")",
+          "price": 850,
+          "costPrice": 310
+        },
+        {
+          "id": "v3",
+          "name": "1.5 kg Celebration Cake",
+          "price": 1250,
+          "costPrice": 460
+        }
+      ],
+      "customizationOptions": {
+        "allowCakeMessage": true,
+        "messagePrompt": "Piped cake message (e.g. Happy Birthday)"
+      }
+    },
+    {
+      "id": "prod-4",
+      "name": "Blackcurrant Dream Whipped Cake",
+      "category": "Cakes",
+      "price": 780,
+      "costPrice": 280,
+      "unit": "cake",
+      "image": "https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=500&auto=format&fit=crop&q=80",
+      "description": "Airy vanilla sponge layered with rich blackcurrant compote, whipped cream and dark compound drip.",
+      "allergens": [
+        "Dairy",
+        "Gluten"
+      ],
+      "inStock": true,
+      "variants": [
+        {
+          "id": "v1",
+          "name": "500g Bento",
+          "price": 440,
+          "costPrice": 160
+        },
+        {
+          "id": "v2",
+          "name": "1 kg Box (8\")",
+          "price": 780,
+          "costPrice": 280
+        }
+      ],
+      "customizationOptions": {
+        "allowCakeMessage": true,
+        "messagePrompt": "Cake topper or piped text"
+      }
+    },
+    {
+      "id": "prod-5",
+      "name": "Red Velvet Cream Cheese Cupcakes",
+      "category": "Cupcakes",
+      "price": 450,
+      "costPrice": 160,
+      "unit": "pack",
+      "image": "https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=500&auto=format&fit=crop&q=80",
+      "description": "Velvety cocoa sponge topped with smooth cream cheese frosting swirl and red velvet crumb.",
+      "allergens": [
+        "Dairy",
+        "Gluten",
+        "Eggs"
+      ],
+      "inStock": true,
+      "variants": [
+        {
+          "id": "v1",
+          "name": "Box of 6 pieces",
+          "price": 450,
+          "costPrice": 160
+        },
+        {
+          "id": "v2",
+          "name": "Box of 12 pieces",
+          "price": 850,
+          "costPrice": 300
+        },
+        {
+          "id": "v3",
+          "name": "Box of 4 pieces",
+          "price": 320,
+          "costPrice": 110
+        }
+      ],
+      "customizationOptions": {
+        "allowCakeMessage": true,
+        "messagePrompt": "Greeting card message"
+      }
+    },
+    {
+      "id": "prod-6",
+      "name": "Artisan Chocolate Celebration Cake",
+      "category": "Cakes",
+      "price": 800,
+      "costPrice": 290,
+      "unit": "cake",
+      "image": "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=500&auto=format&fit=crop&q=80",
+      "description": "Rich dark chocolate sponge layered with Belgian dark chocolate ganache and chocolate curls.",
+      "allergens": [
+        "Dairy",
+        "Gluten",
+        "Eggs"
+      ],
+      "inStock": true,
+      "variants": [
+        {
+          "id": "v1",
+          "name": "500g Cake",
+          "price": 480,
+          "costPrice": 180
+        },
+        {
+          "id": "v2",
+          "name": "1 kg Cake",
+          "price": 800,
+          "costPrice": 290
+        },
+        {
+          "id": "v3",
+          "name": "2 kg Tiered Cake",
+          "price": 1550,
+          "costPrice": 560
+        }
+      ],
+      "customizationOptions": {
+        "allowCakeMessage": true,
+        "messagePrompt": "Custom cake message (max 30 chars)"
+      }
+    },
+    {
+      "id": "prod-7",
+      "name": "Cafe Grilled Cheese Mayo Sandwich (Pack of 2)",
+      "category": "Savouries",
+      "price": 180,
+      "costPrice": 58,
+      "unit": "pack",
+      "image": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500&auto=format&fit=crop&q=80",
+      "description": "Toasted bakery bread packed with creamy mayo, herbs, tomato sauce and butter in sandwich box.",
+      "allergens": [
+        "Dairy",
+        "Gluten"
+      ],
+      "inStock": true,
+      "variants": [
+        {
+          "id": "v1",
+          "name": "Pack of 2 Sandwiches",
+          "price": 180,
+          "costPrice": 58
+        },
+        {
+          "id": "v2",
+          "name": "Pack of 4 Party Sandwiches",
+          "price": 340,
+          "costPrice": 110
+        }
+      ],
+      "customizationOptions": {
+        "allowCakeMessage": false
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "id": "rec-1",
+      "name": "Classic Fudgy Brownie (8-inch Box)",
+      "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&auto=format&fit=crop&q=80",
+      "yieldCount": 1,
+      "yieldUnit": "8\" Box (6-8 Slices)",
+      "prepTimeMinutes": 20,
+      "bakeTimeMinutes": 30,
+      "ovenTemp": "175°C / 350°F",
+      "laborMinutes": 30,
+      "hourlyLaborRate": 150,
+      "overheadPercent": 12,
+      "items": [
+        {
+          "ingredientId": "ing-1",
+          "name": "Dark compound",
+          "qty": 0.22,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-4",
+          "name": "Butter (Pasteurized)",
+          "qty": 0.12,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-8",
+          "name": "Sugar",
+          "qty": 0.15,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-6",
+          "name": "Egg",
+          "qty": 3,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-7",
+          "name": "Maida",
+          "qty": 0.065,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-10",
+          "name": "Cocoa powder",
+          "qty": 0.025,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-14",
+          "name": "Vanilla essence",
+          "qty": 5,
+          "unit": "ml"
+        },
+        {
+          "ingredientId": "ing-24",
+          "name": "Brownie Packing box (8 inch)",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-28",
+          "name": "10Inch Packing cover",
+          "qty": 1,
+          "unit": "pcs"
+        }
+      ],
+      "notes": "Melt dark compound and butter over low heat. Whisk eggs and sugar until pale ribbon stage."
+    },
+    {
+      "id": "rec-2",
+      "name": "Rosemilk Tres Leches Cake (8-inch 1kg)",
+      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop&q=80",
+      "yieldCount": 1,
+      "yieldUnit": "8\" Cake (1kg)",
+      "prepTimeMinutes": 45,
+      "bakeTimeMinutes": 35,
+      "ovenTemp": "165°C / 330°F",
+      "laborMinutes": 45,
+      "hourlyLaborRate": 150,
+      "overheadPercent": 15,
+      "items": [
+        {
+          "ingredientId": "ing-7",
+          "name": "Maida",
+          "qty": 0.16,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-8",
+          "name": "Sugar",
+          "qty": 0.12,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-6",
+          "name": "Egg",
+          "qty": 3,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-11",
+          "name": "Baking powder",
+          "qty": 0.005,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-5",
+          "name": "Whipping cream",
+          "qty": 0.28,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-15",
+          "name": "Rosemilk essence",
+          "qty": 8,
+          "unit": "ml"
+        },
+        {
+          "ingredientId": "ing-13",
+          "name": "Nuts (Almonds, Cashews, Walnuts)",
+          "qty": 0.03,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-26",
+          "name": "Cake Packing box (8 inch)",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-31",
+          "name": "Cake birthday toppers",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-32",
+          "name": "Birthday candles",
+          "qty": 1,
+          "unit": "pkt"
+        }
+      ],
+      "notes": "Poke cooled sponge thoroughly before pouring rosemilk soak."
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-2101",
+      "customerName": "Pooja Sundaram",
+      "customerPhone": "+91 98401 22910",
+      "customerWhatsapp": "+91 98401 22910",
+      "date": "2026-10-23",
+      "deliverySlot": "11:30 AM",
+      "fulfilmentMethod": "self_pickup",
+      "deliveryType": "Self Pickup",
+      "deliveryAddress": "",
+      "deliveryInstructions": "Customer will collect from kitchen gate",
+      "status": "ready",
+      "paymentStatus": "paid",
+      "paymentMethod": "UPI / GPay",
+      "items": [
+        {
+          "productId": "prod-1",
+          "name": "Classic Fudgy Dark Chocolate Brownie (8\" Box)",
+          "variant": "8\" Box (6-8 slices)",
+          "qty": 2,
+          "price": 550
+        }
+      ],
+      "subtotal": 1100,
+      "discount": 0,
+      "deliveryCharge": 0,
+      "total": 1100,
+      "advancePaid": 1100,
+      "balanceDue": 0,
+      "cakeMessage": "Happy Anniversary Karthik & Pooja",
+      "notes": "Attach gold ribbon on both boxes."
+    },
+    {
+      "id": "ORD-2102",
+      "customerName": "Rohan Mehra",
+      "customerPhone": "+91 99620 44812",
+      "customerWhatsapp": "+91 99620 44812",
+      "date": "2026-10-23",
+      "deliverySlot": "03:00 PM - 04:00 PM",
+      "fulfilmentMethod": "porter_delivery",
+      "deliveryType": "Porter / Third-Party Delivery",
+      "deliveryAddress": "Flat 4B, Emerald Heights, T. Nagar, Chennai",
+      "deliveryInstructions": "Call recipient upon arrival at tower gate",
+      "recipientContact": "Rohan Mehra (+91 99620 44812)",
+      "externalReference": "POR-88219-CHN",
+      "status": "in-oven",
+      "paymentStatus": "partially-paid",
+      "paymentMethod": "UPI / PhonePe",
+      "items": [
+        {
+          "productId": "prod-3",
+          "name": "Rosemilk Tres Leches Celebration Cake (8\" 1kg)",
+          "variant": "1 kg Box (8\")",
+          "qty": 1,
+          "price": 850
+        }
+      ],
+      "subtotal": 850,
+      "discount": 50,
+      "deliveryCharge": 60,
+      "total": 860,
+      "advancePaid": 500,
+      "balanceDue": 360,
+      "cakeMessage": "Happy Birthday Aanya!",
+      "notes": "Add Cake Birthday Topper & candles inside bag."
+    },
+    {
+      "id": "ORD-2103",
+      "customerName": "Kavitha Sridhar",
+      "customerPhone": "+91 94440 88123",
+      "customerWhatsapp": "+91 94440 88123",
+      "date": "2026-10-23",
+      "deliverySlot": "05:30 PM - 06:30 PM",
+      "fulfilmentMethod": "own_delivery",
+      "deliveryType": "Own Bakery Delivery",
+      "deliveryAddress": "18, 4th Main Road, Besant Nagar, Chennai",
+      "deliveryInstructions": "Leave with security if not reachable",
+      "recipientContact": "Kavitha (+91 94440 88123)",
+      "status": "pending",
+      "paymentStatus": "unpaid",
+      "paymentMethod": "Cash on Delivery",
+      "items": [
+        {
+          "productId": "prod-2",
+          "name": "Signature 10\" Walnut Brownie Celebration Slab",
+          "variant": "10\" Slab (Full)",
+          "qty": 1,
+          "price": 950
+        },
+        {
+          "productId": "prod-7",
+          "name": "Cafe Grilled Cheese Mayo Sandwich (Pack of 2)",
+          "variant": "Pack of 2 Sandwiches",
+          "qty": 2,
+          "price": 180
+        }
+      ],
+      "subtotal": 1310,
+      "discount": 0,
+      "deliveryCharge": 80,
+      "total": 1390,
+      "advancePaid": 0,
+      "balanceDue": 1390,
+      "cakeMessage": "",
+      "notes": "Cut 10\" brownie slab into 16 clean squares."
+    }
+  ],
+  "expenses": [
+    {
+      "id": "exp-101",
+      "date": "2026-10-23",
+      "category": "Ingredients",
+      "vendor": "BakePro Supplies",
+      "amount": 2450,
+      "paymentMethod": "UPI / GPay",
+      "receiptImage": "",
+      "notes": "10kg Dark compound and 2kg White compound restock"
+    },
+    {
+      "id": "exp-102",
+      "date": "2026-10-23",
+      "category": "Packaging",
+      "vendor": "PackPrint Corrugators",
+      "amount": 1120,
+      "paymentMethod": "Cash",
+      "receiptImage": "",
+      "notes": "50pcs 8-inch Brownie boxes and 30pcs Cake boxes"
+    }
+  ],
+  "production": [
+    {
+      "id": "plan-1",
+      "date": "2026-10-23",
+      "product": "Classic Fudgy Brownie (8\" Box)",
+      "batchQty": 4,
+      "stage": "Baking",
+      "targetTime": "11:00 AM",
+      "completed": false,
+      "assignedBaker": "Ananya",
+      "notes": "2 for ORD-2101, 2 for counter display"
+    },
+    {
+      "id": "plan-2",
+      "date": "2026-10-23",
+      "product": "Rosemilk Tres Leches (8\" 1kg)",
+      "batchQty": 1,
+      "stage": "Cooling",
+      "targetTime": "1:30 PM",
+      "completed": false,
+      "assignedBaker": "Ananya",
+      "notes": "ORD-2102 birthday order"
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "sup-1",
+      "name": "BakePro Supplies",
+      "contact": "Venkatesh",
+      "phone": "+91 98840 11920",
+      "email": "orders@bakepro.in",
+      "category": "Compounds, Cocoa & Essences",
+      "leadDays": 1,
+      "minOrder": "₹1,000"
+    },
+    {
+      "id": "sup-2",
+      "name": "Amul Dairy Distributor",
+      "contact": "Suresh Babu",
+      "phone": "+91 94441 55021",
+      "email": "suresh.amul@gmail.com",
+      "category": "Butter, Cheese & Cream",
+      "leadDays": 1,
+      "minOrder": "₹1,500"
+    },
+    {
+      "id": "sup-3",
+      "name": "PackPrint Corrugators",
+      "contact": "Kailash",
+      "phone": "+91 98410 77300",
+      "email": "packprint.sales@gmail.com",
+      "category": "8\" & 10\" Boxes & Bags",
+      "leadDays": 2,
+      "minOrder": "₹2,000"
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust-1",
+      "name": "Pooja Sundaram",
+      "phone": "+91 98401 22910",
+      "whatsapp": "+91 98401 22910",
+      "address": "12/4 Harrington Road, Chetpet, Chennai",
+      "totalOrders": 7,
+      "totalSpend": 5420,
+      "tier": "VIP Baker Club",
+      "notes": "Loves extra dark chocolate"
+    },
+    {
+      "id": "cust-2",
+      "name": "Rohan Mehra",
+      "phone": "+91 99620 44812",
+      "whatsapp": "+91 99620 44812",
+      "address": "Flat 4B, Emerald Heights, T. Nagar, Chennai",
+      "totalOrders": 4,
+      "totalSpend": 3100,
+      "tier": "Regular",
+      "notes": "Corporate Dunzo orders"
+    },
+    {
+      "id": "cust-3",
+      "name": "Kavitha Sridhar",
+      "phone": "+91 94440 88123",
+      "whatsapp": "+91 94440 88123",
+      "address": "18, 4th Main Road, Besant Nagar, Chennai",
+      "totalOrders": 5,
+      "totalSpend": 4680,
+      "tier": "VIP Baker Club",
+      "notes": "Prefers eggless options"
+    }
+  ],
+  "cashbook": {
+    "openingBalance": 3000,
+    "records": [
+      {
+        "id": "cb-1",
+        "time": "09:30 AM",
+        "description": "Opening Cash Register Float",
+        "type": "in",
+        "amount": 3000,
+        "category": "Float"
+      },
+      {
+        "id": "cb-2",
+        "time": "11:15 AM",
+        "description": "Counter POS sale: 2 Brownie Cubes",
+        "type": "in",
+        "amount": 170,
+        "category": "Sales"
+      },
+      {
+        "id": "cb-3",
+        "time": "01:00 PM",
+        "description": "Paid packing box delivery auto fare",
+        "type": "out",
+        "amount": 150,
+        "category": "Expense"
+      }
+    ]
+  }
+}

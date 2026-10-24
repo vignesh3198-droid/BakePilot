@@ -1,0 +1,905 @@
+{
+  "profile": {
+    "name": "The Crust & Crumb Patisserie",
+    "tagline": "Artisan Custom Cakes, Fudgy Brownies & Cloud Kitchen",
+    "baker": "Ananya Sharma",
+    "email": "hello@crustandcrumb.in",
+    "phone": "+91 98401 55230",
+    "address": "14, Greenways Road, R.A. Puram, Chennai, TN",
+    "currency": "�,�",
+    "currencySymbol": "�,�",
+    "defaultDeliveryCharge": 60,
+    "fssaiOrLicense": "FSSAI: 22424001000842",
+    "invoiceNotes": "Baked fresh with pure butter and premium chocolate. Please refrigerate cream items immediately.",
+    "instagram": "@crustandcrumb.india",
+    "activeBusiness": "The Crust & Crumb (Main Kitchen)",
+    "businesses": [
+      "The Crust & Crumb (Main Kitchen)",
+      "Crust & Crumb Express (Kiosk)"
+    ],
+    "cloudSyncUrl": "/api/sync",
+    "logo": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAGQAZADASIAAhEBAxEB/8QAHQABAAIDAQEBAQAAAAAAAAAAAAYHBQgJBAMCAf/EAFQQAAIBAwIDBQQGBAoGBA8AAAABAgMEBQYRBxIhCBMxQVFhcYGRFCIyobHBFRZSkiNCVGJygqKywtFTk6PD0uEXJDM1GCY0NjdDREZjdKSztNPi/8QAHAEBAAIDAQEBAAAAAAAAAAAAAAQFAQIDBgcI/8QAOhEBAAEEAAQDBQYDBwUAAAAAAAECAwQRBRIhMRNBUQYUYXGRIjKBocHRB1KxFSNCguHw8SQzU3Li/9oADAMBAAIRAxEAPwDcsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIje8TuH9jmrnDXur8TbX1rN069KtcKHJJeMW303Xmt+ga1V00950lwIhccT+HNCnz1Ncaea/mZCnN/JNs+2k+ImitV5OpjdO6jssjeU6bqypUm+bkTSb6pbrdrw9Qx4tEzrcJSAYDWOs9L6PpW1TU2btMZG6lKNDvpPeo47c2yW76brd+1eobVVRTG5Z8ENteKnDe5gp0tcYBJ/6S9hB/KTR8rvi3wztasKVXW+FcpvZd3cqovi47pfENPGt/zR9U3APFm8visHj55DM5G0x9pBpSrXNWNOCb8Fu34v0DeZ11l7QVtX47cKKNZUpavtZN+cKNWUfmo7Eo0jrfSWre8WnNQWGSnTW86dKqu8ivVwf1kuvjtsGlN63VOoqifxSEAB0AefJ39ljLCtf5G7oWdpRjzVa1eooQgvVt9EVfk+0RwosasqS1DVupRfX6PZ1Zp+6XKk/mHOu7Rb+9MQtgFcaa448L8/dwtLPVNvQrzaUY3lOdum35c00o/eWOGaLlNcbpnYCP6m1tpHTOQt7DUGocfjLm5g50qdxWUHKO+3N18Fvut36P0PLLiTw8jFyeudN7L0ydFv8AvAm5RE6mUqBHtJ630lqy4urfTmessnVtUnWhQnu4p7pP2rp4okIbU1RVG4kB+K1WlQozrVqkKdKnFynOckoxS6ttvwRQ/EvtN6U0/cTsNMWstRXcN1OtGfd20H6Kezc/6q26+Ic7t6i1G650vsGjee7TXFDI1U7G6xmHgm9o2tnGe69rq8/3bGJfaE4uv/3s/wDoLb/9ZjaFPFbMeU/7/Fv0DSvhDxl4l57inp3F5TU9W4s7q9hSrUXb0oxnF+KfLFG593cULS1rXd1Wp0LejCVSrVqSUYwilu5Nvokkt9zKVj5NN+maqfJ9QQCHGjhbNNrWuL6espL8UfGrxw4VU47vWdjL+jCo/wAIhv49r+aPqsUEAx/GjhdfVoUqOtMZGU3su+lKkvi5JJfEnVpc295a0rq0r0ri3qxU6dWlNShOL8GmujXtDam5TX92dvqAA3AAAAAAAAAAAAAAAAAAAAAA5/8AahxUcRxy1HSpw5adzVp3cPb3lOMpP95yOgBpX237NUOLFndpbfScXTb98ZzRiVbxSndnfpKhizuy1kv0Zx007NvaFxUq20/bz0pxX9rlKxMrpHLzwGqsVm6ceaVheUrnl/a5JqW3x22CitV8ldNXpLpwaeduvJu413g8SpJxs8fKq15qVSb3+6nE3At61K4t6dxQmqlKrBThJeEotbpo5/dpjPLUHGvUNxTk3RtaysqW68FRShL4Oam/iJXvFK9Wdesq2M1oXFRzutcJhqm6p3t/QoTaW7UZTSk/k2YUsXs12rvOOOl6Sipct1Kq0/5lOUvyChtU81dNPrLd7irrXH8P9E3uo7+HeuiuS2t1Lldes/sQT8l6vrsk3s9jQDiDrfUeus5Uy2ochUuJuTdKintSoRfhGEfBLbbr4vbdtvqXX26dQVbnV+F01CrPuLK0d1Ugn9V1Kkmk2vNqMPhzP1NdrK3qXd5RtaK3qVqkacF7W9l+IlP4jkVV3PDjtD1WGEzWQsLm/sMRkLuztVvcV6NtOdOivWckto/E8+OvbzG31G+x91WtbqjJTpVqM3GcH6prqjpPoTS+N0lo7H6cx9CMbe1oKE90t6s9vrzl6uT3b/yNF+0jpShpDi7l8fZ28bexuXG8tYRioxjCot2opeEVJTil7A0ycGceiK9tmOy5xeq69xdXAagq0/1gsKamqiW30uitl3m3hzJtJ7eO6fqXHmcjZ4jE3eVyFaNC0tKMq1apJ9Iwit2/kjnbwY1LU0lxPwObVSUKNO7hTudt+tGb5anTz+q217UjZrtwaonjNB47TVCo41MxcudZLzo0eVtP3zlD5MJ+Nmz7vVVV3p/3DXjjbxSzXEjUVWtWrVbfC0aj+g2HNtGEVulOSXjNrxflvsuhXgNrOypwY0/ktJQ1lq7GUMlUvpSVja14t06dJNxc5R8JSk09t00kk11fQqrdu5l3e/VqmbF9lXjNeYjMWmh9T3kq2JupqlYXFVtytare0YN/6Nvp/NbXlvtFe1Nw0x/D3WFnVwdKdHDZWlKpQpSm5d1Ug0pwTfXb60Gt9/tewqCnOdOpGpTlKE4tOMk9mmvNApquYl34w2y7d+AhUwmn9UQppVKFxOxqzSW7jOLnBPzezhLb05n6mpZvBnb3/pQ7JdzkK6VS9niu+quOy/6xbtSk/Dpu6be3pLY0fEu3EaY8SK47VRtsR2Ekv+kTOy81idv9tTNxTTTsKzkuKGYp/wAWWFm371Xo/wCZsjx71b+pfCrM5mlNxu5Uvo1ntLZ99U+rFr+im5e6LMrLArijG5p8ttb+1bxgvM/nLvRGAunSwtlVdK8q0pve8qx6Si3+xF7rbwbW/ptr4f19XuyccGeG+W4laqjirFyt7KilUvr1w3jQp77fGb8o+fV+CbWFLXXcybm+8yhVCjWr1FToUp1ZvwjCLb+SMrDSmqJ2/wBIhpvMyo7b94rGo4/Pl2NsNGcS+A3DiVxp3ERubSrZ1ZUq95OwnUqV6kfqyk5pOT6p9NkvRJEs/wDCK4Rcu/6zVd/T9HXG/wDcCXRhWdfauxtqVwJtrq040aT+k21ejvkaeynTa3+Z0FydnQyGNurC6pKrb3NGdGrTfhKMotNfFMqrG8feFea1JjsXbXdzXurmvGjb1qlhJRhOT2it5LdbtpbpeZbplZ4Nqi3TNNNXM5c39tUs76vZ1ltUoVZU5r0cXs/wPgSbitZRx3E3U9jB7xoZW5hF+xVJbH34Paapaw4m4HTtwt7e7ul36UuVulBOc0mvB8sZGHneSZr5I770iRNOFvEvVHDzLQusLeznZuW9xYVZN0Ky894+Uv5y6/gby624aaT1Hom601HB4y0g6DhZ1KVrCLtaiX1JxaW62e3h4rdeZzonFwnKEls4vZhKyMevEqiYl0w0LqfGax0pYajxNTntbynzJPxhJPaUH7VJNfAzZrb2EM1UudL6iwNSUnGxuqVxT3fRKrGSaXxpb/E2SMr/ABrvi2qa/UAAdwAAAAAAAAAAAAAAAAAADUbt526jqnTN3t1qWVan+7NP/GbcmqPb4S/SGkH591d/jREoPEY/6er8P6tYoRc5qEVu5PZHu1HibzA5+/wmQgo3VjcTt6yXhzQk02vZ06HwxaTydqn4OtDf95Ft9sPAvDcZrq8jDajlraleQaXTm2cJL37w3+KMPP02925r9Jj9W0vB/U9vX4B4XUl1W2pWeJk7icn4fR1KE2/9WzQDKXdXI5S6v6u7q3VedWXn9aUm3+Jd/D7WE7Dsm60xLrNVY30bekt+qhcKKkvd9Wp82VbwowVTUvErT2Epwc1c39JVUlvtSjLmqP4QjJ/AJmVdm9FumPT/AE/RhM3jbrD5e7xd9DkubWrKlVjv4ST2ZaXY/oOrx2xNTbfube5m/Z/Ayj/iI92hqcKXGvVUIRUY/T5NJe1Jkw7FiT40x3Xhja+39kOFijlyYp9J/Vh+1nWqVePmoo1JNqkraEE/JfRqT2+bb+JDOGVGnccSdMW9VJ06uYtIT39HWgmWX20MQ7DjNUyChJQydjRr83k5RXdNfKEfmVHpq+/Rmo8ZknJx+iXlKvuvLkmpfkGL/wBnIq36/q6eGmvbroxjxNw1dfaqYaMX/VrVf+I3Ht6sK9CnXpSUqdSKnFrzTW6NIe2fmaOU4yytKEm1jMfRtJ9enO3Ko9v9Yl70Zlc8TmPA/FS1CThWhOPjGSa+ZdfbFytTI6/w1Go5b2+Dt3Ld9OablNv718ioNO2FfK6gx2LtqbqV7y6pUKcF4ylOail82Wt2xaUaHGarQgtoU8dbRivYotGFNRuLFfzj9VNHS3htiv0Jw+0/iXSVKdrjqFOpFeU1Bc39rc5px+0t/U6mCE/hEda5+Si+23jqd3wgoXrUVUscpRqRlt12lGcHHf0+sn/VRpMb19sSMZcDshzPwu7dr386NFBLhxSNX/wbodim4hlODeSxV44V6VDKVqHcyW67qdKnLZ+xuU/vNQNTYupg9R5PC1qiqVLC7q20ppbKThNx3Xse25tF2CZ1Hg9Vwe/dq5tnH3uM9/wRSXaWx7xvHHVFvvF89zGuuVbf9pTjU/xBnJjmxbdfp0/39Ey7D91Tt+Lt5Qm/rXOIrU4e9VKU/wAIsn3bxzEqOA01gYS/8qua11USn4KnGMY7r2uo/wB0qTsjXitOOuGpuPN9JpXFFez+ClLf+yZ3tvX6uuLVpaJSX0PFUoPd9G5TnPf5SXyDNFzWDMfHShzf7sz6Nt9G8J8a3R5chk6av72bX1m5reEfYow5Vt67vzZo9w9w0dQ66weDqQc6d7f0aNVKWzcHNc2z8vq7nR/UuRoYXTWTy9eL7iws6tzNL9mEHJ/chDpwq3G6rk+Tmpqi4healyl3T+xXvK1SPulNtfieLuavcKv3cu6cuRT26c22+2/rs0fh9XuWvc4FQ7Klpmk4uUtUzm949VF0e7239N4b/EKyiibm59OqCcPKkaOv9O1pyUYQyttKTfklVizpgctaVSdKrCrTk4zhJSjJeKa8GdQ8fdUr2wt723mp0bilGrTkvCUZJNP5MQtuET0qj5Of/aYsY4/jpqmhFbKdzCv8alKFR/fMyfZGpxqce8FKXjTp3Ul7/o9RfmfPtZ/+n/Unutf/AMWkeTsy5jG4HjVg8ll7+3sLGnG5jVuK9RQhDe3qJbt9FvLZe9hB6U5f+b9XQGtUp0aU61WcYU4Rcpyk9lFLq22cubyoq13WqpbKdSUl8XubhdobjtpWjom/09pLKUcvk8lSlbTq27bpW9OSanLm8JNrokvXffps9P7C0ur++oWNjb1bm6uKkadGjSi5TqTb2UUl1bbEpPE71Nyqmmmd6bQ9ge1rKGr71waoydpSjLylJd62vgnH5m0pXfZ60DPh7w5tsVduMslczd1fOK6RqSS+ovXlSS382myxDK1w7c27NNM9wABJAAAAAAAAAAAAAAAAAAANSe3pcKWo9L2u/WnZ16j/AK04r/AbbGl3bhvI1uKlhap7u2xcN/605sSgcSnWPP4KHtp91cU6v7E1L5M2t7eOKVXC6Zz8IpqnXq2kpp+PPFTj/ckanG7XGK3hqzslUMnNKpXp4qxyMJNb8s0oc79/LKa+JhVYlPPZu0/CJ+jTClkLulibjFQqtWlxXp16sP2p04zjF/BVJ/MujsUYj6fxdqZCUE4Y3H1aqk/KU2qa+O0pfeUYbe9hHDxt9I6gzso/XvL2nbxbX8WlBvo/fUfyQaYNHPfpj0UJ2j4uHHDVSf8ALd/nCLJL2NbmnQ432lKb+tc2NxSh71Hn/CDPL2u8XLHccMpVcWo31GjdRb804KDa+MGV7oTUd3pHWGM1JYwU69hXVVQb2U4+Eot+W6bXxDFVXhZU1T5T+rb7thcPq+qtF0dRYujOrksGpznThHd1beWzn7d47KS9nMaTHSLh9xC0prnEUL7B5W3qVKsfr2k5qNelLzjKHj09fB+K3RWvFTs16X1TeV8rp67ensjWk51KcKXeW1ST/mbpwbfnF7eP1WFjmYfjz4trrtT3DztK6g0poelpu4wlvlatpR7mxu6ty4OlBLaKnHlfOo9EtnHotilc5lL7N5i7y+TuJXF7eVpVq9VpLmnJ7t7LovcvAvK57KmvKddQo5bBVqfnPvakdvg4ki0t2YsTi72FfiBrKyjRT+raWs1S7zw8ak2ml49FH4oIdVjLuxFNcdI9UZ7HHD+6zuuI6wvKG2KwzbpTkt+9uWvqpf0U3Jvyaj69Pj22rKVvxfoXTfS6xlGa9nLKcfyNqdJ6h4dWErPSGmc5gITpJ0rfH2l3TlP6q3a5U229t22+r6spjt16blc4DBaqoU1vZVp2lw0urhU2lBt+ilGS/rhLvY1NvEmmmdzHWWpB0y0BlXnNDYLMSqRqTvMfQrTlF9OeUE5ffuczTcbsicT8RdaGp6QzeRtbLIYpyjbOvVUFXoNuS2bezcW2ml5cvtEI/C7sUXJpnzZftr3tO14NRt57ud5k6FKG3qlObfyh95pEXh2veIeO1lrGzxODu1dY3DQnB1oP6lWvNrncX5pKMUn79unV0eJcc+7Fy/Mx2jo3M7C9lGjwwy184SjUuMvOHM19qEKVPbb4ykVZ24MdC14tWV7SoKCvcTSnUmv49SNSpB/FRUF8jZLs6aeraZ4OafsLmnKnc1aH0qtCXjGVVuezXk0mk15PcpHt6201ltK3e38HKhcU9/apQf5hYZFvlwoifLSiuE2Y/QHE3TWXdaVGlb5Og604rdqk5pVF8YOS+JMe1veTuuPGcpy25banb0Ybencwl+MmVTRqTpVYVab2nCSlF+jRktYZipqDVeWzlVzcr+8q3H15btKUm0vgml8AqIuf3U0fHacdluxhf8d9NUqsJTp0qlau9vJwo1JRb/rKJt92j8n+iuCWqK6qqnKtZu2i35961Br4qTRrd2HKNOpxev5zgpSpYStODf8AFffUY7/JtfEtXtw5z6Dwyx+Fp1HGrlMhFyjy7qVKlFyl18vrul94WmJPh4ddXz/ZpgbeX+l6q7DlOzdGnO5jYU8pFryi66rc3v7ptGoZY8+NWvp6JWjpZC1/RCsFj+7+iw5u5UORLm2335V4hX412i3zc3nGlcHRngZkv0vwg0tfc0W3jqdN8r6JwXI184nOY3X7EuclkeE9fEVZxc8Tf1KdOKW21KptUW/r9eVT7hCTwqvV2afWGuXagvIX3HjVFam04xr0qPxp0acH98WRLQWl8hrPVtlprF1beleXvOqUriTjDeMJTabSb6qLS6eOx7OLl5DIcUtU3tJ7062WuZR93eS2PdwGvJ2HGXSdxTezeTpUm/5s3yS+6TCHVqu/O+0z+rz8ROG2sdA1aS1LiJ29Gs9qVzTkqlGb9OaPRP2PZnh4e6uy2h9VWuosLKl9JobpwqQUoVIP7UX7H6rqjovq3AYzVGnL7A5egq1neUnTmvOO/hKL8pJ9U/VHM/JWtSwyNzY1WnUt606UmvDeLaf4BIzMb3WuKqJ6Oj3C/WuL19o601Fi24Rqrkr0Zfao1V9qD/J+aaZJzT/sL6ir22scxpmdb/qt9afSadNt9KtNpbr03jJ7+vKvQ2+q1IUqUqlSSjCCbk/RITMRG5XeJem/airzfoERnreiq7jDHzlS36TdXZteu235knsLuhe2kLm3nzU5rdez2P2lTw7j3D+JV1W8W7FU0946x/WI3HxhZX8O/YiKrlOol9wUdxX7R+n9F6nngMdiZ5+4t5KN7UpXSpU6MvOKfLLnkvNdEn033T2tbQuqMTrLS1nqLC1ZVLS6julJbSpyXSUJLyafT/kW6DRft11TRTPWGbBHs1qq0x9xK2pUZXNWD2ntLlin6b7M9enc7QzEJqNN0a1PrKm5b9PVPzKe17QcNvZfudF2JuenXy7xvWt/De0+rCv02vFmn7LLAAuEUAAAAAAAAAAA0D7VOVjleOeoJU5qVO1lStYbeThTipL9/mN/CvMvwT4YZbPXecyOlaVxf3dWVavUd1XUZzk93LkU+Xq+vgEPNx679EU0z5uepvVwbofrd2WbTEprnuMVc2EW+u0k5wi/g9jNXXAjhNc0+Spo21ivWncVqb+cZpkx0dpjB6QwVLB6dsVZY+lKUoUu8lPZye7fNJtvr6swj4eDXZrmapjUxpzLaaezWzR0A7L+DlguCOn6VSHLWvKcr2p7e9k5Qf7nIYfLdmzhnkc3Xyk6OVod/WdWdvRu1Glu3u0k4uSTe/RPpv02Ldxtna47H22PsqMaNrbUo0aNOPhCEUlFfBJAwcKuxXNVaje2Hw6uNU6Tt9T4e1VbJ4aMu+hBfXq2z6yS9eR/W29HLbr0elZ1NKE4vdmzAaou62X0pcU8DkqkW52/JvaVZ9euy602/B8u68+Xffc1z8Gq5V4lvv5w0uTae6bT9hk8dqHUGNhyY7OZOzj+zQu5019zRYOa7PfFXGVZQjp6N/BSaVS0uYTUl6pNppe9JmKq8F+KdKPNLROUa/mxjL8GFR4F6mfuz9EPyGbzOR/7wy9/edd/4e5nP8WeGUpS+1Jv3smdThPxLp/a0Nn3/Rspy/BHnqcM+I1P7Wg9Tv8Ao4utL8IhrNu55xKR9lal3vHXTr3+xKtL/ZTN5Nb6cx2rtKZHTmUpqdrfUXTk9t3CXjGa9sZJNe1GnXZs0TrbE8aMDf5HSOesLSlKr31e5x9WlThF0prrKUUvFpG7lScKdOVSpKMIRW8pSeyS9WNxEblecMo/uZpqjvLm1xJ0TnNBamuMHm7eUXCT7i4UX3dxDfpOD814dPFeDIydKNXYvROrcZ+jtR08TkrbduMa1WO8G/OMk04v2pplMZns08Mbq5qVsbqu/wAfGc3JUfpVGrCC/ZjuubZe2TftInv2L/5afrDhe4LfirduNw0+Lh7NPCe915qihl8lbTp6ax9VTr1Jx6XM4vdUY7+O7+0/JbrxaLx0n2eeEuGvYXmQylfOTgulG8vacaPNumnywUW/Dwcmnv1RcuPutO4yxo2GPr460taMeWlRoShGEF6JLohOfiR3u0/WP3dMbgt6KoquU/gyySSSSSS8EjWHt7p/o7SMtuirXa3+FI2Uo5LHVpqFK/tZzl4RjVi2/huYTX+hdLa8sLay1RjFfUbar3tHatOnKMttn9aDT2a8V4eHojvbvW70bt1RMfCdrDMx667U2+0z6ua4N+o9nrhBF7/qju/bkbp/70/suz3wgk93pBL3ZG6X+9OmlL/ZV71j8/2UZ2EqSfEPO19usMTyfOtTf+E/PbmzlO84g4nBUaymsdYd5WjGW/JUqyb5WvJ8kYP3SRsroDhjorQd/eX2l8TKxrXdONOq5XNSquVPfZc8nt16ni1dwb4b6r1Dc5/P6e+l5G6UO+rfTa9Pm5YqEfqwmktoxS6LyCZ7nc928GJje3PE3sy/CbhxS4Z3WQp6RxkLqGHlWjWUHzKao783j479T1y7PPB+S2WlXF+qyV1+dQsytj7KviZ4qrRUrKdB28qW72dNx5eXfx8OggxMCq1zeJqduXhsR2ItUUMVqXUOFva0aNC6x/02M5z2jGVBvm6e2M2/dBl4Q7PHCCMUnpSU36vI3W/3VDJae4J8MsBf1L3F6ZjSrVLepbzc7yvUTp1IuE47Tm11i2viNOOPw+9auRXuOnz/AGc/sndTvsldXtT7dxWnVl75Nt/iejTF+sVqXGZOTko2l3Srvl8dozTe3yN7LfgBwhoSco6Qpyb/ANJfXE/udQV+z/whry55aRhF/wDw765ivkqmwcv7Lvb3uPz/AGWbUrUqdCVepUjClGLnKbeyUUt29/TY5fZS5le5K6vJfar1p1X75Sb/ADOnd3Y2l1i62MuKMZ2dajKhUpbtJ03HlcenXw6FbU+z5wgh1WkE/wClkLp/7wyn52LcyOXlmOjT3gNqb9UuLOAzFR7W/wBJVvc9dl3VVd3Jv+jzc39U6E5ijO5xN1Ro9Z1KUlH2vYrhdnzhFGrGpHSXLKMlJbZG623Xs7wtGEVCCjFbRS2SOV6zF61Vbq7VRMfV04fZuYv3pjvuFPTjKE3CcXGUXs01s0z1Z3O5LTPCDVecxsJSubW3bt2lvyTaUef+rzKXwLHv8Hir6s61zaRlUfjJScW/fs1uemnZWkLF2Mbak7aUHCVJx3jKL8U0/Hfz3Pnvs77E5HCeJe813Iminetb3O+nWNaj6y9PxDilGVjTapiYqn8vk5e1qlStWnWqzlUqTk5TlJ7uTfVts2o7B2VyM7bU2Fk5zx9GVG5p7/Zp1Zc0ZfvKMf3S37/glwqvbjv6+i7CM99/4KVSlH92EkvuJfpnTuC0zjv0fp/FWmNtXNzdK3pqKlJ9N36vour9D6Np47F4fcs3YrmpWdx3jr1HWTVXmfOn4779SUcOrScr2vevpThDu17W2n9233klvcDiby4lXuLOMqkvtSU5R3+TPfbUKNtRjRt6UadOPhGK2R8z4H7CX8HiUZV+5FVNMzMa3uZ8t9I1695e1y+MUXrHh0UzEz3fQAH01QAAAAAAAAAAAAAAAAAAAAAAAAAAAHiz/wD3Hff/AC8/7rPaefJzq08dc1KKTqRpSlFNbptIjZtMVY1yJ/ln+jpanVyn5wqeNKrJbxpza9kWfSFndz+xa15e6m2ZeOrMvFbRdul7KSM5q3M5TF3FtGjKio1KW8k4b/WT6/DwPguPwjhV3HuZPj18tvl5vsR/i3Ef4/g9jXk5FNdNHJG53rr6fgiKxeTfhjrz/US/yPJOMoTlCcXGUXtKLWzT9Cb6RzmRymTnQuZU3TjSc/qw267pfmRjU1Luc/ew9arn+99b8zlxTg+JZ4fbz8SuqqmqqaftREdo35TLbHyrlV+qzciImI30eOlb3FWnOpSoVZwh9uUYNqPvfkZbTOduMddwp1q0pWkmlOMuvKvVemxMNHUoQ05bbJfXUpS9rbZXmSpwpZG5pU1tCFacYr2JvYmZfDL/ALO2cTiNi79quNzHbyidfGNTqXK3kUZ1dyxXT0hmtb1Lm31BU7u5qxjUhGaUZtJdNvyMTb1MncScbepeVWlu1Bylt8jL6461MdJ+MrWO79T4aVzVHDq6dShOrKqo8vK0ttt/H5mvEabdfHrlq/em3bqmZmes63HN2+fRmxNUYdNVFPNVEa1+OmNrVshSfLWq3UH6TlJfiSriT/2Nj/Sn/hMtgL6OesK1a6tKPdqs4RhJcy2ST67+PiYvW2UuLLIW9KnSt5w7vnXe0lJp7tdN/DwR6SvhVjA4HkXZyJrtXuTU8s7jVU+Uz5/ggRkV3suink1VTvcb+CF03UT+o5b/AM09EamQS2jUul7nIykNVZGHhStN/XutvzP3PV2YTcWreDT2a7v/AJnjLVjhdFO/eq4+Vv8A+1rVXkTP/bj6/wCjDzuL+C3nXuYr2zkj+Rur2T5Y3NxJ+imyUanr1bzR1jd10u9nWTey28pGN0HDn1DCX7FOUvu2/Mk3uFV08Ts4Vu9VNNzkmJ7TEVfDfl83OjJiceq7NEbp30+TD1pXUl/DSrNfz2/zM4o1v1Ip3FCpUg6VzLn5ZNdH0/HY9WQ1ZfUbyvbTs7SSp1JRSkm/B+fUy1lVlmNJXMqlvRpSqRntGnHaO68Ht67lxwrhWHcv5FnHyJrr8OuNTTNMxMTHnufOIRsjJu00UVV0REbjz2gn0y8/lVf/AFjJ5r6pUpYSEqdSUH38VvF7PwZXhPuIUt8DRfrXj/dkcPZu/cnhHEZmqfu0+f8A7Ns+iPebGo85/RC6Nxe1a0KUbqu5Tkor+Efiy1qEO7owp7t8sVHdvdvZFb6Nto3OobdTW8ae9R+9Lp9+xZZ6r+G+PXONeya5meaYiN/CN/r+Sv47XHiU248o39f+AAH0lQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4rw7yhUh+1Fr7j9n8m0oSb8EtzWqImmYlmO6oKUU68YNpJySb+JJNfX9rd3VvStqsKvdRfNKL3W78t/gRrZSq7N7Jy6sy2osNVwtxSaqqrSn1hLbruvJo/OOFdyaeGZVFqjduZo56vONTOunxnz/d7m7TbnItzVP2o3qPX1SHh3ZVaNrcXdWDiqziqe66tLfd+7r9xHdZf+ct574/3ETDSOZWUtJU6qjC4opKSj0Ul5NIhWqKqragvZryquH7v1fyPW+0UYlr2ZxLeLXzU8299pnpVzdPLrPZW4M3Ks+5VcjU6/bX5JBj9SWWP01RoU5updwg4qmovaL3fVt9NvcR/AYytl8gqa5u7TUq1TfwX+bMrZafo5HTVO8tlKF3FS3W+6qbPw9nwMDjb2vj72ndUJbSg+q8pLzT9hT8SyMma8KeKU7sRTTy8vnTqN9/PtzR0+Gt7SrFFvV33eft7ne/X9vRnuIjgslbUobLko+C8lu9j46OtcVdq7hk+6W3I6bnU5X577dfcfXUFjkc1kvp1lbOrbTpwVOakvDbr5+KbaPF+rGa/kn9uP+ZJzbeXVxy5nW8Sbtvc6iaZmmqNcsT2mJjziXO1VajEps1XIpnXr1jzSmhe4LT9pVpULvvVKbqKnGSm92ktk15dPM/eSxlllJUcxeTmraFqpd14est217H5ERnpvNR/9hk/dJP8yVajrSsdH06M/q1Z0oUdvbt1+5M9LhZ97Jxb9PEMWLdm1TzU0zTMRuNzHfv18u3wQLtmm3comzc5q6p1M7hB7Cg7zJUbeMdu9qqOy8k2ejU1FW+evKUfDvOZfHr+Z/dM3dtY5endXXPyU09uVbvdrb8z8ahu6V9mbi7oc3d1GuXmWz6RS/I+ccuNHCJq5o8WbkdPPlimevy3K93c951r7MU/ntJNRxitC4/y6UmvfyMxvD+SWf2/aoyX4MyOp3/4k4tevdf/AG2YjQ721HQ9sZr+yz1udXy+0eFr0tR9f+VbZjeDd/zPhqyl3OoryHrPn/eSf5k60jBw05aJrxi5fNtkJ1nJS1LdtPdbxXygic6Wmp6espLyppfLp+RZeyFFFPtFmxT5c+vlzo/E5mcG1v4f0VtkaCtshcW6e6pVZQT9UnsSTWdy6mCxMebfvIKb96il+bMRqyHJqK8W228+b5pM+WUu/pFljqW63o0HF7eT5mvwS+Z433inAp4hiR030j/LXH6bWnJN6bN306/WGb4b0ea9u6/7FNR+b/8A5JwRbhxDbHXNTbrKqlv7l/zM5fwu531h3EpRoRqylccrS3jyPZP+tt8j657E2Is8Fs+s7n6zP6aea4tXzZdXw/Z7QQPKx16rjERtakpwhkKP0ydNQXNbqFyptp+O8lQey28Vtt1MnCrqmNlPvW3Xp5apzctGL5rN1Z8ij6vkcOvj069d9/Vq5KQYTWtDMXWnu4wV1XtL2d3arvqXJz06X0in3zXOnHfuufxT9zI1nKWv/wBVbmhialRZmdO2lTrTlT2hKNDmqLquX61SHK+n/rN/LoFgAiWVjqyP6wzsZ3D5+R46MXR3i1GKag5ppb7S3c00nJNJ9USunKUt1KEo7dOu3Xp5fh8AP0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAHmytTucZdVXv9SjJ/cz0hpNbNbpnO9RNduqmJ1MxLamYiqJlTuzXXZky4h1VUssfKK6TcpLfx8F/mS3uqW23dw2/oo/UoQltzRi9vDdHgcL2GrxcLIxYv78Xl68vblnf83Xa5u8Xi5doucn3d+fr+Cu9C1+4z8YvoqtOUPD4/kYm9dSve3Fbkk3OrKTaXq2WyqdNPdQin67BQgvCEV8DlX7A13MK3h1ZHSmqqr7vrEdPveWp+raOMxF2bsUdZiI7+m/gj3D2q54WpSl40qzSW3gmk/wAdyOa0xkrHKSrwj/AXDc4tLwl5r8yxYxjH7MUt/RHzvLahd28qFzSjUpy8YstuIeykZnB7eBVXuu3H2ata7esdekx0/P4I1niPhZVV6I6Vd4Vdj8rkMetrS6nTi/4vRx+T6Hs/WjOfy3/ZQ/yJNU0Zi5TbjWuoJ+Skml80fn9S8Z/Kbv8Aej/wnibPst7UY9Ph2bsxTHlFyYj6LariPD655qqdz8aUSuM3lrjfvb+vs/FRlyr5I92q7yVzGwtYuU+4toSn/SlFP8NjPvReM8ri8/ej/wAJIbe3pUKFOjGPMqcFBOSW7SW3UscH2Q4xftXrObe1FfL1mefepmdd489OF7ieLRVTXap3rfwQPReItMnO6d5CUo0lFRSk11e/+Rg7yEFd1u5hKNJVJKCfXZb9C3IxjHflilv6I/nd0/8ARx+RPv8A8PbVzDtY9NyIqp3url61bnp5+XbvLhRxuqm7VXNO4nWo32/JA9QVZVNLYaHVtp9PctkeDSinT1FZuUZR3m11XsZZfJDZLkjsvDp4H95Ibp8sd14PYk3fYmq7nWsyb/Wjk6cvfkiI7789fhtpTxaKbNVrk778/XfwVVnJ99mbyok9nWn+JO9D1O807RX7EpR+/f8AMzPdU92+7h18eh/YxjFbRior0SJfA/ZOvhfELmZN7m54nccuu8xPfc+jnl8SjIsxa5da15q51xF/rJW2T6xg/wCyjCuE0t3CSXuLflCEpc0oRb9Wg4QfjCPyKfiH8PPfMu7ke8a56pnXL23O/wCZKscb8K3TRyb1Gu/+iP8AD9bYJvbxrS/I9moXl+7lHEtxqO0uOWW0WlW5V3Te/t39nqZWMYxW0YqK9Ej+nvOF4XuGHbxt75IiN9tqbIu+Ndqua1tGdPw1dVeO/TNxSoOlTrK9VGlDlrzVTaDi3u4xcVzbeOz2bTPHQqa3WSxEKkVKydiv0hVapqcbhUqngtvObhvt0XKtls5EyBPcUZuY6o7m7r0K9TvP0fb9zRkqSiq/NLvmnyN83Ly7b7x38jLZN38NOXTsJVal/G0n3Dko80qvI+VtbKO++3kl7DIACK3M9WfpDNqipfRe/oKwk+7i403GkqnL9WTfXvX9ZN+Gx6by61FQzCVCz+k41Wstvs99OtySkvRLrFR6tLeS+EhAHjxFW7qY+2+nUJ07l28JVt+Xbna+suj8U17uqPYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/9k="
+  },
+  "inventory": [
+    {
+      "id": "ing-1",
+      "name": "Dark compound",
+      "category": "Compounds & Chocolates",
+      "currentStock": 12,
+      "minThreshold": 3,
+      "unit": "kg",
+      "unitCost": 195,
+      "supplier": "BakePro Supplies"
+    },
+    {
+      "id": "ing-2",
+      "name": "White compound",
+      "category": "Compounds & Chocolates",
+      "currentStock": 8.5,
+      "minThreshold": 2,
+      "unit": "kg",
+      "unitCost": 220,
+      "supplier": "BakePro Supplies"
+    },
+    {
+      "id": "ing-3",
+      "name": "Milk compound",
+      "category": "Compounds & Chocolates",
+      "currentStock": 6,
+      "minThreshold": 2,
+      "unit": "kg",
+      "unitCost": 210,
+      "supplier": "BakePro Supplies"
+    },
+    {
+      "id": "ing-4",
+      "name": "Butter (Pasteurized)",
+      "category": "Dairy & Fats",
+      "currentStock": 4.5,
+      "minThreshold": 5,
+      "unit": "kg",
+      "unitCost": 540,
+      "supplier": "Amul Dairy Distributor"
+    },
+    {
+      "id": "ing-5",
+      "name": "Whipping cream",
+      "category": "Dairy & Fats",
+      "currentStock": 5,
+      "minThreshold": 4,
+      "unit": "kg",
+      "unitCost": 195,
+      "supplier": "Richs / Tropolite Depot"
+    },
+    {
+      "id": "ing-6",
+      "name": "Egg",
+      "category": "Dairy & Fats",
+      "currentStock": 48,
+      "minThreshold": 30,
+      "unit": "pcs",
+      "unitCost": 7,
+      "supplier": "Local Poultry Wholesale"
+    },
+    {
+      "id": "ing-7",
+      "name": "Maida",
+      "category": "Flours & Sugars",
+      "currentStock": 25,
+      "minThreshold": 8,
+      "unit": "kg",
+      "unitCost": 42,
+      "supplier": "Sri Murugan Wholesale Mart"
+    },
+    {
+      "id": "ing-8",
+      "name": "Sugar",
+      "category": "Flours & Sugars",
+      "currentStock": 20,
+      "minThreshold": 6,
+      "unit": "kg",
+      "unitCost": 46,
+      "supplier": "Sri Murugan Wholesale Mart"
+    },
+    {
+      "id": "ing-9",
+      "name": "Brown sugar",
+      "category": "Flours & Sugars",
+      "currentStock": 4,
+      "minThreshold": 2,
+      "unit": "kg",
+      "unitCost": 110,
+      "supplier": "BakeMart Wholesale"
+    },
+    {
+      "id": "ing-10",
+      "name": "Cocoa powder",
+      "category": "Compounds & Chocolates",
+      "currentStock": 3.5,
+      "minThreshold": 1.5,
+      "unit": "kg",
+      "unitCost": 480,
+      "supplier": "BakePro Supplies"
+    },
+    {
+      "id": "ing-11",
+      "name": "Baking powder",
+      "category": "Leavening & Essentials",
+      "currentStock": 1.2,
+      "minThreshold": 0.5,
+      "unit": "kg",
+      "unitCost": 380,
+      "supplier": "BakeMart Wholesale"
+    },
+    {
+      "id": "ing-12",
+      "name": "Baking soda",
+      "category": "Leavening & Essentials",
+      "currentStock": 0.8,
+      "minThreshold": 0.4,
+      "unit": "kg",
+      "unitCost": 240,
+      "supplier": "BakeMart Wholesale"
+    },
+    {
+      "id": "ing-13",
+      "name": "Nuts (Almonds, Cashews, Walnuts)",
+      "category": "Nuts & Inclusions",
+      "currentStock": 2.8,
+      "minThreshold": 1,
+      "unit": "kg",
+      "unitCost": 850,
+      "supplier": "Royal Dry Fruits"
+    },
+    {
+      "id": "ing-14",
+      "name": "Vanilla essence",
+      "category": "Essences & Flavours",
+      "currentStock": 400,
+      "minThreshold": 150,
+      "unit": "ml",
+      "unitCost": 0.65,
+      "supplier": "Ossoro Flavour House"
+    },
+    {
+      "id": "ing-15",
+      "name": "Rosemilk essence",
+      "category": "Essences & Flavours",
+      "currentStock": 350,
+      "minThreshold": 150,
+      "unit": "ml",
+      "unitCost": 0.75,
+      "supplier": "Flying Man / Ossoro"
+    },
+    {
+      "id": "ing-16",
+      "name": "Pista essence",
+      "category": "Essences & Flavours",
+      "currentStock": 250,
+      "minThreshold": 100,
+      "unit": "ml",
+      "unitCost": 0.75,
+      "supplier": "Ossoro Flavour House"
+    },
+    {
+      "id": "ing-17",
+      "name": "Blackcurrant essence",
+      "category": "Essences & Flavours",
+      "currentStock": 200,
+      "minThreshold": 100,
+      "unit": "ml",
+      "unitCost": 0.8,
+      "supplier": "Ossoro Flavour House"
+    },
+    {
+      "id": "ing-18",
+      "name": "Mango essence",
+      "category": "Essences & Flavours",
+      "currentStock": 200,
+      "minThreshold": 100,
+      "unit": "ml",
+      "unitCost": 0.75,
+      "supplier": "Ossoro Flavour House"
+    },
+    {
+      "id": "ing-19",
+      "name": "Butterscotch essence",
+      "category": "Essences & Flavours",
+      "currentStock": 250,
+      "minThreshold": 100,
+      "unit": "ml",
+      "unitCost": 0.8,
+      "supplier": "Ossoro Flavour House"
+    },
+    {
+      "id": "ing-20",
+      "name": "Bread",
+      "category": "Cafe & Savoury",
+      "currentStock": 6,
+      "minThreshold": 4,
+      "unit": "loaf",
+      "unitCost": 45,
+      "supplier": "Modern / Britannia Depot"
+    },
+    {
+      "id": "ing-21",
+      "name": "Mayonise",
+      "category": "Cafe & Savoury",
+      "currentStock": 3.2,
+      "minThreshold": 1.5,
+      "unit": "kg",
+      "unitCost": 180,
+      "supplier": "Veeba Wholesale"
+    },
+    {
+      "id": "ing-22",
+      "name": "Sauce tomato",
+      "category": "Cafe & Savoury",
+      "currentStock": 4,
+      "minThreshold": 2,
+      "unit": "kg",
+      "unitCost": 140,
+      "supplier": "Kissan Wholesale"
+    },
+    {
+      "id": "ing-23",
+      "name": "Sauce sachet",
+      "category": "Cafe & Savoury",
+      "currentStock": 120,
+      "minThreshold": 50,
+      "unit": "pcs",
+      "unitCost": 1.5,
+      "supplier": "Kissan Wholesale"
+    },
+    {
+      "id": "ing-24",
+      "name": "Brownie Packing box (8 inch)",
+      "category": "Boxes & Packaging",
+      "currentStock": 18,
+      "minThreshold": 25,
+      "unit": "pcs",
+      "unitCost": 18,
+      "supplier": "PackPrint Corrugators"
+    },
+    {
+      "id": "ing-25",
+      "name": "Brownie Packing box (10 inch)",
+      "category": "Boxes & Packaging",
+      "currentStock": 22,
+      "minThreshold": 20,
+      "unit": "pcs",
+      "unitCost": 25,
+      "supplier": "PackPrint Corrugators"
+    },
+    {
+      "id": "ing-26",
+      "name": "Cake Packing box (8 inch)",
+      "category": "Boxes & Packaging",
+      "currentStock": 14,
+      "minThreshold": 20,
+      "unit": "pcs",
+      "unitCost": 24,
+      "supplier": "PackPrint Corrugators"
+    },
+    {
+      "id": "ing-27",
+      "name": "Cake Packing box (10 inch)",
+      "category": "Boxes & Packaging",
+      "currentStock": 16,
+      "minThreshold": 15,
+      "unit": "pcs",
+      "unitCost": 32,
+      "supplier": "PackPrint Corrugators"
+    },
+    {
+      "id": "ing-28",
+      "name": "10Inch Packing cover",
+      "category": "Boxes & Packaging",
+      "currentStock": 45,
+      "minThreshold": 30,
+      "unit": "pcs",
+      "unitCost": 6,
+      "supplier": "EcoCarry Bags"
+    },
+    {
+      "id": "ing-29",
+      "name": "Sandwich Box",
+      "category": "Boxes & Packaging",
+      "currentStock": 35,
+      "minThreshold": 25,
+      "unit": "pcs",
+      "unitCost": 8,
+      "supplier": "EcoCarry Bags"
+    },
+    {
+      "id": "ing-30",
+      "name": "Brownie PVC 3*3 Box",
+      "category": "Boxes & Packaging",
+      "currentStock": 28,
+      "minThreshold": 20,
+      "unit": "pcs",
+      "unitCost": 12,
+      "supplier": "ClearView Plastics"
+    },
+    {
+      "id": "ing-31",
+      "name": "Cake birthday toppers",
+      "category": "Party & Decor",
+      "currentStock": 24,
+      "minThreshold": 15,
+      "unit": "pcs",
+      "unitCost": 35,
+      "supplier": "PartyWorld Wholesale"
+    },
+    {
+      "id": "ing-32",
+      "name": "Birthday candles",
+      "category": "Party & Decor",
+      "currentStock": 30,
+      "minThreshold": 20,
+      "unit": "pkt",
+      "unitCost": 20,
+      "supplier": "PartyWorld Wholesale"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "Classic Fudgy Dark Chocolate Brownie (8\" Box)",
+      "category": "Brownies",
+      "price": 550,
+      "costPrice": 215,
+      "unit": "box",
+      "description": "Loaded with Morde dark compound, butter, rich cocoa and crackly crust. Cut into 6 or 8 fudgy slices.",
+      "allergens": [
+        "Dairy",
+        "Eggs",
+        "Gluten"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "prod-2",
+      "name": "Signature 10\" Walnut Brownie Celebration Slab",
+      "category": "Brownies",
+      "price": 950,
+      "costPrice": 380,
+      "unit": "box",
+      "description": "Extra-large 10-inch fudgy brownie slab topped with toasted Kashmiri walnuts in 10\" presentation box.",
+      "allergens": [
+        "Dairy",
+        "Eggs",
+        "Gluten",
+        "Tree Nuts"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "prod-3",
+      "name": "Rosemilk Tres Leches Celebration Cake (8\" 1kg)",
+      "category": "Cakes",
+      "price": 850,
+      "costPrice": 310,
+      "unit": "cake",
+      "description": "Soft sponge soaked in cardamom rosemilk, whipped cream frosting, dried rose petals and pista.",
+      "allergens": [
+        "Dairy",
+        "Gluten",
+        "Tree Nuts"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "prod-4",
+      "name": "Blackcurrant Dream Whipped Cake (8\" 1kg)",
+      "category": "Cakes",
+      "price": 780,
+      "costPrice": 280,
+      "unit": "cake",
+      "description": "Airy vanilla sponge layered with rich blackcurrant compote, whipped cream and dark compound drip.",
+      "allergens": [
+        "Dairy",
+        "Gluten"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "prod-5",
+      "name": "Pista Butterscotch Crunch Pastry Box (4 Pack)",
+      "category": "Pastries",
+      "price": 360,
+      "costPrice": 120,
+      "unit": "pack",
+      "description": "Rich layers of butterscotch crunch and natural pistachio cream pastry slices.",
+      "allergens": [
+        "Dairy",
+        "Gluten",
+        "Tree Nuts"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "prod-6",
+      "name": "Cafe Grilled Cheese Mayo Sandwich (Pack of 2)",
+      "category": "Savouries",
+      "price": 180,
+      "costPrice": 58,
+      "unit": "pack",
+      "description": "Toasted bakery bread packed with creamy mayo, herbs, tomato sauce and butter in sandwich box.",
+      "allergens": [
+        "Dairy",
+        "Gluten"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "prod-7",
+      "name": "Single Serve Brownie Cube (PVC 3*3 Box)",
+      "category": "Brownies",
+      "price": 85,
+      "costPrice": 32,
+      "unit": "piece",
+      "description": "Individual fudgy dark compound brownie square packed in crystal-clear 3x3 PVC box.",
+      "allergens": [
+        "Dairy",
+        "Eggs",
+        "Gluten"
+      ],
+      "inStock": true
+    }
+  ],
+  "recipes": [
+    {
+      "id": "rec-1",
+      "name": "Classic Fudgy Brownie (8-inch Box)",
+      "yieldCount": 1,
+      "yieldUnit": "8\" Box (6-8 Slices)",
+      "prepTimeMinutes": 20,
+      "bakeTimeMinutes": 30,
+      "ovenTemp": "175°C / 350°F",
+      "laborMinutes": 30,
+      "hourlyLaborRate": 150,
+      "overheadPercent": 12,
+      "items": [
+        {
+          "ingredientId": "ing-1",
+          "name": "Dark compound",
+          "qty": 0.22,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-4",
+          "name": "Butter (Pasteurized)",
+          "qty": 0.12,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-8",
+          "name": "Sugar",
+          "qty": 0.15,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-6",
+          "name": "Egg",
+          "qty": 3,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-7",
+          "name": "Maida",
+          "qty": 0.065,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-10",
+          "name": "Cocoa powder",
+          "qty": 0.025,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-14",
+          "name": "Vanilla essence",
+          "qty": 5,
+          "unit": "ml"
+        },
+        {
+          "ingredientId": "ing-24",
+          "name": "Brownie Packing box (8 inch)",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-28",
+          "name": "10Inch Packing cover",
+          "qty": 1,
+          "unit": "pcs"
+        }
+      ],
+      "notes": "Melt dark compound and butter over low heat. Whisk eggs and sugar until pale ribbon stage."
+    },
+    {
+      "id": "rec-2",
+      "name": "Rosemilk Tres Leches Cake (8-inch 1kg)",
+      "yieldCount": 1,
+      "yieldUnit": "8\" Cake (1kg)",
+      "prepTimeMinutes": 45,
+      "bakeTimeMinutes": 35,
+      "ovenTemp": "165°C / 330°F",
+      "laborMinutes": 45,
+      "hourlyLaborRate": 150,
+      "overheadPercent": 15,
+      "items": [
+        {
+          "ingredientId": "ing-7",
+          "name": "Maida",
+          "qty": 0.16,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-8",
+          "name": "Sugar",
+          "qty": 0.12,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-6",
+          "name": "Egg",
+          "qty": 3,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-11",
+          "name": "Baking powder",
+          "qty": 0.005,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-5",
+          "name": "Whipping cream",
+          "qty": 0.28,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-15",
+          "name": "Rosemilk essence",
+          "qty": 8,
+          "unit": "ml"
+        },
+        {
+          "ingredientId": "ing-13",
+          "name": "Nuts (Almonds, Cashews, Walnuts)",
+          "qty": 0.03,
+          "unit": "kg"
+        },
+        {
+          "ingredientId": "ing-26",
+          "name": "Cake Packing box (8 inch)",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-31",
+          "name": "Cake birthday toppers",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "ingredientId": "ing-32",
+          "name": "Birthday candles",
+          "qty": 1,
+          "unit": "pkt"
+        }
+      ],
+      "notes": "Poke cooled sponge thoroughly before pouring rosemilk soak."
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-2137",
+      "date": "2026-10-23",
+      "status": "pending",
+      "paymentStatus": "partially-paid",
+      "paymentMethod": "UPI / GPay",
+      "fulfilmentMethod": "own_delivery",
+      "deliveryType": "Own Delivery",
+      "deliverySlot": "11:00 AM - 01:00 PM",
+      "deliveryAddress": "site 31 velan nagar , mathampalayam",
+      "deliveryInstructions": "",
+      "recipientContact": "vikey (+91 7708409541)",
+      "externalReference": "",
+      "cakeMessage": "",
+      "referenceImage": "",
+      "items": [
+        {
+          "productId": "prod-1",
+          "name": "Classic Fudgy Dark Chocolate Brownie (8\" Box)",
+          "qty": 1,
+          "price": 550,
+          "cakeMessage": ""
+        },
+        {
+          "productId": "prod-2",
+          "name": "Signature 10\" Walnut Brownie Celebration Slab",
+          "qty": 1,
+          "price": 950,
+          "cakeMessage": ""
+        },
+        {
+          "productId": "prod-1",
+          "name": "Classic Fudgy Dark Chocolate Brownie (8\" Box)",
+          "qty": 1,
+          "price": 550,
+          "cakeMessage": ""
+        }
+      ],
+      "createdAt": "2026-10-23T17:25:36.822Z",
+      "customerName": "vikey",
+      "customerPhone": "+91 7708409541",
+      "customerWhatsapp": "+91 7708409541",
+      "subtotal": 2050,
+      "discount": 0,
+      "deliveryCharge": 100,
+      "total": 2150,
+      "advancePaid": 350,
+      "balanceDue": 1800,
+      "notes": "add Choco chips"
+    },
+    {
+      "id": "ORD-2101",
+      "customerName": "Pooja Sundaram",
+      "customerPhone": "+91 98401 22910",
+      "date": "2026-10-23",
+      "deliverySlot": "11:30 AM",
+      "deliveryType": "Store Pickup",
+      "status": "ready",
+      "paymentStatus": "paid",
+      "paymentMethod": "UPI / GPay",
+      "items": [
+        {
+          "productId": "prod-1",
+          "name": "Classic Fudgy Dark Chocolate Brownie (8\" Box)",
+          "qty": 2,
+          "price": 550
+        },
+        {
+          "productId": "prod-7",
+          "name": "Single Serve Brownie Cube (PVC 3*3 Box)",
+          "qty": 2,
+          "price": 85
+        }
+      ],
+      "subtotal": 1270,
+      "discount": 0,
+      "deliveryCharge": 0,
+      "total": 1270,
+      "notes": "Write \"Happy Anniversary Karthik & Pooja\" with gold ribbon on both boxes."
+    },
+    {
+      "id": "ORD-2102",
+      "customerName": "Rohan Mehra",
+      "customerPhone": "+91 99620 44812",
+      "date": "2026-10-23",
+      "deliverySlot": "3:00 PM",
+      "deliveryType": "Dunzo Delivery",
+      "status": "in-oven",
+      "paymentStatus": "paid",
+      "paymentMethod": "UPI / PhonePe",
+      "items": [
+        {
+          "productId": "prod-3",
+          "name": "Rosemilk Tres Leches Celebration Cake (8\" 1kg)",
+          "qty": 1,
+          "price": 850
+        }
+      ],
+      "subtotal": 850,
+      "discount": 50,
+      "deliveryCharge": 60,
+      "total": 860,
+      "notes": "Add Cake Birthday Topper & candles inside bag."
+    },
+    {
+      "id": "ORD-2103",
+      "customerName": "Kavitha Sridhar",
+      "customerPhone": "+91 94440 88123",
+      "date": "2026-10-23",
+      "deliverySlot": "5:30 PM",
+      "deliveryType": "Porter Express",
+      "status": "pending",
+      "paymentStatus": "unpaid",
+      "paymentMethod": "Cash on Delivery",
+      "items": [
+        {
+          "productId": "prod-2",
+          "name": "Signature 10\" Walnut Brownie Celebration Slab",
+          "qty": 1,
+          "price": 950
+        },
+        {
+          "productId": "prod-6",
+          "name": "Cafe Grilled Cheese Mayo Sandwich (Pack of 2)",
+          "qty": 2,
+          "price": 180
+        }
+      ],
+      "subtotal": 1310,
+      "discount": 0,
+      "deliveryCharge": 80,
+      "total": 1390,
+      "notes": "Cut 10\" brownie slab into 16 clean squares."
+    }
+  ],
+  "expenses": [
+    {
+      "id": "exp-101",
+      "date": "2026-10-23",
+      "category": "Ingredients",
+      "vendor": "BakePro Supplies",
+      "amount": 2450,
+      "paymentMethod": "UPI / GPay",
+      "notes": "10kg Dark compound and 2kg White compound restock"
+    },
+    {
+      "id": "exp-102",
+      "date": "2026-10-23",
+      "category": "Packaging",
+      "vendor": "PackPrint Corrugators",
+      "amount": 1120,
+      "paymentMethod": "Cash",
+      "notes": "50pcs 8-inch Brownie boxes and 30pcs Cake boxes"
+    }
+  ],
+  "production": [
+    {
+      "id": "plan-1",
+      "date": "2026-10-23",
+      "product": "Classic Fudgy Brownie (8\" Box)",
+      "batchQty": 4,
+      "stage": "Baking",
+      "targetTime": "11:00 AM",
+      "completed": false,
+      "assignedBaker": "Ananya",
+      "notes": "2 for ORD-2101, 2 for counter display"
+    },
+    {
+      "id": "plan-2",
+      "date": "2026-10-23",
+      "product": "Rosemilk Tres Leches (8\" 1kg)",
+      "batchQty": 1,
+      "stage": "Cooling",
+      "targetTime": "1:30 PM",
+      "completed": false,
+      "assignedBaker": "Ananya",
+      "notes": "ORD-2102 birthday order"
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "sup-1",
+      "name": "BakePro Supplies",
+      "contact": "Venkatesh",
+      "phone": "+91 98840 11920",
+      "email": "orders@bakepro.in",
+      "category": "Compounds, Cocoa & Essences",
+      "leadDays": 1,
+      "minOrder": "�,�1,000"
+    },
+    {
+      "id": "sup-2",
+      "name": "Amul Dairy Distributor",
+      "contact": "Suresh Babu",
+      "phone": "+91 94441 55021",
+      "email": "suresh.amul@gmail.com",
+      "category": "Butter, Cheese & Cream",
+      "leadDays": 1,
+      "minOrder": "�,�1,500"
+    },
+    {
+      "id": "sup-3",
+      "name": "PackPrint Corrugators",
+      "contact": "Kailash",
+      "phone": "+91 98410 77300",
+      "email": "packprint.sales@gmail.com",
+      "category": "8\" & 10\" Boxes & Bags",
+      "leadDays": 2,
+      "minOrder": "�,�2,000"
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust-1",
+      "name": "Pooja Sundaram",
+      "phone": "+91 98401 22910",
+      "totalOrders": 7,
+      "totalSpend": 5420,
+      "tier": "VIP Baker Club",
+      "notes": "Loves extra dark chocolate"
+    },
+    {
+      "id": "cust-2",
+      "name": "Rohan Mehra",
+      "phone": "+91 99620 44812",
+      "totalOrders": 4,
+      "totalSpend": 3100,
+      "tier": "Regular",
+      "notes": "Corporate Dunzo orders"
+    },
+    {
+      "id": "cust-3",
+      "name": "Kavitha Sridhar",
+      "phone": "+91 94440 88123",
+      "totalOrders": 5,
+      "totalSpend": 4680,
+      "tier": "VIP Baker Club",
+      "notes": "Prefers eggless options"
+    },
+    {
+      "id": "cust-6822",
+      "name": "vikey",
+      "phone": "+91 7708409541",
+      "whatsapp": "+91 7708409541",
+      "address": "site 31 velan nagar , mathampalayam",
+      "totalOrders": 1,
+      "totalSpend": 2150,
+      "tier": "Regular",
+      "notes": ""
+    }
+  ],
+  "cashbook": {
+    "openingBalance": 3000,
+    "records": [
+      {
+        "id": "cb-1",
+        "time": "09:30 AM",
+        "description": "Opening Cash Register Float",
+        "type": "in",
+        "amount": 3000,
+        "category": "Float"
+      },
+      {
+        "id": "cb-2",
+        "time": "11:15 AM",
+        "description": "Counter POS sale: 2 Brownie Cubes",
+        "type": "in",
+        "amount": 170,
+        "category": "Sales"
+      },
+      {
+        "id": "cb-3",
+        "time": "01:00 PM",
+        "description": "Paid packing box delivery auto fare",
+        "type": "out",
+        "amount": 150,
+        "category": "Expense"
+      }
+    ]
+  },
+  "workspace": {
+    "name": "The Crust & Crumb — Main Patisserie Studio",
+    "coverPhoto": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 300\"><rect width=\"600\" height=\"300\" fill=\"%23FFF9F2\"/><circle cx=\"300\" cy=\"150\" r=\"100\" fill=\"%23F6C9D0\" opacity=\"0.3\"/><rect x=\"150\" y=\"180\" width=\"300\" height=\"70\" rx=\"10\" fill=\"%23302B35\"/><rect x=\"220\" y=\"90\" width=\"160\" height=\"90\" rx=\"8\" fill=\"%23DCD6F7\"/><rect x=\"235\" y=\"105\" width=\"130\" height=\"60\" rx=\"4\" fill=\"%23302B35\"/><circle cx=\"300\" cy=\"135\" r=\"14\" fill=\"%23F9E7A8\"/><text x=\"300\" y=\"275\" font-family=\"sans-serif\" font-weight=\"800\" font-size=\"16\" fill=\"%2377717D\" text-anchor=\"middle\">ARTISAN KITCHEN STUDIO</text></svg>",
+    "address": "14, Greenways Road, R.A. Puram, Chennai, TN",
+    "isHomeKitchenPrivate": false,
+    "pickupLocationInstructions": "Gate 2, Ring the bakery buzzer on ground floor. Parking available in driveway.",
+    "workingDays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "workingHours": "08:30 AM - 08:30 PM",
+    "orderAcceptanceHours": "09:00 AM - 07:00 PM",
+    "minAdvanceNoticeHours": 24,
+    "defaultPrepTimeHours": 4,
+    "holidayDates": [],
+    "equipment": [
+      "Double Deck Convection Oven (60L)",
+      "Stand Mixer (7L)",
+      "Blast Chiller",
+      "Commercial Microwave"
+    ],
+    "notes": "Brownies must be completely cooled for 45 minutes before slicing and packing in 8\" or 10\" presentation boxes."
+  }
+}
